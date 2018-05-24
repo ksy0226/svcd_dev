@@ -1,0 +1,80 @@
+extends ../layouts/default
+
+block head
+    script(src='/isu/js/main/user.js')
+    script(src='/plugins/switchery/switchery.min.js')
+    // skycons
+    script(src='/plugins/skyicons/skycons.min.js', type='text/javascript')
+    // Counter Up
+    script(src='/plugins/waypoints/lib/jquery.waypoints.js')
+    script(src='/plugins/counterup/jquery.counterup.min.js')
+    // circliful Chart
+    script(src='/plugins/jquery-circliful/js/jquery.circliful.min.js')
+    script(src='/plugins/jquery-sparkline/jquery.sparkline.min.js')
+
+block content
+    .content-page
+        // Start content
+        .content
+            .container
+                // Page-Title
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Service Desk
+                                li.active Home
+                            h4.page-title Welcome !
+                .row
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart1(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#5fbeaa', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status1.text-success
+                            p.text-muted.text-nowrap 접수대기
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart2(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#3bafda', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status2.text-primary
+                            p.text-muted.text-nowrap 처리중
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart3(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#f76397', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status3.text-pink
+                            p.text-muted.text-nowrap 미평가
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart4(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#98a6ad', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status4.text-inverse
+                            p.text-muted.text-nowrap 처리완료
+                .row
+                    .col-lg-12
+                        .card-box
+                            h4.text-dark.header-title.m-t-0 미평가현황
+                            .table-responsive
+                                table.table
+                                    thead
+                                        tr
+                                            th.text-center 제목
+                                            th.text-center(width='13%') 등록일
+                                            th.text-center(width='10%') 요청경로
+                                            th.text-center(width='10%') 진행구분
+                                            th.text-center(width='11%') 담당자
+                                            th.text-center(width='13%') 완료일
+                                    tbody(id='more_list_nocomplete')
+                .row
+                    .col-lg-12
+                        .card-box
+                            h4.text-dark.header-title.m-t-0 요청처리현황
+                            .table-responsive
+                                table.table
+                                    thead
+                                        tr
+                                            th.text-center 제목
+                                            th.text-center(width='13%') 등록일
+                                            th.text-center(width='10%') 요청경로
+                                            th.text-center(width='10%') 진행구분
+                                            th.text-center(width='11%') 담당자
+                                            th.text-center(width='13%') 완료일
+                                    tbody(id='more_list')
+block footer

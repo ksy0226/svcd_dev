@@ -1,0 +1,25 @@
+//일반사용자
+- if(session.user_flag ==9){ 
+    include ../layouts/user
+- }
+
+//고객사별 회사담당
+- if(session.user_flag ==5){ 
+    include ../layouts/admin5
+- }
+
+//SD업무담당
+- if(session.user_flag ==4){ 
+    include ../layouts/admin4
+- }
+
+//팀장
+- if(session.user_flag ==3){ 
+    include ../layouts/admin3
+- }
+
+//전체관리자
+- if(session.user_flag ==1){
+    include ../layouts/admin1
+-}
+

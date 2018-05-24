@@ -1,0 +1,298 @@
+extends ../layouts/default
+block head
+    title  1-4 처리된 내용검색
+    // summernot
+    link(href='/plugins/summernote/dist/summernote.css', rel='stylesheet')
+
+    link(href='/plugins/switchery/switchery.min.css', rel='stylesheet')
+    link(href='/assets/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/core.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/icons.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/components.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/pages.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/menu_light.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/responsive.css', rel='stylesheet', type='text/css')
+
+    //첨부파일
+    link(href='/vendor/fileupload/css/fileinput.css', media='all', rel='stylesheet', type='text/css')
+
+    script(src='/assets/js/modernizr.min.js')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+    script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+    script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+
+    // jQuery
+    script(src='/assets/js/jquery.min.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/detect.js')
+    script(src='/assets/js/fastclick.js')
+    script(src='/assets/js/jquery.slimscroll.js')
+    script(src='/assets/js/jquery.blockUI.js')
+    script(src='/assets/js/waves.js')
+    script(src='/assets/js/wow.min.js')
+    script(src='/assets/js/jquery.nicescroll.js')
+    script(src='/assets/js/jquery.scrollTo.min.js')
+    script(src='/plugins/switchery/switchery.min.js')
+    script(src='/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')
+    script(type='text/javascript', src='/plugins/multiselect/js/jquery.multi-select.js')
+    script(type='text/javascript', src='/plugins/jquery-quicksearch/jquery.quicksearch.js')
+    script(src='/plugins/select2/select2.min.js', type='text/javascript')
+    script(src='/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js', type='text/javascript')
+    script(src='/plugins/bootstrap-inputmask/bootstrap-inputmask.min.js', type='text/javascript')
+    script(src='/plugins/moment/moment.js')
+    script(src='/plugins/timepicker/bootstrap-timepicker.min.js')
+    script(src='/plugins/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js')
+    script(src='/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')
+    script(src='/plugins/bootstrap-daterangepicker/daterangepicker.js')
+    // form summernote
+    script(src='/plugins/summernote/dist/summernote.min.js')
+
+    //첨부파일
+    script(src='/vendor/fileupload/js/fileinput.js', type='text/javascript')
+    script(src='/isu/js/incident/new.js', type='text/javascript')
+
+    script(src='/isu/js/search/user_list.js', type='text/javascript')
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') 문의 및 담당자
+                                li.active 처리된 내용검색
+                            h4.page-title 처리된 내용검색
+                .row
+                    .col-lg-12
+                        .card-box
+                            form.form-horizontal.group-border-dashed(action='#', onsubmit='return false;')
+                                .form-group
+                                    label.col-sm-2.control-label 상위업무 
+                                    .col-sm-3
+                                        select.form-control(id='higher_cd' name='higher_cd')
+                                            option(value ='*') 전체
+                                            - if (myProcess.length > 0) {
+                                                - for( var i = 0 ; length = myProcess.length > i ; i++ ){ //속도가 느리다고 알고 있음.
+                                                    option(value ='#{myProcess[i].higher_cd}') #{myProcess[i].higher_nm}
+                                                - }
+                                            - } 
+                                    label.col-sm-2.control-label 하위업무
+                                    .col-sm-4
+                                        select.form-control(id='lower_cd' name='lower_cd')
+                                            option(value ='*') 전체
+
+                                .form-group
+                                    label.col-sm-2.control-label 검색기간
+                                    .col-sm-4
+                                        .input-group
+                                            .input-group
+                                                input.form-control(id='reg_date_from', name='reg_date_from', type='text', placeholder='yyyy-mm-dd', value=reg_date_from)
+                                                span.input-group-addon.bg-primary.b-0.text-white
+                                                    i.ion-calendar
+                                    .col-sm-4
+                                        .input-group
+                                            .input-group
+                                                input.form-control(id='reg_date_to', name='reg_date_to', type='text', placeholder='yyyy-mm-dd', value=reg_date_to)
+                                                span.input-group-addon.bg-primary.b-0.text-white
+                                                    i.ion-calendar 
+                                .form-group.m-b-0
+                                    label.col-sm-2.control-label 검색어
+                                    .col-sm-2
+                                        select.form-control(id='searchType' name='searchType')
+                                            option(value='title,content') 제목+내용
+                                            option(value='title') 제목
+                                            option(value='content') 내용
+                                    .col-sm-6
+                                        input.form-control(id='searchText' name='searchText' type='text' value=searchText)
+                                    .col-sm-2
+                                        button.btn.btn-primary(id='searchBtn' type='button') 조회
+                .row
+                    .col-lg-12
+                        .card-box
+                            table.table.table-hover(id='lists')
+                                thead
+                                    tr
+                                        //th(class='text-center' width='16%') 상위업무명
+                                        th(class='text-center' width='18%') 하위업무
+                                        th(class='text-center' id='title') 제목
+                                        th(class='text-center' width='15%') 등록일
+                                        th(class='text-center' width='15%') 담당자
+                                tbody(id='more_list')
+                        .row
+                            .col-sm-4
+                                .dataTables_info Showing 1 to 15 of 
+                                    span(id='totalPage')
+                                    |  pages
+                            .col-sm-8
+                                .dataTables_paginate.paging_simple_numbers.pull-right
+                                    ul#paging.pagination
+
+    //상세모달
+    //#wdetail_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='custom-width-modalLabel', aria-hidden='true', style='display: none;')
+        .modal-dialog(style='width:80%;')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                .modal-body
+                    // Page-Title
+                    .row
+                        .col-sm-12
+                            .page-title-box
+                                ol.breadcrumb.pull-right
+                                    li
+                                        a(href='#') Home
+                                    li
+                                        a(href='#') 문의 및 담당자
+                                    li.active 처리된 내용검색
+                                h4.page-title 처리된 내용검색
+                        .row
+                            .col-lg-12
+                                .btn-toolbar.m-t-10(role='toolbar')
+                                    .pull-left                               
+                                        button.btn.btn-primary.waves-effect.waves-light.m-l-5(type='button', onClick="javascript:$('#wdetail_modal').modal('hide')")
+                                            i.fa.fa-bars
+                                            | 목록
+                                        buttonn#registerBtn.btn.btn-warning.waves-effect.waves-light.m-l-5(type='button')
+                                            i.fa.fa-copy
+                                            | 재등록
+                                        //button.btn.btn-primary.waves-effect.waves-light.m-l-5(type='button', onclick='window.print()')
+                                        //    i.fa.fa-print
+                                        //    | 인쇄
+                                        //.pull-right
+                                            button.btn.btn-info.waves-effect.waves-light.m-r-5(type='button')
+                                                i.fa.fa-file-pdf-o
+                                                |  PDF Download
+                                            button.btn.btn-success.waves-effect.waves-light.m-r-5(type='button')
+                                                i.fa.fa-file-excel-o
+                                                |  Excel Download
+                                            button.btn.btn-purple.waves-effect.waves-light.m-r-5(type='button')
+                                                i.fa.fa-edit
+                                                |  버튼
+                                            button.btn.btn-primary.waves-effect.waves-light.m-r-5(type='button')
+                                                i.fa.fa-edit
+                                                |  인쇄
+                        // End Button Area
+                        // start Grid Area
+                        .row
+                            .col-sm-12.m-t-20
+                                .card-box
+                                    h4
+                                        b 접수 내용
+                                    hr.m-0
+                                    table.table.table-bordered
+                                        colgroup
+                                            col(width='20%')
+                                            col(width='30%')
+                                            col(width='20%')
+                                            col(width='30%')
+                                        tbody
+                                        tr
+                                            th.bg-muted 진행상태
+                                                td
+                                                    span#_status_nm
+                                            th.bg-muted 긴급구분
+                                                td#_process_speed
+                                        tr
+                                            th.bg-muted 상위업무
+                                            td#_higher_nm
+                                            th.bg-muted 하위업무
+                                            td#_lower_nm
+                                        tr
+                                            th.bg-muted 요청자
+                                            td#_request_company_nm-request_nm
+                                            th.bg-muted 완료요청일
+                                            td#_request_complete_date
+                                        tr
+                                            th.bg-muted 요청경로
+                                            td#_app_menu
+                                            th.bg-muted 등록자/등록일
+                                            td#_register_nm-register_date
+                                        tr
+                                            th.bg-muted 제목
+                                            td#_title(colspan='3')
+                                        tr
+                                            th.bg-muted 요청내용
+                                            td#_content(colspan='3')
+                                        tr(style='display:')
+                                            th.bg-muted 첨부파일
+                                            //td(colspan='3')
+                                                i.fa.fa-paperclip.m-r-10
+                                                a(href='#')
+                                                    span.text-pink faqimage.gif
+                                            td(colspan='3')
+                                                span#_attach
+                                        tr
+                                            th.bg-muted 접수상담내용
+                                            td(colspan='3')
+                                                | 접수하였습니다.
+                                                br
+
+
+                        .col-sm-12.m-t-20
+                            .card-box
+                                h4
+                                    //h4.m-t-30
+                                    b 처리 내용
+                                hr.m-0
+                                table.table.table-bordered.m-t-0
+                                    colgroup
+                                        col(width='20%')
+                                        col(width='30%')
+                                        col(width='20%')
+                                        col(width='30%')
+                                    tbody
+                                        tr
+                                            th.bg-muted 처리담당자
+                                            td#_manager_nm
+                                            th.bg-muted 접수일
+                                            td#_receipt_date
+                                        tr
+                                            th.bg-muted 완료예정일
+                                            td#_complete_reserve_date
+                                            th.bg-muted 난이도
+                                            td
+                                                span#_business_level.badge.badge-danger
+                                        tr
+                                            th.bg-muted 처리구분
+                                            td(colspan='3') 
+                                        tr
+                                            th.bg-muted 처리내용
+                                            td#_complete_content(colspan='3')
+
+                                        tr
+                                            th.bg-muted 처리완료일
+                                            td#_complete_date
+                                            th.bg-muted 처리소요시간
+                                            td#_need_minute
+                                                //i.fa.fa-clock-o.text-muted
+                                                //b.m-l-10.m-r-5
+                                                //| 시간
+                                        tr
+                                            th.bg-muted 지연사유
+                                            td#_delay_reason(colspan='3')
+                                        //tr
+                                            th.bg-muted 평가
+                                            td#_valuation
+                                            th.bg-muted 공개여부 / 조회수
+                                            th.bg-muted 공개여부
+                                            td#_complete_open_flag-reading_cnt
+                                        //tr
+                                            th.bg-muted.text-danger 내부공유사항
+                                            td#_sharing_content(colspan='3')
+                                        tr  
+                                            // 상위업무코드
+                                            #_higher_cd
+                                            // 상위업무명
+                                            #_higher_nm
+
+
+
+
+block footer

@@ -1,0 +1,75 @@
+extends ../layouts/default
+block head
+    link(href='/plugins/summernote/dist/summernote.css', rel='stylesheet')
+    link(type='text/css', href='/vendor/fileupload/css/fileinput.css', media='all', rel='stylesheet')
+    script(src='/plugins/summernote/dist/summernote.min.js')
+    script(src='/vendor/fileupload/js/fileinput.js', type='text/javascript')
+    script(src='/isu/js/oftenqna/new.js', type='text/javascript')
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='/oftenqna/') HOME
+                                li
+                                    a(href='/oftenqna/') SD 기본정보
+                                li.active 자주묻는 질문과답
+                            h4.page-title 자주묻는 질문과답
+                .row
+                    .col-sm-12
+                        .btn-toolbar.m-t-10(role='toolbar')
+                            .pull-left
+                                .btn.btn-primary.waves-effect.waves-light.m-l-5(onclick="location.href='/oftenqna'")
+                                    i.fa.fa-list-ul
+                                    |  목록
+                            .pull-right
+                                button#saveBtn.btn.btn-primary.waves-effect.waves-light.m-r-5(type='button')
+                                    span 저장
+                                    i.fa.fa-send.m-l-10
+                .row
+                    .col-lg-12
+                        .card-box.m-t-10
+                            .p-20
+                                form.form-horizontal.group-border-dashed(id='form' name='form' action='/oftenqna/new' method='post' enctype="multipart/form-data")  
+                                    .form-group(style='display:none')
+                                        label.col-sm-3.control-label 사번
+                                        .col-sm-3
+                                            input.form-control(name='oftenqna[sabun]', type='text', value=sabun)
+                                    .form-group(style='display:none')
+                                        label.col-sm-3.control-label 등록자
+                                        .col-sm-3
+                                            input.form-control(name='oftenqna[user_nm]', type='text', value=user_nm)
+                                    .form-group(style='display:none')
+                                        label.col-sm-3.control-label 상위업무코드
+                                        .col-sm-3
+                                            input.form-control(id='higher_nm', name='oftenqna[higher_nm]', type='text', placeholder='')
+                                    .form-group
+                                        label.col-sm-2.control-label 상위업무
+                                        .col-sm-4
+                                            select#higher_cd.form-control(name='oftenqna[higher_cd]' onchange='higherCd()')
+                                                option(value ='') 선택하세요
+                                                - if (higher.length > 0) {
+                                                    - for( var i = 0 ; length = higher.length > i ; i++ ){ //속도가 느리다고 알고 있음.
+                                                        option(value ='#{higher[i].higher_cd}') #{higher[i].higher_nm}
+                                                    - }
+                                                - }
+                                    .form-group
+                                        label.col-sm-2.control-label 제목
+                                        .col-sm-10
+                                            input.form-control(name='oftenqna[title]', type='text', style="ime-mode:active", required)
+                                    .form-group
+                                        .col-sm-12
+                                            textarea#summernote.summernote(name='oftenqna[content]')
+                                    .row
+                                        .col-md-12.portlets
+                                            .m-b-30
+                                                input#attach-file.file(name='oftenqna[attach-file]', data-upload-url="#", type='file', multiple='')
+block footer
+
+
+

@@ -1,0 +1,128 @@
+extends ../layouts/default
+
+block head
+    //script(src='/assets/js/detect.js')
+    //script(src='/assets/js/fastclick.js')
+    //script(src='/assets/js/jquery.slimscroll.js')
+    //script(src='/assets/js/jquery.blockUI.js')
+
+    //script(src='/assets/js/waves.js')
+    //script(src='/assets/js/wow.min.js')
+    //script(src='/assets/js/jquery.nicescroll.js')
+    //script(src='/assets/js/jquery.scrollTo.min.js')
+
+    script(src='/isu/js/main/deptadmin.js')
+    script(src='/isu/js/statistic/chart_main.js')
+    
+    script(src='/plugins/switchery/switchery.min.js')
+    // skycons
+    script(src='/plugins/skyicons/skycons.min.js', type='text/javascript')
+    // Counter Up
+    script(src='/plugins/waypoints/lib/jquery.waypoints.js')
+    script(src='/plugins/counterup/jquery.counterup.min.js')
+    // circliful Chart
+    script(src='/plugins/jquery-circliful/js/jquery.circliful.min.js')
+    script(src='/plugins/jquery-sparkline/jquery.sparkline.min.js')
+    //Page js
+    //chart_main.js 수정 후 삭제
+    //script(src='/assets/pages/jquery.dashboard.js')
+
+    script(type='text/javascript').
+    
+        jQuery(document).ready(function($) {
+            $('.counter').counterUp({
+                delay: 100,
+                time: 1200
+            });
+            //$('.circliful-chart').circliful();
+        });
+    
+    
+
+block content
+    .content-page
+        // Start content
+        .content
+            .container
+                // Page-Title
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Service Desk
+                                li.active Home
+                            h4.page-title Welcome !
+                .row
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart1(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#5fbeaa', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status1.text-success
+                            p.text-muted.text-nowrap 접수대기
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart2(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#3bafda', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status2.text-primary
+                            p.text-muted.text-nowrap 처리중
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart3(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#f76397', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status3.text-pink
+                            p.text-muted.text-nowrap 미평가
+                    .col-sm-6.col-lg-3
+                        .widget-simple-chart.text-right.card-box
+                            .circliful-chart#chart4(data-bgcolor='#ebeff2', data-dimension='90', data-fgcolor='#98a6ad', data-fontsize='14', data-percent='', data-text='', data-width='5')
+                            h3#status4.text-inverse
+                            p.text-muted.text-nowrap 처리완료
+                // end row
+                // start Chart
+                .row
+                    .col-lg-6
+                        .card-box
+                            h4.text-dark.header-title.m-t-0.m-b-30 만족도 현황
+                            .widget-chart.text-center
+                                #sparkline2
+                                br
+                                h5.text-muted  &nbsp;1 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;7 &nbsp;&nbsp;&nbsp;8 &nbsp;&nbsp;9 &nbsp;&nbsp;10 &nbsp;&nbsp;11 &nbsp;12
+                                h4.m-b-0 Month
+                                
+                                //ul.list-inline.m-t-15
+                                    li
+                                        h5.text-muted.m-t-20 1
+                                        h4.m-b-0 75%
+                                    li
+                                        h5.text-muted.m-t-20 응답율
+                                        h4.m-b-0 100%
+                                    li
+                                        h5.text-muted.m-t-20 만족율
+                                        h4.m-b-0 90%
+                    .col-lg-6
+                        .card-box
+                            h4.text-dark.header-title.m-t-0.m-b-30 월별 요청증감표
+                            .widget-chart.text-center
+                                #sparkline1
+                                ul.list-inline.m-t-15
+                                    li
+                                        h5.text-muted.m-t-20#chartPreYear
+                                        h4.m-b-0#chartPreYearCnt
+                                    li
+                                        h5.text-muted.m-t-20#chartYear
+                                        h4.m-b-0#chartYearCnt
+                // end Chart
+                // start 접수현황
+                .row
+                    .col-lg-12
+                        .card-box
+                            h4.text-dark.header-title.m-t-0 처리현황
+                            .table-responsive
+                                table.table
+                                    thead
+                                        tr
+                                            th.text-center 제목
+                                            th.text-center(width='13%') 등록일
+                                            th.text-center(width='10%') 요청경로
+                                            th.text-center(width='10%') 진행구분
+                                            th.text-center(width='10%') 담당자
+                                            th.text-center(width='13%') 접수(완료)일
+                                    tbody(id='more_list')
+block footer

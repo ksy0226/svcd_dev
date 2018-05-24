@@ -1,0 +1,168 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        // Page title
+        title Index Theme
+        link(rel='stylesheet', href='vendor/fontawesome/css/font-awesome.css')
+        link(rel='stylesheet', href='vendor/metisMenu/dist/metisMenu.css')
+        link(rel='stylesheet', href='vendor/animate.css/animate.css')
+        link(rel='stylesheet', href='vendor/bootstrap/dist/css/bootstrap.css')
+        // App styles
+        link(rel='stylesheet', href='fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css')
+        link(rel='stylesheet', href='fonts/pe-icon-7-stroke/css/helper.css')
+        link(rel='stylesheet', href='styles/style.css')
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        script(src='https://code.jquery.com/jquery-2.2.4.min.js', integrity='sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=', crossorigin='anonymous')
+        script(src='/vendor/jquery/jquery.js')
+        script(src='/views/login/login.js')
+
+    style(type='text/css').
+        .container,
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+        min-height: 290px;
+        /* Set slide height here */
+        min-width: 290px;
+        }
+    script.
+    body.blank
+        // Simple splash screen
+        .splash
+            .color-line
+            .splash-title(style='height:150px;')
+                h1
+                p
+                .spinner
+                    .rect1
+                    .rect2
+                    .rect3
+                    .rect4
+                    .rect5
+        //if lt IE 7
+            p.alert.alert-danger
+                | You are using an 
+                strong outdated
+                |  browser. Please 
+                a(href='http://browsehappy.com/') upgrade your browser
+                |  to improve your experience.
+        .color-line
+        .back-link
+        .login-container
+            .row
+                .col-md-2
+                    .text-center.m-b-md
+                    .hpanel
+                .col-md-5
+                    .text-center.m-b-md
+                    .hpanel
+                        .panel-body
+                            img(src='/isu/images/logo.png', alt='ISU LOGO')
+                            #myCarousel.carousel.slide(data-ride='carousel', data-interval='4000')
+                                // Indicators
+                                ol.carousel-indicators
+                                    li.active(data-target='#myCarousel', data-slide-to='0')
+                                    li(data-target='#myCarousel', data-slide-to='1')
+                                    li(data-target='#myCarousel', data-slide-to='2')
+                                    li(data-target='#myCarousel', data-slide-to='3')
+                                // Wrapper for slides
+                                .carousel-inner
+                                    .item.active
+                                        // <img src="/isu/images/img1.jpg" alt="Los Angeles" style="width:100%;">
+                                        img.tales(src='/isu/images/img1.jpg', style='width:100%;')
+                                        .carousel-caption
+                                            h4 인사시스템
+                                            p 클라우드와 모바일 활용  
+                                            //h3 Los Angeles
+                                            //p LA is always so much fun!
+                                    .item
+                                        img(src='/isu/images/img2.jpg', style='width:100%;')
+                                        .carousel-caption
+                                            h4 전자펜(AFP), SmartDocs
+                                            p 업무자동화 솔루션
+                                            //h3 Chicago
+                                            //p Thank you, Chicago!
+                                    .item
+                                        img(src='/isu/images/img3.jpg', style='width:100%;')
+                                        .carousel-caption
+                                            h4 BI도구
+                                            p Qlik Sense(클릭센스) 
+                                            //h3 New York
+                                            //p We love the Big Apple!
+                                    .item
+                                        img(src='/isu/images/img4.jpg', style='width:100%;')
+                                        .carousel-caption
+                                            h4 하이브리드 클라우드
+                                            p 전자증빙시스템
+                                            p ISU-EDS 
+                                // Left and right controls
+                                a.left.carousel-control(href='#myCarousel', data-slide='prev')
+                                    span.glyphicon.glyphicon-chevron-left
+                                    span.sr-only Previous
+                                a.right.carousel-control(href='#myCarousel', data-slide='next')
+                                    span.glyphicon.glyphicon-chevron-right
+                                    span.sr-only Next
+                            .hpanel
+                                .panel-body
+                                    a(href='http://www.isusystem.com', target='blank') 회사소개
+                                    |         
+                                    a(href='http://blog.isusystem.com', target='blank') 회사블로그
+                //-.well.col-md-3.center.login-box  
+                .col-md-3              
+                    .text-left.m-b-md
+                        .hpanel
+                        .panel-body
+                            form#loginForm(action='/index' method='post' name='login')
+                                label.control-label(for='login', style='height:35px')
+                                .form-group
+                                    // <label class="control-label" for="companynm">COMPANY</label></label>
+                                    //select.form-control
+                                    //  option 선택하세요
+                                    //  option 주식회사 이수시스템
+                                    //  option (주)이수
+                                    //  option (주)이수화학
+                                    //  option 이수페타시스
+                                    //  option 주식회사 이수C&E
+                                .form-group
+                                    input#username.form-control(type='text', placeholder='EMAIL', title='Please enter you ID', required='', value= '#{nameCookie}', name='username')
+                                    //span.help-block.small Your unique ID
+                                .form-group
+
+                                    input#password.form-control(type='password', title='Please enter your PASSWORD', placeholder='******', required='', value='', name='password')
+                                    //span.help-block.small Your strong password
+                                .form-inline.form-group
+                                    .col-sm-6
+                                        .checkbox(style='padding-left: 0px;')
+                                            input.i-checks(type='checkbox', id='idsavecheck' name='idsavecheck' checked=('true'==='#{saveCookie}' ? 'checked' : undefined)) 
+                                            |  ID 저장
+                                        br
+                                        a(href='http://www.naver.com', target='blank') ID / PW 찾기 
+                                    .col-sm-6(style='padding: 5px 0 0 0;') 
+                                        button.btn.btn-primary.btn-block 로그인
+                                br
+                                 
+                                //label
+                                //    a(href='http://www.naver.com', target='blank') ID / PW 찾기
+
+                                //label
+                                //    a(href='http://www.naver.com', target='blank') ID / PW 찾기
+                                //a.btn.btn-primary.pull-right(href='http://113366.com/isu' target='blank') 원격지원받기
+                                br
+                                hr
+                                span
+                                    h5 계정이 없으신가요?
+                                button.btn.btn-success.btn-block 회원가입
+                                //button.btn.btn-warning.btn-block(href='http://113366.com/isu' target='blank') 원격지원
+                                br
+                                span 
+                                    .text-right ⓒ 2017 by 
+                                        b ISUSYSTEM
+                                
+                .col-md-2
+                    .text-center.m-b-md
+                    .hpanel
+           

@@ -1,0 +1,187 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1')
+        meta(name='description', content='A fully featured admin theme which can be used to build CRM, CMS, etc.')
+        meta(name='author', content='Coderthemes')
+        link(href='/assets/images/favicon_1.ico', rel='shortcut icon')
+        title Service Desk - LOGIN
+        link(type='text/css', href='/assets/css/bootstrap.min.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/core.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/icons.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/components.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/pages.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/menu.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/responsive.css', rel='stylesheet')
+        // full-slider
+        link(type='text/css', href='/assets/css/full-slider.css', rel='stylesheet')
+        script(src='/assets/js/modernizr.min.js')
+        // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+        // WARNING: Respond.js doesn't work if you view the page via file://
+        //if lt IE 9
+            script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+            script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+        script(src='/assets/js/jquery.min.js')
+        script(src='/assets/js/bootstrap.min.js')
+        script(src='/assets/js/detect.js')
+        script(src='/assets/js/fastclick.js')
+        script(src='/assets/js/jquery.slimscroll.js')
+        script(src='/assets/js/jquery.blockUI.js')
+        script(src='/assets/js/waves.js')
+        script(src='/assets/js/wow.min.js')
+        script(src='/assets/js/jquery.nicescroll.js')
+        script(src='/assets/js/jquery.scrollTo.min.js')
+        // Custom main Js
+        script(src='/assets/js/jquery.core.js')
+        script(src='/assets/js/jquery.app.js')
+        // Script to Activate the Carousel
+        script.
+            $('.carousel').carousel({
+                interval: 5000 //changes the speed
+            })
+        script(src='/isu/js/index.js')
+        
+    body
+        // Full Page Image Background Carousel Header
+        #myCarousel.carousel.slide
+            // Indicators
+            ol.carousel-indicators
+                li.active(data-slide-to='0', data-target='#myCarousel')
+                li(data-slide-to='1', data-target='#myCarousel')
+                li(data-slide-to='2', data-target='#myCarousel')
+            // Wrapper for Slides
+            .carousel-inner
+                .item.active
+                    // Set the first background image using inline CSS below.
+                    .fill(style='background-image:url(assets/images/bg_login_1.jpg)')
+                .item
+                    // Set the second background image using inline CSS below.
+                    .fill(style='background-image:url(assets/images/bg_login_2.jpg)')
+                .item
+                    // Set the third background image using inline CSS below.
+                    .fill(style='background-image:url(assets/images/bg_login_3.jpg)')
+            // Controls
+            //
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+                </a>
+        .wrapper-page
+            .login-box
+                .text-center
+                    a.logo-lg(href='#')
+                        img(src='/assets/images/ci_isusystem.png', alt='isusystem')
+                form.form-horizontal.m-t-20(name='login' action='/index' method='post')
+                    fieldset
+                        -if(message == null){
+                            //h2 로그인하세요.
+                        -}else{
+                            h3 !{message}
+                        -}
+                        .form-group
+                            .col-xs-12
+                                input#email.form-control(name='email', type='email', value=('#{email}' == 'undefined' ? '' : '#{email}'), placeholder='Email Address', required='')
+                                i.md.md-account-circle.form-control-feedback.l-h-42
+                        .form-group
+                            .col-xs-12
+                                input#password.form-control(name='password', type='password', placeholder='Password', required='')
+                                i.md.md-vpn-key.form-control-feedback.l-h-42
+                        .form-group
+                            .col-xs-12
+                                .checkbox.checkbox-primary
+                                    input#remember_me(name='remember_me', type='checkbox', checked=('true'==='#{remember_me}' ? 'on' : undefined))
+                                    label(for='remember_me')  아이디 저장 
+                        .form-group.text-right.m-t-20
+                            .pull-left
+                                .col-xs-12
+                                    button.btn.btn-primary.btn-custom.w-md.waves-effect.waves-light(type='submit') 로그인
+                            .pull-right
+                                .col-xs-12
+                                    a.btn.btn-outline-wprimary(data-target='#usermanageNew_modal', data-toggle='modal', type='button', onclick="usermanageNew();")
+                                        i.md.md-person-add.m-r-10
+                                        | 계정신청
+                        //.form-group.m-t-30
+                            .col-sm-7
+                                a.text-muted.text-underline(href='pages-recoverpw.html')
+                                    i.fa.fa-lock.m-r-10
+                                    | 비밀번호 찾기
+                            .col-sm-5
+                                a.btn.btn-outline-wprimary(data-target='#usermanageNew_modal', data-toggle='modal', type='button')
+                                    i.md.md-person-add.m-r-10
+                                    | 계정신청
+            p.m-t.login-copy.text-white.text-center
+                small
+                    strong.m-r-5 Copyright
+                    | ISU SYSTEM Co. Ltd. ALL RIGHT RESERVED. © 2017
+            .row.login-banner
+                .col-md-4.text-center
+                    a.btn.btn-outline-wprimary(href='http://www.isusystem.com', target='_blank')
+                        i.md.md-domain.m-r-10
+                        b 회사소개
+                .col-md-4.text-center
+                    a.btn.btn-outline-wwarning(href='http://blog.isusystem.com/', target='_blank')
+                        i.md.md-local-cafe.m-r-10
+                        b 블로그
+                .col-md-4.text-center
+                    a.btn.btn-outline-winfo(href='http://www.isusystem.com/kor/customer/getCus1002Html.do', target='_blank')
+                        i.md.md-place.m-r-10
+                        b 찾아오시는길
+
+    //계정신청 모달
+    #usermanageNew_modal.modal.fade(role='dialog', aria-hidden='true', aria-labelledby='custom-width-modalLabel', tabindex='-1', style='display: none;')
+        .modal-dialog(style='width:40%;')
+            .modal-content
+                .modal-header
+                    button.close(data-dismiss='modal', type='button', aria-hidden='true') ×
+                    h4#custom-width-modalLabel.modal-title
+                        b 계정 신규 등록 요청
+                    small.text-muted 아래 사항을 입력하여 주시기 바랍니다.
+                .modal-body
+                    .row
+                        .col-sm-12
+                            .btn-toolbar.m-b-10(role='toolbar')
+                                .pull-right
+                                    button#usermanageNewSaveBtn.btn.btn-sm.btn-primary.waves-effect.waves-light.m-r-5(type='button', onclick='receiptSave();')
+                                        i.fa.fa-paper-plane.m-l-5
+                                        |  저장
+                    .row
+                        .col-sm-12
+                            .card-box.m-r-5
+                                form#usermanageNew_form.form-horizontal.group-border-dashed(role='form', method='post')
+                                    .form-group
+                                        label.col-sm-3.control-label 회사명
+                                        .col-sm-8
+                                            input.form-control(id='userCompany_nm' name='usermanage[userCompany_nm]' type='text' required value='')
+                                            input.form-control(id='company_cd' name='usermanage[company_cd]' type='hidden' value='')
+                                            //input.form-control(id='access_yn' name='usermanage[access_yn]' type='hidden' value='N')
+                                    .form-group
+                                        label.col-sm-3.control-label Email (ID)
+                                        .col-sm-8
+                                            input.form-control(name='usermanage[email]' type='email' placeholder='isusystem@isu.co.kr' required value='')
+                                    .form-group
+                                        label.col-sm-3.control-label 비밀번호
+                                        .col-sm-8
+                                            input.form-control(name='usermanage[password]' type='password' required value='')
+                                    .form-group
+                                        label.col-sm-3.control-label 비밀번호 확인
+                                        .col-sm-8
+                                            input.form-control(name='usermanage[passwordChk]' type='password' required value='')
+                                    .form-group
+                                        label.col-sm-3.control-label 이름
+                                        .col-sm-8
+                                            input.form-control(name='usermanage[employee_nm]' type='text' required value='')
+                                    .form-group
+                                        label.col-sm-3.control-label 부서명
+                                        .col-sm-8
+                                            input.form-control(name='usermanage[dept_nm]' type='text' value='')
+                                    .form-group
+                                        label.col-sm-3.control-label 직위
+                                        .col-sm-8
+                                            input.form-control(name='usermanage[position_nm]' type='text' value='')
+                                    .form-group
+                                        label.col-sm-3.control-label 연락처
+                                        .col-sm-8
+                                            input.form-control(name='usermanage[hp_telno]' type='text' placeholder='010-0000-0000' value='')

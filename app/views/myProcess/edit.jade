@@ -1,0 +1,70 @@
+extends ../layouts/default
+block head
+    script(src='/vendor/jquery/jquery.min.js')
+    script(src='/plugins/multiselect/js/jquery.multi-select.js', type='text/javascript')
+    link(type='text/css', href='/plugins/multiselect/css/multi-select.css', rel='stylesheet')
+    link(type='text/css', href='/assets/css/pages.css', rel='stylesheet')
+
+    script(src='/isu/js/myProcess/edit.js')
+
+block content
+    body.widescreen.fixed-left-void
+        #wrapper.forced
+            .content-page
+                .content
+                    .container
+                        // Page-Title
+                        .row
+                            .col-sm-12
+                                .page-title-box
+                                    ol.breadcrumb.pull-right
+                                        li
+                                            a(href='#') Home
+                                        li
+                                            a(href='#') SD 담당자
+                                        li.active 나의 업무지정
+                                    h4.page-title 나의 업무지정
+                        .row
+                            .col-lg-12
+                                .card-box
+                                    form.form-horizontal.group-border-dashed(action='#', onsubmit='return false;')
+                                        .form-group
+                                            label.col-sm-2.control-label 상위업무 
+                                            .col-sm-4
+                                                select.form-control(id='higher_cd' name='higher_cd')
+
+                                            .col-sm-2
+                                                button#searchBtn.btn.btn-primary(type='button') 조회
+                        // start Grid Area
+                        .row
+                            .col-sm-12
+                                .card-box
+                                    .row
+                                        .col-sm-12
+                                            button#saveBtn.btn.btn-primary.waves-effect.waves-light.pull-right(type='button')
+                                                i.fa.fa-paper-plane.m-r-5
+                                                | 저장
+                                    hr.m-t-10.m-b-10
+                                    .row
+                                        .col-sm-12
+                                            table.m-t-5(width='100%')
+                                                tbody
+                                                    tr
+                                                        td(width='20%')
+                                                            h4.pull-left
+                                                                b 지정할 업무리스트
+                                                        td(width='25%')
+                                                            span.pull-right
+                                                                button#select-all.btn.btn-xs.btn-inverse.m-r-5(type='button')
+                                                                    i.fa.fa-check-square-o.m-r-5
+                                                                    |  전체선택
+                                                        td(width='10%')
+                                                        td(width='20%')
+                                                            h4.pull-left
+                                                                b 나의 업무
+                                                        td(width='25%')
+                                                            span.pull-right
+                                                                button#deselect-all.btn.btn-xs.btn-inverse.m-r-5(type='button')
+                                                                    i.fa.fa-check-square-o.m-r-5
+                                                                    |  전체취소
+                                            select#myProcessSelect.multi-select(name='myProcessSelect', data-plugin='multiselect', data-selectable-optgroup='true', multiple='multiple')

@@ -1,0 +1,58 @@
+extends ../layouts/default
+block head
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') SD기본정보
+                                li.active 상위업무입력
+                            h4.page-title 상위업무입력
+                .row
+                    .col-sm-12
+                        .card-box
+                            .p-20
+                                form.form-horizontal.group-border-dashed(name='form' action='/higherProcess/new' method='post')
+                                    .form-group
+                                        .pull-left
+                                            .btn.btn-primary.waves-effect.waves-light.m-l-5(onclick="location.href='/lowerProcess'")
+                                                i.fa.fa-list-ul
+                                                |  목록
+                                        .pull-right
+                                            button.btn.btn-primary(type='submit')
+                                                i.fa.fa-send-o
+                                                |  저장
+                                    hr
+                                    .form-group
+                                        label.col-sm-3.control-label 상위업무코드
+                                        .col-sm-3
+                                            input.form-control(type='text', name='higherProcess[higher_cd]', placeholder='')
+                                    .form-group
+                                        label.col-sm-3.control-label 상위업무명
+                                        .col-sm-3
+                                            input.form-control(type='text', name='higherProcess[higher_nm]', placeholder='')
+                                    .form-group
+                                        label.col-sm-3.control-label 설명
+                                        .col-sm-9
+                                            input.form-control(type='text', name='higherProcess[description]', placeholder='')
+                                    .form-group(style='display:none')
+                                        label.col-sm-3.control-label 회사명
+                                        .col-sm-3
+                                            input.form-control(type='text', name='higherProcess[company_nm]', placeholder='')
+                                    .form-group(style='display:none')
+                                        label.col-sm-3.control-label 이메일
+                                        .col-sm-3
+                                            input.form-control(type='text', name='higherProcess[sabun]', placeholder='')
+                                    .form-group
+                                        label.col-sm-3.control-label 사용여부
+                                        .col-sm-3
+                                            select.form-control.input-sm(name='higherProcess[use_yn]')
+                                                option(value='사용' Selected) 사용 
+                                                option(value='미사용') 미사용

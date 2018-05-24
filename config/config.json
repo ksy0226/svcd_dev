@@ -1,0 +1,46 @@
+{
+    "port": 443,
+    "port_80": 8080,
+    "companyName": "ISU SYSTEM, Inc.",
+    "projectName": "SERVICE DESK",
+    "systemEmail": "hilee.em@gmail.com",
+    "cryptoKey": "3yb0ardc4t",
+    "log4j": {
+        "filepath": "logs/log4js.log",
+        "level": "DEBUG"
+    },
+    "DATABASE": {
+        "DATABASE_URL": "mongodb://175.119.100.184:27017/servicedesk",
+        "RECONNECT": true,
+        "RECONNECTION_INTERVAL": 5000,
+        "options": {
+            "db": {
+                "native_parser": true,
+                "server": {
+                    "poolSize": 10
+                },
+                "user": "mysd",
+                "pass": "mysd123qwe"
+            }
+        }
+    },
+    "mailer": {
+        "service": "Isu",
+        "host": "mail.isu.co.kr",
+        "port": "25",
+        "user": "servicedesk@isu.co.kr",
+        "password": "a1234"
+    },
+    "fileUpload":{
+        "directory":"upload-file"
+    },
+    "summernoteUpload":{
+        "directory":"upload-file-summernote"
+    },
+    "groupware":{
+        "uri":"http://gw.isu.co.kr"
+    },
+    "msgAlimi":{
+        "uri":"http://175.119.100.144:8089"
+    }
+}

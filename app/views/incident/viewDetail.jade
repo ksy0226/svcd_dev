@@ -1,0 +1,149 @@
+extends ../layouts/default
+block head
+
+block content
+    // ==============================================================
+    // Start right Content here
+    // ==============================================================
+    .content-page
+        // Start content
+        .content
+            .container
+                // Page-Title
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='/incident') 문의 및 담당자
+                                li.active 처리진행현황
+                            h4.page-title 처리진행현황 상세보기
+                // start Search Area
+                .row
+                    .col-lg-12
+                        .card-box
+                            .m-b-30
+                                // Right Sidebar
+                                span.pull-right
+                                    button.btn.btn-success.waves-effect.waves-light.m-b-5(type='button') #{incident.status_nm}
+                                h4.m-t-0
+                                    b #{incident.title}
+                                hr
+                                .media
+                                    span.pull-right
+                                        h4.text-right.m-0 #{incident.request_nm}
+                                        span.media-meta.text-muted #{incident.register_date}
+                                    .media-body
+                                        h4.m-t-0.text-primary
+                                            i.md.md-desktop-windows.m-r-10(style='font-size:24px')
+                                            b 접수내용
+                                        //
+                                            <h4 class="text-unverse m-0"><b>박선우</b></h4>
+                                            <small class="text-muted">이수시스템</small>
+                                // media
+                                hr.m-t-10
+                                // start 접수내용
+                                p
+                                    | !{incident.content}
+                            // 첨부파일 1개 이상일때만 표시
+                            - if (incident.attach_file.length > 0){
+                            .row
+                                .col-lg-12
+                                    .card-box.bg-muted
+                                        h5
+                                            i.fa.fa-paperclip.m-r-10.m-b-10
+                                            | 첨부파일 
+                                            b.text-primary #{incident.attach_file.length}
+                                            | 개
+                                        // start : text 형식 첨부파일 영역
+                                        - if (incident.attach_file.length > 0) {
+                                        - for( var i = 0 ; incident.attach_file.length > i ; i++ ){
+                                        p.m-b-5.font-13
+                                            i.ti-save.text-primary.m-r-10
+                                            | #{incident.attach_file[i].originalname}
+                                            span.text-muted.m-l-10 (#{incident.attach_file[i].size} Byte)
+                                            a.m-l-10(href='/incident/download/#{incident.attach_file[i].path}') 저장
+                                        - }
+                                        - }
+                                        // end : text 형식 첨부파일 영역
+                                        hr
+                                        p.text-muted.font-13
+                                            | 이미지 미리보기 ( 
+                                            b.text-primary #{incident.attach_file.length}
+                                            | 개의 이미지가 있습니다. )
+                                        .row
+                                            - if (incident.attach_file.length > 0) {
+                                                - for( var i = 0 ; incident.attach_file.length > i ; i++ ){
+                                                    -if(incident.attach_file[i].mimetype == 'image'){
+                                                        .col-sm-2.col-xs-4
+                                                            a(href='/incident/download/#{incident.attach_file[i].path}')
+                                                                img.img-thumbnail.img-responsive(src='/#{incident.attach_file[i].path}', alt='#{incident.attach_file[i].originalname}')
+                                                    -}
+                                                - }
+                                            - }
+                                        // end 접수내용
+                            - }
+                            // start 조치내용
+                            .row
+                                .col-sm-12
+                                    .card-box.m-t-10(style='border:1px solid #3bafda')
+                                        span.media-meta.pull-right.text-muted #{incident.request_complete_date}
+                                        h4.m-t-0.text-primary
+                                            i.md.md-sms.m-r-10(style='font-size:24px')
+                                            b 조치내용
+                                        hr
+                                        p
+                                            | #{incident.complete_content}
+                                        hr
+                                        .widget-user(style='min-height:0;')
+                                            div
+                                                img.img-responsive.img-circle(src='/assets/images/users/avatar-2.jpg', alt='user')
+                                                .wid-u-info
+                                                    small.text-primary
+                                                        b 담당자
+                                                    h4.m-t-5.m-b-5 #{incident.manager_dept_nm} #{incident.manager_nm} #{incident.manager_position}
+                                                    p.text-muted.m-b-5.font-13
+                                                        i.md.md-mail.m-r-5
+                                                        | #{incident.manager_email}
+                        // end 조치내용
+                        // start 평가
+                        .row
+                            .col-lg-12
+                                .card-box
+                                    span.m-t-0.text-primary
+                                        b 서비스 만족도
+                                    hr
+                                    p.text-inverse.m-b-10.m-t-20 조치내역에 대해 만족하십니까?
+                                    .radio.radio-primary.radio-inline
+                                        input#inlineRadio1(type='radio', value='option1', name='radioInline', checked='')
+                                        label.font-12(for='inlineRadio1')  매우 만족 
+                                    .radio.radio-primary.radio-inline
+                                        input#inlineRadio2(type='radio', value='option2', name='radioInline')
+                                        label.font-12(for='inlineRadio2')  만족 
+                                    .radio.radio-primary.radio-inline
+                                        input#inlineRadio3(type='radio', value='option3', name='radioInline')
+                                        label.font-13(for='inlineRadio2')  보통 
+                                    .radio.radio-primary.radio-inline
+                                        input#inlineRadio3(type='radio', value='option4', name='radioInline')
+                                        label.font-12(for='inlineRadio2')  보통 
+                                    .radio.radio-primary.radio-inline
+                                        input#inlineRadio3(type='radio', value='option5', name='radioInline')
+                                        label.font-12(for='inlineRadio2')  보통 
+                                    p.text-inverse.m-t-20 불편사항이나 개선사항이 있으시다면 입력해주세요. 
+                                    textarea.form-control(rows='3')
+                                    .text-right.m-t-15
+                                        button.btn.btn-default.btn-sm.waves-effect.waves-light(type='button') 확인
+                        // end 평가
+                        // end card-box
+                        // end container
+                        // end content
+                        footer.footer.text-right
+                            | 2017 © ISU Group.
+// ==============================================================
+// End Right content here
+// ==============================================================
+// END wrapper
+
+

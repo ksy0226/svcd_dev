@@ -1,0 +1,7 @@
+서비스데스크 필요사항 리스트업
+1. incident : 담당자 정보 추가 (incident models)
+	- manager_company_nm	: 담당자 회사명
+	- manager_nm			: 담당자 이름
+	- manager_dept 			: 담당자 부서명
+	- manager_position 		: 담당자 직위
+	- manager_email 		: 담당자 이메일

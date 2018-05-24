@@ -1,0 +1,1925 @@
+﻿@charset 'utf-8';
+@import url(/webgw/font/MalgunGothic.css);
+
+
+.hover{font-size: 12px; color: #0000ff; font-weight: bold; font-family: "맑은고딕", MalgunGothic;}
+
+/*demo*/
+/* 기본 태그 관련... */
+* 								{ margin: 0; padding: 0; }
+
+html
+{
+
+	SCROLLBAR-FACE-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #9db5db;
+	SCROLLBAR-SHADOW-COLOR: #9db5db;
+	SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+	SCROLLBAR-ARROW-COLOR: #9db5db;
+	SCROLLBAR-TRACK-COLOR: #ffffff;
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+
+}
+
+body							{ font-family: "맑은고딕", MalgunGothic;
+								  font-size: 12px;
+								  color: #333333;
+								  margin: 0;
+								  padding: 0 }	
+								  
+td								{ font-family: "맑은고딕", MalgunGothic;
+								  font-size: 12px; }
+	   
+img                     		{ border: none; }
+
+ul, ol, li 						{ list-style: none; }
+
+a, a:link, a:visited			{ color: #333333; text-decoration: none; cursor: hand; }
+a:hover, a:active				{ color: #333333; text-decoration: none; cursor: hand; }
+
+h1								{ font-size: 13px; color: #000000; font-weight: bold; font-family: "맑은고딕", MalgunGothic;}	
+h2								{ font-size: 18px; color: #FFFFFF; font-weight: bold; font-family: "맑은고딕", MalgunGothic;}	
+h3								{ font-size: 13px; color: #000000; font-weight: bold; font-family: "맑은고딕", MalgunGothic;}	
+h4								{ font-size: 17px; color: #FFFFFF; font-weight: bold; font-family: "맑은고딕", MalgunGothic;}	
+h5								{ font-size: 13px; color: #ff6600; font-weight: bold; font-family: "맑은고딕", MalgunGothic;}
+
+.blank							{ height: 10px; font-size: 1px; }
+
+								  								  
+/* ==================================================================================================================================== */
+
+/* 로그인 페이지 관련  */
+div#Login						{ width:100%; height:100%; margin-top:150px; ; padding:0; text-align:center;}
+.LBG							{ background: url(../images/login_bg.gif) no-repeat; width:748px; height:350px;}
+.LBG .LBgBox 					{ background: url(../images/login_box.gif) no-repeat; width:569px; height:198px; margin-top:106px; margin-left:40px; text-align:left; padding-top:40px;}
+.LoBox							{ margin:10px; }
+.LoBox img						{ padding:2px 5px 0 7px;}
+.LoTitle						{ padding:30px 30px 0 40px; }
+
+
+/* 입력 태그 관련 */
+form 							{ clear: both; margin: 0; padding: 0;}
+		  
+select          				{ font-family: MalgunGothic;
+								  font-size: 12px;
+								  color: #333333;
+				  				  vertical-align: middle;
+								  margin: 0;
+								  padding: 0; }
+				  
+input     		        		{ font-family: MalgunGothic;
+								  font-size: 12px;
+		          		  		  color: #333333;
+						  		  vertical-align: middle;
+								  margin: 0;
+								  padding: 0; }
+				  
+input1     		        		{ font-family: MalgunGothic;
+								  font-size: 12px;
+		          		  		  color: #333333;
+						  		  vertical-align: middle;
+								  margin: 0;
+								  padding: 0; text-align:center;}
+
+.btnplus     		        		{ font-family: MalgunGothic;
+								  font-size: 12px;
+		          		  		  font-weight: bold;}
+
+
+textarea     		       		{ font-family: MalgunGothic;
+								  font-size: 12px;
+		          		  		  color: #333333;
+						  		  border: 1px solid #cccccc;
+						  		  vertical-align: middle;
+								  margin: 0;
+								  padding: 0; }
+								  
+iframe 							{ margin: 0; padding: 0; }
+
+								 								  								  
+								  
+/* ==================================================================================================================================== */
+
+/* 왼쪽메뉴 관련  */
+.leftmenu						{ width: 185px; position: relative; left: 5px; margin: 0; padding: 0; }
+
+.left_bg						{ background: url(/GWImages/Yellow/Covi/Common/sub/left_menu_bg.gif) repeat-y; padding: 0 0 0 15px; }
+.m_list							{ width: 165px; margin: 0; padding: 0 0 0 10px;}
+.m_list .line_bg				{ background: url(/GWImages/Yellow/Covi/Common/sub/n_left_line.gif) repeat-x;}
+.m_list a.mmenu					{ color: #656565;
+								  background: url(/GWImages/Yellow/Covi/Common/sub/n_left_icon.gif) no-repeat 0px 6px; 
+								  display: block;
+								  height: 24px;
+								  padding: 6px 0 0 15px; }
+.m_list a.mmenu:hover			{ color: #1849b0;
+								  display: block;
+								  height: 24px;
+								  padding: 6px 0 0 15px; }
+
+
+/* 왼쪽메뉴 중 서브메뉴 포함한 메뉴에 대한 css 시작*/
+.m_list a.mmenu02				{ color: #656565;
+								  display: block;
+								  height: 18px;
+								  padding: 7px 0 0 15px; }
+
+.m_list a.mmenu02:hover			{ color: #1849b0;
+								  display: block;
+								  height: 18px;
+								  padding: 7px 0 0 15px; 
+								  background: url(/GWImages/Yellow/Covi/Common/sub/left_menu_bg02.gif) repeat-x;}
+/* 왼쪽메뉴 중 서브메뉴 포함한 메뉴에 대한 css 끝 */
+
+
+.m_list div						{ clear:both; width: 165px; margin: 0; padding: 0; }
+.m_list div ul					{ padding-bottom: 3px;}
+.s_list							{ width: 165px; margin: 0; padding: 0;}
+.s_list li						{ margin: 0 0 1px 0;}
+.s_list a.smenu					{ color: #656565;
+								  background: url(/GWImages/Yellow/Covi/Common/sub/n_left_arr_off.gif) no-repeat 10px 8px;
+								  display: block;
+								  height: 15px;
+								  padding: 5px 0 0 20px; }
+.s_list a.smenu:hover			{ color: #ffffff;
+								  background: url(/GWImages/Yellow/Covi/Common/sub/n_left_arr_on.gif) no-repeat #a3beec 10px 8px;
+								  display: block;
+								  height: 15px;
+								  padding: 5px 0 0 20px; }	
+							  
+.m_list .current .mmenu			{ color: #1849b0; }		
+
+.s_list .current .smenu 		{ color: #ffffff;
+								  background: url(/GWImages/Yellow/Covi/Common/sub/n_left_arr_on.gif) no-repeat #a3beec 10px 8px; }			
+
+.s_list .s_menu					{ color: #666666;
+								  background: url(/GWImages/Yellow/Covi/Common/sub/left_smenu_bg_off.gif) no-repeat;
+								  display: block;
+								  height: 18px;
+								  padding: 7px 0 0 8px; } 
+								  
+.leftmenu .pm					{ height: 7px;
+								  margin: 0;
+								  padding: 0; }
+								  
+.leftmenu .zoom					{ clear: both;
+								  position: absolute;
+								  width: 14px;
+								  top: 83px;
+								  left: 156px; }
+								  
+								  
+.leftmenu .tree_free			{ width: 153px;
+								  background: #FFFFFF;
+								  margin: 5px 0 0 0;
+								  padding: 0;
+								  border: solid 1px #ebaa7d; }								  
+								  
+.leftmenu .tree					{ width: 153px;
+								  margin: 5px 0 10px 0;
+								  padding: 0;
+								  border: solid 1px #ebaa7d; }
+
+
+.leftmenu .left_bottom			{ height: 36px; background: url(/GWImages/Yellow/Covi/Common/sub/left_menu_bottom.gif) no-repeat; font-size:1px; }
+
+/* 왼쪽메뉴 중 cs에서 뿌려주는 메뉴를 위한 css */
+.m_list02						{ width: 165px; margin: 0; padding: 0 0 0 10px;}
+.m_list02 .line_bg				{ background: url(/GWImages/Yellow/Covi/Common/sub/n_left_line.gif) repeat-x;}
+.m_list02 a.mmenu				{ color: #656565;
+								  background: url(/GWImages/Yellow/Covi/Common/sub/n_left_icon.gif) no-repeat 0px 6px; 
+								  display: block;
+								  height: 18px;
+								  padding: 7px 0 0 15px; }
+.m_list02 a.mmenu:hover			{ color: #1849b0;
+								  display: block;
+								  height: 18px;
+								  padding: 7px 0 0 15px; }
+
+.m_list02 div					{ clear:both; width: 165px; margin: 0; padding: 0; }
+.m_list02 div ul				{ padding-bottom: 0px;}
+.m_list02 .current .mmenu		{ color: #1849b0; }
+/* 왼쪽메뉴 중 cs에서 뿌려주는 메뉴를 위한 css 끝 */
+								  								  
+								  
+/* ==================================================================================================================================== */
+
+/* top 관련  */
+.TopWidth						{ position: relative; width: 960px; left: 5px; margin: 0; padding: 0; }
+
+.Top_logo						{ float: left; padding:5px 0 10px 17px; }
+
+/*ergo daum의 top 부분*/
+.Top_global						{ float: right; margin-top: 25px; font-size:11px; }
+.Top_global .TLine				{ padding: 0px 10px 0px 10px; }
+.Top_global .TBtn				{ background: url(../images/top_icon02.gif) no-repeat; padding-left:13px; margin-right:8px;}
+/*ergo daum의 top부분 끝*/
+
+
+.Top_bg							{ clear: both; }
+.Top_tr							{ background: url(../images/top_right.gif) no-repeat right top; height: 67px; }
+.Top_tl							{ background: url(../images/top_left.gif) no-repeat; height: 100%; }
+
+.Top_lm							{ float: left; margin-top: 4px; margin-left: 8px; padding: 0 }							  
+
+.Top_rm							{ position: absolute; float: right; top: 50px; right: 20px; }
+.Top_rm img						{ float:left; margin:10px; }
+								  
+.Top_rm a						{ float: left;
+								  margin: 0;
+								  padding: 0 0 0 6px; }
+.Top_rm a span 					{ color: #ffffff;
+								  float: left;
+								  bottom: 0;
+								  display: block;								  
+								  padding: 11px 22px 11px 17px;}
+.Top_rm a:hover 				{ color: #000000;								  
+      							  background: url(../images/top_bg_left.gif) no-repeat left;}								  
+.Top_rm a:hover span 			{ color: #000000;								  
+								  background: url(../images/top_bg_right.gif) no-repeat right;}
+								  
+.Top_sm							{ clear: both;
+								  position: absolute;
+								  right: 10px;
+								  top: 92px;
+								  text-align: right;
+								  margin: 0;
+								  padding: 0; }							  
+.Top_sm a						{ color: #666666;
+								  margin: 0 5px 0 5px; }						  
+.Top_sm a:hover					{ color: #333333;
+								  text-decoration: underline; }
+
+								  								  								  					  
+/* ==================================================================================================================================== */
+
+/* sub 전체사이즈 관련  */
+#SubWidth						{ position: relative; width: 99%; margin-top: 0px; margin-bottom: 34px; }
+								  
+						  
+/* ==================================================================================================================================== */
+
+
+/* personinfo */
+#PerW							{ width:100%; margin:0; padding:0; }
+#Block							{ width:100%; margin:0; padding:0; margin-top:10px;}
+.PTbg							{ background: url(../images/info_top_bg.gif) repeat-x; }
+.PTbg02							{ background: url(../images/b_top_bg.gif) repeat-x; }
+.PBbg							{ background: url(../images/info_bot_bg.gif) repeat-x; }
+.PLbg							{ background: url(../images/info_left.gif) no-repeat; }
+.PRbg							{ background: url(../images/info_right.gif) no-repeat;}
+.PCbg							{ background:#ffffff;}
+
+.PHelL							{ padding: 0 0 0 10px;  background: url(../images/hel_left.gif) no-repeat left; }
+.PHelL .PHelR					{ display: block; padding:8px 0 7px 0;color:#FFFFFF; background: url(../images/hel_right.gif) no-repeat right; height:100%; text-align:center; font-weight:bold;}
+
+.PerP							{ width:80px; padding:10px 5px 0px 0px; }
+
+.PTDay							{ padding-top:10px; color:#5b5b5b; font-weight:bold;}
+.PInfo							{ background: url(../images/Einfo_ball.gif) no-repeat 1px 4px; padding-left:10px; }
+.PInfo span						{ color:#ba122b; font-weight:bold;}
+
+/* 로고들어간 게시판 View */
+.ergoC							{ background: url(../images/ergo_clogo.gif) no-repeat center; }
+
+
+input[type="checkbox"]
+
+{
+
+      background: url(/GWImages/Yellow/Covi/Common/Ele/BG_Chk.gif) no-repeat center;
+
+}
+
+ 
+
+input[type="radio"]
+
+{
+
+      background: url(/GWImages/Yellow/Covi/Common/Ele/BG_Rad.gif) no-repeat top left;
+
+}
+
+ 
+
+select
+
+{
+
+      background: url(/GWImages/Yellow/Covi/Common/Ele/BG_Sel.gif) no-repeat top left;
+
+      background-color: #FEF2EA;
+
+ 
+
+}
+
+
+.Mtop							{ text-align: left; margin: 0 6px 0 6px; padding: 0; }
+
+.Main div						{ margin: 0; padding: 0; }
+.Main .tab01 a:hover, .Main a.Btn01:hover			{ text-decoration: none; }
+
+.Main td						{ color: #828282; }
+.Main .blt						{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_04.gif) no-repeat; background-position: 0px 8px; margin: 0; padding: 0 0 0 9px; }
+.Main a							{ color: #666666; text-decoration: none; }
+.Main a:hover, .Main a:active	{ color: #333333; text-decoration: underline; }
+
+.Main .login a					{ color: #cc4b00; }
+.Main .text_black				{ color: #000000; }	
+.Main .text_c					{ color: #662300; font-weight: bold; background: #efe9e5; text-decoration: none; }
+
+.Main .date						{ font-family: MalgunGothic; font-size: 22px; color: #FFFFFF; font-weight: bold; }
+
+.MTitle01 span					{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_05.gif) no-repeat; background-position: 0px 4px; margin: 0; padding: 2px 0px 4px 14px; font-size:10pt; font-weight:bold; color:#000000}
+.MTitle01 h1					{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_05.gif) no-repeat; background-position: 0px 2px; margin: 0; padding: 2px 0px 8px 18px; }
+.MTitle02 h1					{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_05.gif) no-repeat; background-position: 0px 4px; margin: 0; padding: 2px 0px 4px 14px; }
+.MTitle01 h5					{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_05.gif) no-repeat; background-position: 0px 2px; margin: 0; padding: 2px 0px 4px 18px; }
+.Main .photo					{ border: solid 1px #b4b4b4; }
+
+/* 그룹웨어 메인좌측 개인정보 관련  */
+.Main .text_white_b				{ color: #FFF; font-weight: bold; }
+.Main .text_white				{ color: #FFF; }
+.Main .text_date				{ color: #333333; }
+.Main .blt_small				{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_04.gif) no-repeat; background-position: 0px 5px; margin: 0; padding: 0 0 0 9px; }
+
+/* ==================================================================================================================================== */
+
+/* 태그 관련  */
+.tag							{ line-height: 25px; word-spacing: 15px; }
+.tag a							{ color: #666666; }
+.tag_s01						{ font-size: 11px; }
+.tag_s02						{ font-size: 12px; }
+.tag_s03						{ font-size: 13px; }
+.tag_s04						{ font-size: 14px; }
+.tag_s05						{ font-size: 15px; }
+.bold							{ font-weight: bold }
+a.text_black					{ color: #000000; }	
+
+
+
+/* 카페페이지 태그구름텍스트속성 - 3월 5일 기존에 10단계 */
+
+.tag_title01 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size:15px;
+	color:#000000;
+	font-weight: bold;
+	text-align: left;
+}
+.tag_title02 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 15px;
+	color: #666666;
+	font-weight: normal;
+	text-align: left;
+}
+.tag_title03 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 14px;
+	color: #333333;
+	font-weight: bold;
+	text-align: left;
+}
+.tag_title04 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 14px;
+	color: #666666;
+	font-weight: normal;
+	text-align: left;
+}
+.tag_title05 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 13px;
+	color: #333333;
+	font-weight: bold;
+	text-align: left;
+}
+.tag_title06 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 13px;
+	color: #666666;
+	font-weight: normal;
+	text-align: left;
+}
+.tag_title07 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 12px;
+	color: #333333;
+	font-weight: bold;
+	text-align: left;
+}
+.tag_title08 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 12px;
+	color: #666666;
+	font-weight: normal;
+	text-align: left;
+}
+.tag_title09 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 11px;
+	color: #333333;
+	font-weight: bold;
+	text-align: left;
+}
+.tag_title10 {
+	font-family: "맑은고딕", "맑은고딕체";
+	font-size: 11px;
+	color: #666666;
+	font-weight: normal;
+	text-align: left;
+}
+
+.small							{ font-family: MalgunGothic; font-size: 12px; letter-spacing: -0.02em; }
+						  
+/* ==================================================================================================================================== */
+
+/* 여백 관련  */
+.pm_tab							{ padding-top: 15px; margin-bottom: 5px; }
+
+.pm_cal							{ width: 15px; text-align: center; padding-top: 5px; }
+								  
+						  
+/* ==================================================================================================================================== */
+
+/* 타이틀 관련 */
+.Title							{ margin: 0px; padding-bottom: 4px; height:20px;}
+.Title h1						{height:20px; background: url(/GWImages/Yellow/Covi/Common/icon/blt_05.gif) no-repeat ; margin:0px; padding: 0px 5px 0px 12px;}
+.Title ul			    		{ position: absolute; top: 4px; right: 0; margin: 0; }
+.Title ul li					{ float: left; padding-right: 4px; }
+.Title a						{ color: #333333; }
+.Title div						{ margin: 0; padding: 0; }
+.Title_bg01						{ display: none; height: 1px; background-color: #e6a073; font-size: 1px; }
+.Title_bg02						{ height: 2px; background-color: #e6e6e6; font-size: 1px; }
+.Title span						{margin:10px 0px -10px 0px;height:20px; padding-top:6px;/*font-size: 13px; color: #333333; font-weight: bold;*/ }
+/* 서브 타이틀 관련 */
+.sTitle							{ clear: both; background: url(/GWImages/Yellow/Covi/Common/icon/blt_02.gif) no-repeat; color:#823300; font-weight:bold; margin: 0; padding: 0px 0px 6px 15px; }
+
+								  
+						  
+/* ==================================================================================================================================== */
+
+/* ==================================================================================================================================== */
+
+/* 전자결재 팝업 버튼 관련 */				  				  
+.Approval_Btn					{ width: 100%; height: 35px; margin: 0; padding: 0; }
+.Approval_Btn div, .Approval_Btn li 			{ float: left; margin: 0; padding: 0; vertical-align: middle; }								  
+								  
+a.Btn_Group03 img				{ padding: 3px 6px 4px 0; }
+a.Btn_Group03					{ color: #333333;
+								  display: block;
+								  float: left;
+								  margin: 0;
+								  padding: 0;}								  
+a.Btn_Group03:active, a.Btn_Group03:hover	{ color: #000000;
+								  outline: none; /* hide dotted outline in Firefox */ }								  
+a.Btn_Group03 span				{ white-space: nowrap; }
+/* 전자결재 span tooltip 황선희 추가 06-09*/
+span.tooltip{	font-size:10;background-color: lightyellow;	border-bottom: 1px solid;	border-left: 1px solid;	border-right: 1px solid;	border-top: 1px solid;	display: none;position: absolute}
+						
+/* 버튼 관련 */
+.Btn_L							{ /*width: 80%;*/								  
+								  margin-bottom: 3px; padding: 0; }
+.Btn_L a.Btn01					{ color: #e1e1e1; }
+.Btn_L div, .Btn_L li 			{ float: left; margin: 0; padding: 0; vertical-align: middle; }
+
+.Btn_L .type-text 				{ height: 15px;
+								  border: 1px solid #999999; margin: 0; padding: 3px 0 0 3px; }
+
+.Btn_G				 			{ background: #4b4b4b; border: solid 1px #4b4b4b; }
+.Btn_G ul						{ clear: both; margin: 0; padding: 0; }
+.Btn_G ul li					{ clear: both; margin: 0; padding: 0; vertical-align: middle }
+
+.Btn_G ul li a					{ color: #FFFFFF; text-align: left; padding-left: 5px; }
+
+.Btn_G ul li a:active, .Btn_G li a:hover	{ color: #000000; background: #FFFFFF; }
+
+.btn_line						{ display: block; float: left; margin-left: 6px; margin-right: 8px; }
+
+.btn_select						{ display: block; float: left; margin-left: 5px; }
+
+.Approval_Btn div .btn_select	{ padding-top: 3px; }
+								  
+								  
+/*a.Btn_Group01 img				{ padding: 2px 6px 2px 0; }
+/*a.Btn_Group01					{ color: #333333;
+								  display: block;
+								  float: left;
+								  margin: 0;
+								  padding: 0;
+								  text-decoration: none; }								  
+a.Btn_Group01:active, a.Btn_Group01:hover	{ color: #000000;
+								  outline: none; /* hide dotted outline in Firefox  }								  
+a.Btn_Group01 span					{ white-space: nowrap; }*/
+
+/*아이콘 오버(0303조경아)*/
+a.Btn_Group01 img				{ padding-right: 6px; }
+
+a.Btn_Group01					{ border:#86a0cc solid 1px; background:#fff; padding:2px 4px 3px 4px;}
+a.Btn_Group01 span 				{ vertical-align:middle; padding-right:3px;}
+a.Btn_Group01:hover 			{border:#86a0cc solid 1px;  background:#fff1b0;}								  
+#a.Btn_Group01:hover span 		{  background:#fff1b0; }
+/**/
+
+/*관리자화면 메뉴오버(0312조경아)*/
+
+a.Btn_Group02					{ float: left;
+								  height: 22x; }
+a.Btn_Group02 span 				{ color: #333333;
+								  display: block;
+								  float: left;
+								  padding: 5px 5px 5px 5px;							  
+								  text-decoration: none;}
+a.Btn_Group02:hover 			{ color: #FFF;								  
+      							  background: #e9a154 ; }								  
+a.Btn_Group02:hover span 		{ color: #FFF;								  
+								  background: #e9a154 ; }
+/**/
+
+
+
+a.Btn01 						{ background: url(/GWImages/Yellow/Covi/Common/btn/btn01_right.gif) no-repeat scroll top right;
+								  text-align: center;
+								  color:#465e85;
+								  display: inline-block;
+								  height: 21px;
+								  margin-right: 5px;
+								  margin-bottom: 7px;
+								  padding-right: 4px; /* sliding doors padding */
+								  text-decoration: none; }
+								  
+a.Btn01:active, a.Btn01:hover	{ background: url(/GWImages/Yellow/Covi/Common/btn/btn01_right_on.gif) no-repeat scroll top right;
+								  color: #000000;
+								  outline: none; /* hide dotted outline in Firefox */ }
+								  
+a.Btn01 span 					{ background: url(/GWImages/Yellow/Covi/Common/btn/btn01_left.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+						 		  padding: 4px 4px 4px 6px; }
+
+a.Btn01:active span, a.Btn01:hover span 	{ background: url(/GWImages/Yellow/Covi/Common/btn/btn01_left_on.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+						 		  padding: 4px 4px 4px 6px; }
+								  
+a.Btn01 span img 				{ padding-right: 7px;}
+
+
+
+a.Btn02 						{ font-size: 12px; background: url(/GWImages/Yellow/Covi/Common/btn/btn02_right.gif) no-repeat scroll top right;
+								  text-align: center;
+    							  color: #4b4b4b;
+								  display: inline-block;
+								  height: 20px;
+								  margin-right: 5px;
+								  padding-right: 4px; /* sliding doors padding */
+								  text-decoration: none; }
+								  
+a.Btn02:active, a.Btn02:hover	{ font-size: 12px; background: url(/GWImages/Yellow/Covi/Common/btn/btn02_right_on.gif) no-repeat scroll top right;
+								  color: #000000;
+								  outline: none; /* hide dotted outline in Firefox */ }		
+								  
+a.Btn02 span 					{ background: url(/GWImages/Yellow/Covi/Common/btn/btn02_left.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+						 		  padding: 4px 2px 4px 6px; }
+a.Btn02:active span, a.Btn02:hover span 	{ background: url(/GWImages/Yellow/Covi/Common/btn/btn02_left_on.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+						 		  padding: 4px 2px 4px 6px; }
+
+
+/*이준희(2008-01-30): float: left;와 display: block;를 제거함.*/
+a.Btn04							{ background: url(/GWImages/Yellow/Covi/Common/btn/btn04_right.gif) no-repeat scroll top right;
+								  text-align: center;
+								  color: #e2e8f4;
+								  display: inline-block;
+								  height: 20px;
+								  font-weight: bold;
+								  margin-left: 15px;
+								  padding-right: 5px;/* sliding doors padding */
+								  text-decoration: none; }
+		
+a.Btn04:active, a.Btn04:hover	{ background: url(/GWImages/Yellow/Covi/Common/btn/btn04_right_on.gif) no-repeat scroll top right;
+							      color: #FFFFFF;
+								  outline: none; /* hide dotted outline in Firefox */ }
+		
+a.Btn04 span					{ background: url(/GWImages/Yellow/Covi/Common/btn/btn04_left.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+								  padding: 4px 4px 4px 10px; }
+
+a.Btn04:active span, a.Btn04:hover span{ background: url(/GWImages/Yellow/Covi/Common/btn/btn04_left_on.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+								  padding: 4px 4px 4px 10px; }
+
+
+
+a.Btn05 						{ background: url(/GWImages/Yellow/Covi/Common/btn/btn05_right.gif) no-repeat scroll top right;
+								  text-align: center;
+    							  color: #4b4b4b;
+								  display: inline-block;
+								  height: 20px;
+								  font-weight: bold;
+								  margin-right: 10px;
+								  padding-right: 5px; /* sliding doors padding */
+								  text-decoration: none; }
+								  
+a.Btn05:active, a.Btn05:hover	{ color: #000000;
+								  outline: none; /* hide dotted outline in Firefox */ }
+								  
+a.Btn05 span 					{ background: url(/GWImages/Yellow/Covi/Common/btn/btn05_left.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+						 		  padding: 4px 3px 4px 10px; }
+
+
+
+a.Btn06 img						{ padding-left: 3px; }
+
+a.Btn06 						{ background: url(/GWImages/Yellow/Covi/Common/btn/btn05_right.gif) no-repeat scroll top right;
+								  text-align: center;
+    							  color: #4b4b4b;
+								  display: inline-block;
+								  height: 20px;
+								  margin-right: 5px;
+								  margin-left: 5px;
+								  padding-right: 5px; /* sliding doors padding */
+								  text-decoration: none; }
+								  
+a.Btn06:active, a.Btn06:hover	{ color: #000000;
+								  outline: none; /* hide dotted outline in Firefox */ }
+								  
+a.Btn06 span 					{ background: url(/GWImages/Yellow/Covi/Common/btn/btn05_left.gif) no-repeat;
+								  display: block;
+								  white-space: nowrap;
+						 		  padding: 4px 0 4px 4px; }
+
+								  
+/*이준희(2008-01-30): 버튼 정렬 추가함.*/								  
+.AlignC							{ text-align: center; }
+.AlignR							{ text-align: right;  padding-right: 20px; }
+
+/*이준희(2008-01-30): 사이즈 .WD1, .WD2, .WD3를 추가함.*/
+.WD1							{ width: 75px; }
+.WD2							{ width: 100px; }
+.WD3							{ width: 125px; }
+								  
+						  
+/* ==================================================================================================================================== */
+
+/* 탭 관련 */
+.tab01 							{ clear: both; width: 100%;
+								  /*float: left;*/
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab01_bg.gif) repeat-x left top;
+								  margin-bottom: 5px;
+								  padding: 0; }
+.tab01 ul 						{ list-style: none;
+								  margin: 0;
+								  padding: 0; }
+.tab01 li 						{ display: inline;
+      							  margin: 0;
+      							  padding: 0; }
+.tab01 a 						{ height: 22px; float: left;
+								  text-align: center;
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab01_left.gif) no-repeat left top;
+      							  margin: 0; padding-left: 5px; }
+.tab01 a span 					{ height: 16px; color: #666666;
+								  float: left;
+      							  display: block;
+      							  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab01_right.gif) no-repeat right top;
+								  margin: 0; padding-top: 6px; padding-right: 7px; padding-left: 2px; }
+								  
+/* End IE5-Mac hack */
+.tab01 a:hover 					{ color: #823300;
+								  background-position: 0 -30px; }
+.tab01 a:hover span				{ color: #823300;
+								  background-position: right -30px; }
+.tab01 .current a 				{ color: #823300;
+								  background-position: 0 -30px; }
+.tab01 .current a span 			{ color: #823300;
+								  background-position: right -30px; }
+								  
+								  
+/*
+.tab02 							{ clear: both; width: 100%;
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab02_bg.gif) repeat-x left top;
+								  margin-bottom: 5px;
+								  padding: 0; }
+.tab02 ul 						{ list-style: none;
+								  margin: 0;
+								  padding: 0; }
+.tab02 li 						{ display: inline;
+      							  margin: 0;
+      							  padding: 0; }
+.tab02 a 						{ height: 30px; float: left;
+								  text-align: center;
+								  font-weight: bold; 
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab02_left.gif) no-repeat left top;
+      							  margin: 0; padding-left: 5px; }
+.tab02 a span 					{ height: 18px; color: #999999;
+								  float: left;
+      							  display: block;
+      							  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab02_right.gif) no-repeat right top;
+								  margin: 0; padding-top: 12px; padding-right: 13px; padding-left: 9px; }*/
+								  
+/* End IE5-Mac hack */
+.tab02 a:hover 					{ color: #000000;
+								  background-position: 0 -30px; }
+.tab02 a:hover span				{ color: #000000;
+								  background-position: right -30px; }
+.tab02 .current a 				{ color: #000000;
+								  background-position: 0 -30px; }
+.tab02 .current a span 			{ color: #000000;
+								  background-position: right -30px; }
+								  
+								  
+								  
+.clas							{ height: 25px; float: right; right: 5px; }
+								  
+						  
+/* ==================================================================================================================================== */
+/* ====================================================업무관리관련 누락CSS 추가 20090305 by ssuby================================================================================ */
+/* 왼쪽 메뉴 밑 Box 관련 */
+.Box                                                 { margin: 0 0px 0 5px; padding: 0; width: 185px; text-align: left; position: relative; }
+.Box_tl                                              { background: #ffffff; font-size: 1px; height: 1px; }
+.Box_tr                                              { background: #ffffff; padding-left: 1px; height: 1px; }
+.Box_tc                                              { background: #cccccc; margin-right: 1px; height: 1px; }
+
+.Box_cl                                              { clear: both; background: #cccccc; }
+.Box_cr                                              { background: #cccccc right; padding-left: 1px; }
+.Box_cc                                              { background: #ffffff; margin-right: 1px; padding: 0; height: 100%;}
+
+.Box_bl                                              { background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box_br                                              { background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_right.gif) no-repeat right; padding-left: 5px; height: 5px; }
+.Box_bc                                              { background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_bg.gif) repeat-x; margin-right: 5px; height: 5px; }
+
+.Box_cc .title                               { background: url(/GWImages/Yellow/Covi/Common/box/box_bg.gif) repeat-x bottom; color:#823300; height: 17px; margin: 0; padding: 7px 0 0 12px; }
+
+.Box_cc ul                                           { margin: 0; padding: 10px 0 0 5px; }
+
+.Box_cc ul li                                { background: url(/GWImages/Yellow/Covi/Common/icon/blt_04.gif) no-repeat; background-position: 0 8px; line-height: 20px; margin: 0; padding: 0 5px 1px 7px; }
+
+.Box_cc ul li a                                      { color: #666666; }
+
+.Box_tab                                             { clear: both; float: left; margin: 0; padding: 0; }
+
+.Box_tab_tl                                  { float: left; background: #cccccc; width: 1px; height: 25px; margin: 0; padding: 0; }
+
+.Box_tab a                                           { width: 92px;
+                                                               height: 19px;
+                                                               color: #333333;
+                                                               text-align: center;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_off.gif) no-repeat;
+                                                               display: block;
+                                                               float: left;
+                                                               margin: 0;                     
+                                                               padding-top: 6px; }
+.Box_tab a:hover                             { width: 92px;
+                                                               height: 19px;
+                                                               color: #823300;
+                                                               text-align: center;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on.gif) no-repeat;
+                                                               display: block;
+                                                              float: left; }                                              
+.Box_tab .current                           { color: #823300;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on.gif) no-repeat; }
+/* 2개를 3개로 바뀐 css 2008-06-02 */
+
+.Box_tab02                                           { clear: both; float: left; margin: 0; padding: 0; width: 184px; }
+
+.Box_tab02 a                                 { width: 61px;
+                                                               height: 19px;
+                                                               color: #333333;
+                                                               text-align: center;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_off_Col3.gif) no-repeat;
+                                                               display: block;
+                                                               float: left; 
+                                                               margin: 0;                     
+                                                               padding-top: 6px; }
+
+.Box_tab02 a:hover                           { width: 61px;
+                                                               height: 19px;
+                                                               color: #823300;
+                                                               text-align: center;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on_Col3.gif) no-repeat;
+                                                               float: left; 
+                                                               display: block;}
+
+.Box_tab02 .current                         { color: #823300;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on_Col3.gif) no-repeat; }
+/* ====================================================업무관리관련 누락CSS 추가 20090305 by ssuby================================================================================ */
+/* Box01 관련 */
+.Box01							{ width: 750px}
+.Box01_tl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_top_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box01_tr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_top_right.gif) no-repeat right; padding-left: 5px; height: 5px; }
+.Box01_tc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_top_bg.gif) repeat-x; margin-right: 5px; height: 5px; }
+
+.Box01_cl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_left_bg.gif) repeat-y left; }
+.Box01_cr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_right_bg.gif) repeat-y right; padding-left: 5px; }
+.Box01_cc 						{ margin-left: 5px; margin-right: 10px; height: 100%;}
+
+.Box01_bl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box01_br 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_right.gif) no-repeat right; padding-left: 5px; height: 5px; }
+.Box01_bc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_bg.gif) repeat-x; margin-right: 5px; height: 5px; }
+
+/* Box04 관련 */
+.Box04							{ background: #f5f5f5; margin-bottom: 10px; width: 750px}
+.Box04_tl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_top_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box04_tr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_top_right.gif) no-repeat right; padding-left: 5px; height: 5px; }
+.Box04_tc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_top_bg.gif) repeat-x; margin-right: 5px; height: 5px; }
+
+.Box04_cl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_left_bg.gif) repeat-y left; }
+.Box04_cr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_right_bg.gif) repeat-y right; padding-left: 5px; }
+.Box04_cc 						{ background: #f5f5f5; margin-left: 5px; margin-right: 10px; height: 100%;}
+
+.Box04_bl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_bottom_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box04_br 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_bottom_right.gif) no-repeat right; padding-left: 5px; height: 5px; }
+.Box04_bc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box04_bottom_bg.gif) repeat-x; margin-right: 5px; height: 5px; }
+
+/* 관리자 SMS 검색바 시작*/
+.Box042							{ background: #f5f5f5; margin-bottom: 10px; width: 850px}
+/* 관리자 SMS 검색바 끝*/
+
+/* Box05 관련 */
+.Box05							{ clear: both; margin-top: 10px;}
+.Box05_tl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_top_left.gif) no-repeat left; font-size: 1px; height: 9px; }
+.Box05_tr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_top_right.gif) no-repeat right; padding-left: 9px; height: 9px; }
+.Box05_tc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_top_bg.gif) repeat-x; margin-right: 9px; height: 9px; }
+
+.Box05_cl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_left_bg.gif) repeat-y left; }
+.Box05_cr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_right_bg.gif) repeat-y right; padding-left: 9px; }
+.Box05_cc 						{ margin-right: 9px; padding-top: 5px; height: 100%;}
+
+.Box05_bl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_bottom_left.gif) no-repeat left; font-size: 1px; height: 9px; }
+.Box05_br 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_bottom_right.gif) no-repeat right; padding-left: 9px; height: 9px; }
+.Box05_bc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box05_bottom_bg.gif) repeat-x; margin-right: 9px; height: 9px; }
+
+						  
+/* ==================================================================================================================================== */	
+
+/* 게시판 table 관련 / B = board */
+.BTable							{ clear: both; margin: 0; padding: 0; }
+.BTable th, .BTable th a, .BTable div th a, .BTable div th a:hover		{ color: #15245f; text-align: left; letter-spacing: -0.3pt; text-decoration: none; }
+.BTable td		{ padding:2px 0px 2px 0px;}
+.BTable td a, .BTable td a:visited			{ color: #333333;  text-decoration: none; }
+.BTable td a:hover, .BTable td a:active				{ color: #333333; text-decoration: underline; }
+.BTable_bg01					{ background-color: #b4c2d9; }
+.BTable_bg02					{ background-color: #dbe6f5; }
+.BTable_bg03					{ background-color: #cdd3de; }
+.BTable_bg04					{ background-color: #f0f0f0; }
+.BTable_bg05					{ background-color: #e4e4e4; }
+.BTable_bg06					{ background-color: #86a1c6;}
+.BTable .text01					{ color: #823300; }
+.text02					        { color: #333333; font-weight: bold;}
+.BTable img		 				{ padding-left: 3px; vertical-align: middle; }
+
+
+/* 게시판 모듈 타이틀 css */
+.BTableBD						{ border-top:2px solid #dc5f0a;  border-bottom:1px solid #cccccc; background-color: #f5ebe2; }
+
+
+.tdW43 { width:43%; overflow: hidden; text-overflow:ellipsis; white-space:nowrap; }
+.tdW53 { width:53%; overflow: hidden; text-overflow:ellipsis; white-space:nowrap; }
+.tdW57 { width:57%; overflow: hidden; text-overflow:ellipsis; white-space:nowrap; }
+.tdW67 { width:67%; overflow: hidden; text-overflow:ellipsis; white-space:nowrap; }
+
+.BTableBD43						{ width:43%; border-top:2px solid #dc5f0a;  border-bottom:1px solid #cccccc; background-color: #f5ebe2; }
+.BTableBD53						{ width:53%; border-top:2px solid #dc5f0a;  border-bottom:1px solid #cccccc; background-color: #f5ebe2; }
+.BTableBD57						{ width:57%; border-top:2px solid #dc5f0a;  border-bottom:1px solid #cccccc; background-color: #f5ebe2; }
+.BTableBD67						{ width:67%; border-top:2px solid #dc5f0a;  border-bottom:1px solid #cccccc; background-color: #f5ebe2; }
+
+
+/* 카페 홍보게시판 관련 */
+.BTable .cafe01					{ padding-left: 20px; }
+.BTable .cafe02					{ padding-left: 4px; }
+
+/* 포토게시판 table 관련 / P = photo */
+.PTable							{ background-color: #f5f5f5; border: solid 1px #cccccc;  }
+.PTable .name					{ font-family: "맑은고딕", MalgunGothic; font-size: 12px; color: #666666; }
+.PTable .text					{ font-family: "맑은고딕", MalgunGothic; font-size: 12px; color: #333333; line-height: 17px; }
+.PTable .num		 			{ font-size: 11px; color: #FFFFFF; background-color: #666666; }
+.PTable .border		 			{ border: solid 1px #ffffff; margin: 0; padding: 0; }
+.PTable_bg01					{ background-color: #f5f5f5; }
+.PTable_bg02					{ background-color: #cccccc; }
+
+
+/* 개인정보 화면 */
+#p_wrapper                      { width: 960px;
+                                  margin:0 auto;
+								  margin-top: 9px;}      
+.pic 					    	{ width: 174px;
+                                  background: url(/GWImages/Yellow/Covi/Common/sub/mem_pic_bg2.gif) no-repeat left bottom;}
+#zoom                           { position:relative;
+	                              padding:0px 20px 0px 0px;}  								
+.pic h2                         { background: url(/GWImages/Yellow/Covi/Common/sub/mem_pic_bg1.gif) no-repeat left top;
+                                  padding:15px 15px 5px 17px;}
+.pad1                           { PADDING-LEFT: 10px;}
+.per_text                       { color: #ff6500; font-weight: bold;}							  
+						  
+/* ==================================================================================================================================== */	
+
+/* 페이징 관련 */
+.Paging 						{ text-align: center; vertical-align: middle; height: 33px; margin-top: 17px; }
+.Paging a						{ color: #666666;}
+.Paging span					{ color: #000000; }
+								  
+						  
+/* ==================================================================================================================================== */	
+						  
+/* 푸터 관련 */			  
+.Footer							{ width: 100%; line-height: 19px; padding-top: 20px; padding-bottom: 20px; text-align:right }
+.Footer .line, .Mfooter .line	{ height: 1px; font-size: 1px; background: #CCCCCC; margin: 0; padding: 0; }
+.Footer div, Mfooter div		{ font-size: 11px; padding-top: 10px; }
+.Footer b, Mfooter b			{ color: #000000; }
+
+.Mfooter						{ line-height: 19px; text-align: right; padding-bottom: 30px; }
+
+/* ==================================================================================================================================== */	
+
+/* 퀵메뉴 관련 */
+.Quick							{ clear: both; display: none;
+								  position: absolute;
+								  top: 500px; left: 759px;
+								  width: 35px; height: 116px;
+								  text-align: right; vertical-align: middle;
+								  background: url(/GWImages/Yellow/Covi/Common/quick/quick_line.gif) no-repeat left top;
+								  padding-top: 65px; }				
+
+
+/* ==================================================================================================================================== */	
+
+/* 썸네일 관련 */				  
+.thumbnail						{ width: 650px; float: left; margin-left: 25px; padding: 5px; }
+.thumbnail .img					{ width: 350px; text-align: center; float: left; }
+.thumbnail .img img				{ border: #999999 solid 2px; }
+.thumbnail .text				{ width: 300px; float: right; top: 0; line-height: 20px; padding-top: 10px; }
+.thumbnail .text b				{ color: #000000; }			
+
+
+/* ==================================================================================================================================== */	
+
+/* 전자결재 팝업 관련 */	
+.Approval_title					{ font-family: "맑은고딕", MalgunGothic; color: #000000; font-size: 18pt; font-weight: bold; border-bottom: dotted 2px #000000 }
+
+.Approval_bg					{ background: #cccccc; padding: 2px; }
+
+.Approval_label					{ color: #662800; font-size: 12px; font-weight: bold; background: #f5ebe1; }
+
+.Approval_type-text				{ font-size: 12px; border: 1px solid #C0C0C0; padding-top: 5px; padding-left: 4px; }
+			  	
+.popup_title					{ width: 100%; height: 40px; margin-bottom: 15px; padding: 0; }
+.popup_title .title_tl 			{ background: url(/GWImages/Yellow/Covi/Common/popup/popup_title_left.gif) no-repeat left; height: 35px; }
+.popup_title .title_tr 			{ background: url(/GWImages/Yellow/Covi/Common/popup/popup_title_right.gif) no-repeat right; padding-left: 15px; height: 35px; }
+.popup_title .title_tc 			{ background: url(/GWImages/Yellow/Covi/Common/popup/popup_title_bg.gif) repeat-x; margin-right: 15px; height: 35px; }
+
+.popup_title h2					{ background: url(/GWImages/Yellow/Covi/Common/popup/popup_title_blt.gif) no-repeat;
+								  background-position: 0 10px;; margin: 0; padding: 10px 0px 5px 15px; font-size:14px;}
+
+
+.popup_field					{ margin-left: 20px; margin-right: 20px; }							  
+								  
+.popup_field fieldset			{ border: solid 0 transparent;  background: #e6e6e6; padding-top: 10px; }
+.popup_field table .title		{ color: #333333; font-weight: bold; width: 90px; height: 25px; padding-left: 10px; }
+.popup_field table .line		{ height: 1px; background: url(/GWImages/Yellow/Covi/Common/popup/line_bg.gif) repeat-x ; }
+.popup_field .type-text			{ height: 15px;
+								  border: 1px solid #b4b4b4 ; padding: 3px 0 0 3px; }
+.popup_field label				{ width: 100px; height: 100px; float: left; margin-top: 1px; margin-left: 10px; }
+.popup_field  b					{ color: #000000; }
+.popup_field .line				{ height: 11px; background: #FFFFFF url(/GWImages/Yellow/Covi/Common/popup/line_bg.gif) repeat-x bottom ; margin-top: 10px; }
+
+
+.popup_box .type-text			{ height: 15px;
+								  border: 1px solid #b4b4b4 ; padding: 3px 0 0 3px; }
+.popup_box .line				{ height: 1px; background: #FFFFFF url(/GWImages/Yellow/Covi/Common/popup/line_bg.gif) repeat-x ; font-size:1px; margin: 0; padding:0; }	
+
+
+/*이준희(2008-01-30): width: 100%;text-align: center;를 제거함*/
+.popup_Btn
+{
+	clear: both;
+	background: #e5eff9;
+	margin-top: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.popup_Btn Btn					{ text-align: right; }
+
+
+.popup_left						{ width: 270px; float: left; margin-left: 10px; }
+.popup_center					{ width: 100px; float: left; }
+.popup_right					{ width: 530px; float: left; }
+
+
+.popup_line						{ clear: both; height: 2px; font-size: 1px; }
+
+.iframe_border					{ border: solid 1px #CCCCCC; margin-bottom: 5px; }
+
+.popup_right .title				{ height: 25px; float: left; margin-top: 5px; }
+.popup_right .title .text 		{ float: left; }
+.popup_right .title .text h3	{ background: url(/GWImages/Yellow/Covi/Common/icon/icon_list.gif) no-repeat;
+								  margin-top: 4px; padding: 1px 0 0 20px; }
+.popup_right .title .Btn		{ float: right; margin: 0; padding: 0; }
+
+.popup_right .title .Btn ul		{ margin: 0; padding: 0; }
+.popup_right .title .Btn ul li	{ float: left; padding-left: 5px; }
+
+.popup_center .Btn				{ clear: both; padding-left: 6px; }
+
+.popup_center .Btn ul			{ margin: 0; padding: 0; text-align: center; }
+.popup_center .Btn ul li		{ clear: both; text-align: center; margin: 0; padding: 0; }
+
+
+.popup_table_Btn				{ margin-top: 15px; padding: 0; }
+
+.popup_table_Btn ul				{ margin: 0; padding: 0; }
+.popup_table_Btn ul li			{ float: left; padding-left: 5px; }
+
+
+.copy							{ color: #333333; font-weight: bold; line-height: 20px; padding-top: 7px; }
+	
+.PopupCtrl                      {  background-color:transparent;  padding-top :2px; padding-bottom:2px; width:100%; color:#333333; background-image: none; vertical-align:bottom; height: 20px;  }
+.PopupCtrl Back                 {  background-color:#fffff;  }
+
+
+/* ==================================================================================================================================== */	
+
+/* 쓰기페이지 관련 */				  				  
+.write							{ clear: both; margin: 0; padding: 0; }	
+
+.write .title					{ color: #333333; font-weight: bold; width: 90px; height: 25px; background-color: #E7EBF6; padding-left: 10px; }
+.write .title_01				{ color: #333333; font-weight: bold; height: 25px; background-color: #E7EBF6; padding-left: 10px; /* 가로 사이즈 프리*/ }
+
+.write .title_02				{ color: #333333; font-weight: bold; width:120px; height: 25px; background-color: #E7EBF6; padding-left: 10px; /* 가로 사이즈 120px로 고정*/ }
+
+.write .title_03				{ color: #333333; font-weight: bold; height: 25px; background-color: #cccccc; padding-left: 10px; /* 가로 사이즈 프리*/ }
+		
+.write .line					{ height: 1px; background: #FFFFFF url(/GWImages/Yellow/Covi/Common/popup/line_bg.gif) repeat-x ; font-size:1px; margin: 0; padding:0; }
+input.radio, input.checkbox, input.submit { width: auto; }
+
+.write .type-text				{ height: 15px;
+								  border: 1px solid #b4b4b4 ; padding: 3px 0 0 3px; }
+
+.write ul						{ margin: 0; padding: 0; }
+.write ul li					{ float: left; padding-right: 5px; }	
+
+.write .title01					{ color: #000000; width: 89px; height: 25px; background-color: #cccccc; padding-left: 10px; }
+
+.write .title02					{ color: #333333; font-weight: bold; width: 89px; height: 25px; background-color: #f0f0f0; padding-left: 10px; }
+
+.write .fight					{ color: #ff3300; font-weight: bold; width: 100px; font-size:20px; text-align:center; }
+			  
+.write a.link					{ color: #662300; }	
+
+.write .fight_t					{ padding: 0 5px 5px 10px;}
+
+/* ==================================================================================================================================== */	
+
+/* 일정관리 관련 */				  				  
+
+.schedule						{ clear: both; margin: 0; padding: 0; }
+.schedule table					{ margin: 0; padding: 0; }
+.schedule .text_Yellow				{ color: #ff3300; }
+.schedule .text_Yellow			{ color: #0033b4; }
+.schedule .text_gray			{ color: #333333; }
+.schedule .bgcolor01			{ background-color: #fff0e6; }
+.schedule .bgcolor02			{ background-color: #e1f0fa; }
+
+.schedule ul					{ margin: 0; padding: 0; }
+.schedule ul li					{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_04.gif) no-repeat; background-position: 0 7px; line-height: 14px; padding: 2px 0 2px 7px; }
+.schedule ul li a				{ color: #666666; }
+.schedule ul li a:hover, .schedule ul li a:active				{ color: #333333; text-decoration: underline; }
+
+.schedule .date h4				{ text-decoration: underline; margin: 0; padding: 0; }
+.schedule .date a				{ color: #FFFFFF; font-weight: bold; margin: 0; padding: 0; }
+
+.schedule .cal_bg01				{ background-color: #f5f5f5; }
+.schedule .cal_bg02				{ background-color: #d7d7d7; color: #000000; }
+.schedule .cal_bg03				{ background-color: #ffffff; border: solid 2px #f55f00; }
+
+/* ==================================================================================================================================== */	
+
+/* 업무관리 관련 */				  				  
+
+.Projmgr .box_bg					{ background: #666666; }
+.Projmgr .text_t					{ color: #000000 }	
+.Projmgr .text_c					{ color: #662300; }
+
+
+/* ==================================================================================================================================== */	
+
+/* 카페 관련 */				  				  
+
+.Cafe div						{ margin: 0; padding: 0; }
+
+.Cafe td						{ color: #666666; }
+.Cafe .blt						{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_04.gif) no-repeat; background-position: 0px 8px; margin: 0; padding: 0 0 0 9px; }
+.Cafe a							{ color: #666666; text-decoration: none; line-height: 17px; }
+.Cafe a:hover, .Cafe a:active	{ color: #333333; text-decoration: underline; }
+.Cafe a.Btn02					{ color: #666666; text-decoration: none; line-height: 12px; }
+
+.Cafe .login a					{ color: #cc4b00; }
+.Cafe .text_black				{ color: #000000; }	
+.Cafe a.text_c					{ color: #cc5000; font-weight: bold; text-decoration: none; }
+
+.Cafe .photo					{ border: solid 1px #b4b4b4; }
+
+.Cafe .bg_01					{ background: #f5f5f5 }
+
+.Cafe .type-text 				{ height: 15px;
+								  border: 1px solid #000000; margin: 0; padding: 3px 0 0 5px; }
+
+.Cafe a.cafe_name, .Cafe a.cafe_name:hover, .Cafe a.cafe_name:active			{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_06.gif) no-repeat 0px 2px;
+								  color: #4b1e00;
+								  font-weight: bold;
+								  text-decoration: underline;
+								  padding: 0 0 0 14px; }
+.Cafe .copy						{ color: #333333; font-weight: bold; }
+
+.Cafe .sTitle					{ background: url(/GWImages/Yellow/Covi/Common/icon/blt_02.gif) no-repeat; color:#823300; font-weight:bold; margin: 0; padding: 0px 0px 6px 15px; }
+
+
+
+/* 카페 타이틀 관련 */
+.CTitle							{ text-align: right; padding-right: 4px; }
+.CTitle a						{ color: #333333; }
+.CTitle_bg01					{ display: none; height: 1px; background-color: #e6a073; font-size: 1px;}
+.CTitle_bg02					{ height: 2px; background-color: #e6e6e6; font-size: 1px;}
+
+/* 카페 설명 문구 관련 */
+.C_text							{ font-size: 18	px; text-align: center; line-height: 20px;}
+.C_img							{ padding: 10px 0 20px 0;}
+.C_team							{ padding: 10px 0 10px 10px;}
+.C_qa							{ font-weight: bold; padding-left:10px;}
+
+
+/* ==================================================================================================================================== */	
+
+/* 컨텍스트 메뉴 관련 */	
+
+.Ctx_Table1						{ font-family: MalgunGothic; background-color: White; border-color: Black; border-style: Solid; border-width: 1px; cursor: Default;}
+.Ctx_Table2						{ font-family: MalgunGothic; font-size: 8pt; color: Black; border-color: Transparent; border-style: Solid; border-width: 0px;}
+.Ctx_MouseOver					{ background-color: #FCEFC3; color: Black; border-color: #316AC5; border-style: Solid; border-width: 0px; cursor: Default;}	
+
+
+/* ==================================================================================================================================== */	
+
+/* 메일 */
+.mail1 {
+	font-family: "맑은고딕", "맑은고딕", "맑은고딕체";
+	font-size: 11pt;
+    font-weight: bold;
+	color: #666666;
+}
+.mail2 {
+	font-family: "맑은고딕", "맑은고딕", "맑은고딕체";
+	font-size: 11pt;
+    font-weight: bold;
+	color: #FFFFFF;
+}		  				  
+
+
+/* ==================================================================================================================================== */	
+
+/* 이준희 과장님(2008-03-17)*/
+.LabelVTop						{vertical-align: top; padding-top: 10px;}
+
+
+/* ==================================================================================================================================== */
+/* 그룹포탈구성관리 */
+
+#group_left						{ width:170px; float:left; margin: 10px 20px 0 0;}
+#group_cnt						{ width:630px; padding: 10px 20px 0 0;}
+
+#grp_topmenu					{ width:635px; height:40px; background-color: #fef2ea;  border-color: #f0b78e; border-style: double; border-width: 2px; text-align: center; font-weight: bold; color:#823300; padding-top:20px; margin-left:5px;}
+#grp_topmenu02					{ width:945px; height:40px; background-color: #fef2ea;  border-color: #f0b78e; border-style: double; border-width: 2px; text-align: center; font-weight: bold; color:#823300; padding-top:20px; margin-left:5px;}
+
+.grp_def						{ background-color: #f0f0f0;  border-color: #a8a8a8; border-style: double; border-width: 2px; text-align: center; font-weight: bold;  margin: 5px 5px 5px 5px;}
+.grp_left						{ background-color: #f0f0f0;  border-color: #a8a8a8; border-style: double; border-width: 2px; text-align: center; font-weight: bold; float: left; margin: 5px 5px 5px 5px;}
+.grp_right						{ background-color: #f0f0f0;  border-color: #a8a8a8; border-style: double; border-width: 2px; text-align: center; font-weight: bold; float: right; margin: 5px 5px 5px 5px;}
+
+.grp							{ padding-left: 20px; padding-right: 20px;}
+
+.grp_text						{ width: 730px; height: 40px; padding-top:5px; color: #992300; text-decoration: none; line-height: 17px;  background: url(/GWImages/Yellow/Covi/Common/icon/icon_!.gif) no-repeat 0px 6px; padding-left:17px;}
+.grp_stext						{ width: 730px; height: 25px; padding-top:5px; color: #992300; text-decoration: none; line-height: 17px;  background: url(/GWImages/Yellow/Covi/Common/icon/icon_!.gif) no-repeat 0px 6px; padding-left:17px;}
+.grp_sTitle						{ color:#823300; font-weight:bold; padding: 0px 0px 5px 0px; }
+
+/* 관리자-메뉴속성 */
+#admM							{ width: 400px; float:left; margin: 10px 10px 5px 0;}
+#admMR							{ width: 360px; float:left; margin: 10px 10px 5px 0;}
+
+
+.admFrame						{ border: solid 1px #CCCCCC; margin-bottom: 5px; overflow: auto; height:150px; }
+.admFrame02						{ border: solid 1px #CCCCCC; margin-bottom: 5px; overflow: auto; height:120px; }
+
+/* 관리자-인명관리 */
+#pm								{ width: 250px; float:left; margin: 10px 10px 5px 0;}
+.pmFrame						{ border:0px margin-bottom: 5px; overflow: auto; height:230px; }
+
+/* ==================================================================================================================================== */
+/* 조직도 */
+#org_lay01						{ width:205px; height:320px; float:left; margin: 10px 10px 5px 0; }
+#org_lay02						{ width:260px; height:320px; float:left; margin: 10px 10px 5px 0; }
+#org_btn						{ width:45px; float:left; margin: 65px 10px 0px 0px; }
+#org_btn ul li					{ padding-top:4px;}
+#org_bottom						{ width:800px; height:120px; margin: 15px 5px 5px 0; }
+#org_sch						{ width:100%; height: 30px; text-align:center; background-color: #f5f5f5; margin-top:10px; padding-top:10px;}
+
+.org_frame						{ border: solid 1px #CCCCCC; margin-bottom: 5px; overflow: auto; height:295px; }
+.org_sTitle						{ color:#823300; font-weight:bold; padding: 5px 0px 5px 0px; }
+.org_sTitle02					{ height:17px; color:#823300; font-weight:bold; padding: 7px 0px 4px 0px; }
+.org_text						{ height:20px; background:url(/GWImages/Yellow/Covi/Common/icon/blt_04.gif) no-repeat 3px 7px; color: #666666;  font-weight: bold; padding-left:13px;}
+
+
+
+/* ==================================================================================================================================== */
+/* 전자결재 리스트 */
+#App_list						{ width:330px; height:auto; background-color: #ffffff; border:1px solid #c5c5c5; border-right:2px groove #e7e7e7; border-bottom:2px groove #e7e7e7; }
+#App_list ul					{ margin: 0; padding: 0;}
+/*#App_list ul li				{ height:25px; float:left; background:url(/GWImages/Yellow/Covi/Approval/layTopBg.gif) repeat-x;}*/
+#App_listIn						{ clear:both; margin:15px 5px 5px 5px;}
+#App_listIn td					{ line-height: 14px; padding: 2px 0 2px 7px; font-size:11px; }
+#App_listIn td span				{ font-weight:bold; color:#823300; }
+.list_right						{ float:right; padding:5px;}
+
+.AppPop							{ width:220px; border:1px solid #bebebe; background-color:#f6eec3; padding:5px;}
+
+/* ==================================================================================================================================== */
+/* 검색 레이어 팝업 */
+.SLPop							{ font-weight:bold; font-size:11px; color:#333333; padding: 0 0 0 8px; }
+
+/* 검색 레이어 팝업 Box06 관련 */
+.Box06							{ background: #f5f5f5; margin-bottom: 5px; }
+.Box06_tl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_top_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box06_tr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_top_right.gif) no-repeat right; padding-left: 2px; height: 5px; }
+.Box06_tc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_top_bg.gif) repeat-x; margin-right: 2px; height: 5px; }
+
+.Box06_cl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_left_bg.gif) repeat-y left; }
+.Box06_cr 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_right_bg.gif) repeat-y right; padding-left: 2px; }
+.Box06_cc 						{ background: #f5f5f5; margin-left: 5px; margin-right: 7px; height: 100%;}
+
+.Box06_bl 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_bottom_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box06_br 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_bottom_right.gif) no-repeat right; padding-left: 2px; height: 5px; }
+.Box06_bc 						{ background: url(/GWImages/Yellow/Covi/Common/box/box08_bottom_bg.gif) repeat-x; margin-right: 2px; height: 5px; }
+
+
+
+/*상단 부서선택*/
+.tm								{ background: url(/GWImages/Yellow/Covi/Main/top_tmbg.gif) repeat-x; font-size:11px; font-weight:bold;}
+.tmspace						{ padding-left:5px;}
+
+/* 관리업무 탭 (2008-06-18) */
+.tatab01 						{ clear: both; width: 100%;
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tatab01_bg.gif) repeat-x left top;
+								  margin-bottom: 5px;
+								  padding: 0; height:30px;}
+.tatab01 ul 					{ height: 30px; float: left;
+								  text-align: center;
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tatab01_left.gif) no-repeat left top;
+      							  margin: 0; padding-left: 5px; }
+.tatab01 li  					{ height: 30px; color: #823300; font-weight:bold;
+								  float: left;
+      							  display: block;
+      							  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tatab01_right.gif) no-repeat right top;
+								  margin: 0; padding-top: 10px; padding-right: 20px; padding-left: 10px; }
+
+/* 블로그 */
+.blogId							{ font-weight:bold; padding-left:10px; }
+.blogId span					{ padding-left:100px;}
+.blogTitle						{ font-weight:bold; background: url(/GWImages/Yellow/Covi/Common/icon/blt_03.gif) no-repeat 3px; padding-left:10px;}
+.BLeftBg						{ background: url(/GWImages/Yellow/Covi/Blog/left_bg.gif) repeat-y;  padding: 5px 5px 0 5px;}
+.BLeftTop						{ background: url(/GWImages/Yellow/Covi/Blog/left_top.gif) no-repeat; height:40px; }
+.BlogM							{ font-weight:bold; padding-left:20px; background: url(/GWImages/Yellow/Covi/Blog/menu_bg.gif) repeat-x; padding-bottom:5px;}
+.BlogM	span					{ color:#FFFFFF; font-size:13pt;}
+
+.blogHT							{ font-weight:bold; font-size:15pt; text-align:center; color:#000000;}
+.blogct							{ background:#e9e9e9; height:28px;}
+
+/* ==================================================================================================================================== */    
+
+/* 업무관리 포탈관련 */   
+
+.TblDefault
+                                {
+                                          width: 100%;
+                                          text-align: left;
+                                          vertical-align: top;
+                                          table-layout: fixed;
+                                          border-style: none;
+                                          border-collapse: collapse;
+                                          text-overflow: ellipsis;
+                                          word-break: break-word;
+                                }
+
+                                .TdDefault
+                                {
+                                          text-overflow-mode: ellipsis-word;
+                                          text-overflow: ellipsis;
+                                          overflow: hidden;
+                                          white-space: nowrap;
+                                }
+
+                                .FldDefault
+                                {
+                                          padding-left: 10px;
+                                }  
+                                .Box_tab_Col3_Large
+                                {
+                                          clear: both; float: left; margin: 0; padding: 0;
+                                }
+
+                                .Box_tab_Col3_Large a, .Box_tab_Col3_Large span
+                                {
+                                          width: 33%;
+                                          height: 19px;
+                                          color: #333333;
+                                          text-align: center;
+                                          background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_off_Col3_Large.gif);
+                                          display: block;
+                                          float: left;
+                                          margin: 0;                                 
+                                          padding-top: 6px;
+                                }
+
+                                .Box_tab_Col3_Large a:hover, .Box_tab_Col3_Large span:hover
+                                {
+                                          height: 19px;
+                                          color: #823300;
+                                          text-align: center;
+                                          background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on_Col3_Large.gif);
+                                          display: block;
+                                          float: left;
+                                }
+
+                                .Box_tab_Col3_Large .current
+                                {
+                                          width: 34%;
+                                          color: #823300;
+                                          background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on_Col3_Large.gif);
+                                }
+
+/* ==================================================================================================================================== */
+
+/* 로그인 페이지 관련  */
+div#Login						{ width:100%; height:100%; margin-top:100px; padding:0; text-align:center;}
+.LogLine						{ background: #c2c2c2; height:1px;}
+.EDLLogo						{ padding-bottom: 10px; text-align: left; }
+.EDLLogo02						{ padding-bottom: 10px; text-align: right; }
+.EDLC							{ padding:5px 15px 10px 15px; }
+
+.EDLBox							{ background: url(../images/ED_logbox_bg.gif) repeat-x; height:120px;}
+.EDLBox img						{ padding:0 5px 0 5px;}
+.EDLBox img.Lbtn			    { vertical-align:middle;}
+.EDCopy							{ padding-top:10px; text-align:left;}
+
+.EDCheck					    { font-weight:bold; font-size:11px; padding:5px 0 5px 2px; }
+.EDCheck .EDDBox				{ border:0px; }
+.EDtext							{ background: url(../images/icon_!.gif) no-repeat 3px 9px; padding:8px 0 0 20px; line-height:16px; text-align:left;}
+
+
+/* ==================================================================================================================================== */
+
+/* Change Password  */
+.CPTbg							{ background:url(/GWImages/Yellow/Covi/Password/pass_tbg.gif) repeat-x; height:45px;}
+.CTBG							{ background:#f0f0f0;}
+.CTList							{ background:url(/GWImages/Yellow/Covi/Password/pass_icon.gif) no-repeat 0 10px; padding:8px 0 5px 10px; font-weight:bold;}
+.CPTYellow							{ color:#ba122b; line-height:140%; padding:5px 0 0 10px;}
+.CPBot							{ background:url(/GWImages/Yellow/Covi/Password/pass_botbg.gif) no-repeat; width: 432px; height:100px; margin:10px 0 0 17px;}
+
+
+/* ==================================================================================================================================== */
+
+/* New list  */
+/*
+.n_ptly		{ width:100%; border:#a4aebd solid 1px; margin-bottom:5px; text-align:left;}
+.n_phtitle	{ background:url(/GWImages/Yellow/Covi/main/n_ball01.gif) no-repeat #a3b9df 5px 5px; padding-left:22px;height:22px; width:100%; color:#fff;}
+.n_more		{ background: #a3b9df ;float:right;	padding: 5px 8px 4px 5px;}
+
+.n_pttd		{ background: url(/GWImages/Yellow/Covi/main/ball02.gif) no-repeat 0px 8px; padding:4px 3px 2px 8px; }
+.n_notiph	{ padding:5px 10px 0px 5px; width:80px;}
+.n_tgab		{ padding:1px 12px 1px 12px; }
+*/
+
+.n_ptly		{ width:100%; border:#555555 solid 0px; margin-bottom:5px; text-align:left;}
+.n_phtitle	{ background:url(/GWImages/Yellow/Covi/main/n_ball01.gif) no-repeat #ffffff 5px 5px; padding-left:22px;height:22px; width:100%; color:#508969; font-weight:bold; border-bottom:1px solid #b8ceb7;} 
+.n_more		{ float:right; padding: 5px 8px 4px 5px; border-bottom:1px solid #b8ceb7;}
+/* .n_line		{ background: url(/GWImages/Yellow/Covi/main/board_line.gif) repeat-x ; height:1px; margin:5px;}*/
+.n_line		{ border-bottom: 1px dotted #8b8b8b; font-size:1px; margin:5px;}
+/*.n_pttd		{ background: url(/GWImages/Yellow/Covi/main/ball02.gif) no-repeat 0px 8px; padding:4px 3px 2px 8px; }*/
+.n_pttd		{ padding:4px 3px 2px 8px; }
+.n_pttd2	{ background: url(/GWImages/Yellow/Covi/main/ball02.gif) no-repeat 0px 8px;}
+.n_notiph	{ padding:5px 10px 0px 5px; width:80px;}
+.n_tgab		{ padding:1px 12px 1px 12px; }
+
+
+
+
+.n_btntb div ul { padding:5px 5px 0px 5px; margin:3px;}
+.n_btntb div ul li{ display: inline; padding:0px; margin:0px;}
+
+.n_btntb { position: relative; background:url(/GWImages/Yellow/Covi/common/n_tbbg.gif) repeat-x; width:100%; height:31px; padding-bottom:5px;}
+.n_btntb ul { padding:8px 5px 0px 5px; margin:0px;}
+.n_btntb ul li{ display: inline; padding:0px; margin:0px;}
+.n_btntb ul li a.btnov{ border:#86a0cc solid 1px; background:#fff; padding:2px 5px 3px 4px;}
+.n_btntb ul li a.btnov:hover, a.btnov:active { background:#fff9d7; border:#d6b079 solid 1px;}
+.n_btntb ul li a.btnov span { vertical-align:middle; padding-right:3px;}
+
+.n_btntb2	{ position: relative; background:url(/GWImages/Yellow/Covi/common/n_tbbg.gif) repeat-x; width:100%; height:31px; padding-bottom:5px; font-size:9pt;}
+.n_btntb2 ul { padding:8px 5px 0px 5px; margin:0px;}
+.n_btntb2 ul li{ display: inline; padding:0px; margin:0px;}
+.n_btntb2 ul li a.btnov{ border:#86a0cc solid 1px; background:#fff; padding:2px 5px 3px 4px;}
+.n_btntb2 ul li a.btnov:hover { background:#6cdd3de;}
+.n_btntb2 ul li a.btnov span { vertical-align:middle; padding-right:3px;}
+
+
+
+/* ==================================================================================================================================== */
+
+/* New top  */
+#n_tops						{ background:url(/GWImages/Yellow/Covi/common/top_bg.gif) repeat-x;}
+#n_topadmin					{ background:url(/GWImages/Yellow/Covi/common/top_bg_admin.gif) repeat-x;}
+div#n_p_info				{ float:left; margin-left:15px;padding-top:10px; width:400px; color:#fff; font-size: 11px; }
+div#n_p_info a				{ color:#fff; font-size: 11px; }
+div#n_top					{ float:right; margin-top:5px;padding-right:10px; color:#fff; }
+div#n_top ul				{ margin:0px; padding:0px;}
+div#n_top ul li				{ display:inline; margin:0px; padding:0px;}
+div#n_top ul li span		{font-size:11px;}
+div#n_top a					{ color:#fff;font-size:11px;}
+.n_text						{ margin:0px 5px -1px 5px;}
+.memse						{ background:url(/GWImages/Yellow/Covi/common/mem_se.gif) no-repeat; height:29px; width:280px;}
+.memse span					{ padding-left:5px; padding-right:3px;}
+.memse input				{ background:url(/GWImages/Yellow/Covi/common/input_bg.gif) no-repeat 100% 4px; width:100px; height:23px; border:none;}
+.memse .tin					{ padding-top:7px; padding-left:0px;}
+.memse img					{ padding-bottom:2px;}
+
+.n_gab						{padding-left:7px;}
+div#n_logo					{ clear:both; float:left; margin-top:20px; padding-left:15px; padding-bottom:0px;}
+div#n_mdiv					{ display:inline; float:right; margin-top:8px; padding:0px; width:80%;}
+
+.n_menu						{ clear:both; margin-top:0px; margin-bottom:0px; margin-right:0px; padding-left:7px;}
+.n_menu ul 					{ margin: 0px;padding: 0px; }
+.n_menu ul li 				{ display: inline; margin: 0px; padding: 0px;}
+.n_menu a 					{ height: 20px; float: left; text-align: center; background: transparent url(/GWImages/Yellow/Covi/common/top_tab_left.gif) no-repeat left top; margin: 0; padding-left: 15px; }
+.n_menu a.plus 				{ height: 20px; float: left; text-align: center; background: transparent url(/GWImages/Yellow/Covi/common/top_tab_left_plus.gif) no-repeat left top; margin: 0; padding-left: 15px; }
+.n_menu a.minus 			{ height: 20px; float: left; text-align: center; background: transparent url(/GWImages/Yellow/Covi/common/top_tab_left_minus.gif) no-repeat left top; margin: 0; padding-left: 15px; }
+.n_menu a span 				{ height: 20px; color: #ffffff; float: left; background: transparent url(/GWImages/Yellow/Covi/common/top_tab_right.gif) no-repeat right top; margin: 0px 1px 0px 0px;_margin: 0px 1px -4px 0px; padding-top: 5px;padding-right: 17px; padding-left: 2px; _padding-bottom: -10px;}
+.n_menu a span.plus 		{ height: 20px; color: #ffffff; float: left; background: transparent url(/GWImages/Yellow/Covi/common/top_tab_right_plus.gif) no-repeat right top; margin: 0px 1px 0px 0px;_margin: 0px 1px -4px 0px; padding-top: 5px;padding-right: 17px; padding-left: 2px; _padding-bottom: -10px;}
+.n_menu a span.minus 		{ height: 20px; color: #ffffff; float: left; background: transparent url(/GWImages/Yellow/Covi/common/top_tab_right_minus.gif) no-repeat right top; margin: 0px 1px 0px 0px;_margin: 0px 1px -4px 0px; padding-top: 5px;padding-right: 17px; padding-left: 2px; _padding-bottom: -10px;}
+.n_menu a:hover 			{ color: #35558e; background-position: 0 -32px; }
+.n_menu a:hover span		{ color: #35558e; background-position: right -32px; }
+.n_menu .n_current a		{ color: #35558e; background-position: 0 -32px; }
+.n_menu .n_current a span	{ color: #35558e; background-position: right -32px;}
+
+div#n_smdiv					{ padding:0px 7px 0px 0px; } 
+.n_smleft					{ clear:both; float:left; width:2%; background: transparent url(/GWImages/Yellow/Covi/common/top_mleft.gif) no-repeat left top ; height:22px}
+.n_smbg						{ float:left; width:94%; background: transparent url(/GWImages/Yellow/Covi/common/top_mbg.gif) repeat-x; height:22px; padding-top:5px;_padding-top:4px; _margin-right:-4px;}
+.n_smbg ul					{ margin:0px; padding:0px;}
+.n_smbg ul li				{  display: inline; margin: 0px; padding: 0px; }
+.n_smbg ul li img			{ margin: 5px 7px 0px 7px;}
+.n_smright					{ width:22px; background: transparent url(/GWImages/Yellow/Covi/common/top_mright.gif) no-repeat right top ; height:22px;_padding-left:-4px; }
+
+.n_abb {text-overflow:ellipsis;overflow:hidden;}
+.BTable_bg07 { border-bottom-color: #86a1c6; border-bottom-width:2px; border-bottom-style:solid;border-top-color: #b4c2d9; border-top-width:1px; border-top-style:solid;height:23px;}
+.BTable_bg08 { border-bottom-color: #cccccc; border-bottom-width:1px; border-bottom-style:solid;height:21px;}
+.BTable_bg09 { border-bottom-color: #cccccc; border-bottom-width:2px; border-bottom-style:solid;}
+
+/* new potal */
+.n_appt		{ clear:both; float:left; margin:0px; padding:5px 0px 0px 0px;}
+div#n_app	{ margin:0px 0px 0px 60px; padding:4px 0px 0px 0px;}
+div#n_app ul { margin:0px; padding:0px;}
+div#n_app ul li { display:inline; margin:0px; padding: 0px;}
+
+.n_potalph	{ border:#dbdbdb solid 2px; padding:0px; margin:10px 5px 10px 5px;}
+.n_arrowgab	{ padding:0px 5px 0px 5px; width:20px; }
+.n_pttd02	{ padding:4px 0px 3px 0px; }	/*{ padding:7px 0px 4px 0px; }*/
+.n_pollt	{ background:transparent url(/GWImages/Yellow/Covi/main/ball03.gif) no-repeat 0px 7px; padding-left:10px; height:25px; color:#4665a1;}
+.n_pollt02	{ padding-left: 10px; padding-bottom:10px;}
+.n_pollt03	{ padding-top: 5px;}
+.n_btnpoll	{ text-align:right; padding:5px ;}
+
+.n_igboxbg	{ background: url(/GWImages/Yellow/Covi/main/n_info_bg.gif) repeat-x; vertical-align:top;}
+.n_infot	{ color:#26324e; font-weight:bold; text-align:center; padding:10px 0px 10px 0px;}
+.n_ifphoto	{ border:#919cb3 solid 2px; padding:1px; background:#ffffff;}
+
+.n_infocnt	{ margin:0px; padding:0px 0px 0px 10px;}
+.n_infocnt ul { margin:0px; padding:0px;}
+.n_infocnt ul li { margin:0px; padding:0px;}
+.n_infocnt ul li { margin:0px; padding-top:4px; background:url(/GWImages/Yellow/Covi/main/day_bg.gif) no-repeat; height:19px; width:122px; color:#222d48; text-align:center; font-weight:bold;}
+.n_infocnt ul li ul li { margin:0px;}
+
+.n_infocnt02	{ margin:0px; padding:0px 0px 0px 7px;}
+.n_infocnt02 ul { margin:0px; padding-top:5px;}
+.n_infocnt02 ul li { display:inline;margin:0px; padding:5px 0px 0px 0px;}
+.n_infocnt02 ul li span {  color:#49494A;}
+.n_infocnt02 ul li a span { font-weight:bold; color:#ff6600;}
+
+#n_leftm	{ margin: 0 0px 0 5px; width: 185px; text-align: left; position: relative;
+			  height: 100%; /* For IE */ min-height: 100%; /* For Modern Browsers */ 
+			  background: url(/GWImages/Yellow/Covi/Common/sub/n_left_bg.gif) repeat-y; }
+#n_leftm .tree { margin: 0; padding: 0; background:#e7eef9;}
+#n_leftm .tree span{ padding-left:10px;}  /*#n_leftm .tree span{ padding-left:10px;}*/
+#n_lefttop     { margin:0px; padding: 0px;}
+.n_leftcnt     { background: url(/GWImages/Yellow/Covi/Common/sub/n_left_bg.gif) repeat-y 5px 0px; }
+#n_leftfoot   { clear:both; width: 100%; background: url(/GWImages/Yellow/Covi/Common/sub/n_left_bottom.gif) no-repeat; height: 33px; margin-left:5px; position: absolute;bottom: 0 !important; bottom: -1px; /* For Certain IE widths */}
+#n_leftfoot1   { clear:both; width: 100%; background: url(/GWImages/Yellow/Covi/Common/sub/n_left_bottom.gif) no-repeat; height: 33px; margin-left:5px; position: absolute; /* For Certain IE widths */}
+#n_leftfoot2{ clear:both; width: 100%; background: url(/GWImages/Yellow/Covi/Common/sub/n_left_bottom.gif) no-repeat; height: 33px;position: absolute;bottom: 0 !important; bottom: -1px; /* For Certain IE widths */}
+.n_line_bg     { background: #8492b7; height:2px; margin:0px; padding:0px;}
+
+/* CoviTab 컨트롤용 style */
+
+.CoviTab						{ clear: both; width: 100%;								 
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab01_bg.gif) repeat-x left top;
+								  margin-bottom: 5px;
+								  padding: 0; }
+								  
+.CoviTab .ajax__tab_tab .ajax__tab_header {background:url(/GWImages/Yellow/Common/tab/tab01_on_bg.gif) repeat-x bottom;}
+
+.CoviTab .ajax__tab_tab {height:22px;padding:4px;margin:0;background:url(/GWImages/Yellow/Common/tab/tab01_off_bg.gif) repeat-x;}
+.CoviTab .ajax__tab_outer {background:url(/GWImages/Yellow/Common/tab/tab01_off_right.gif) no-repeat right top;}
+.CoviTab .ajax__tab_inner {padding-left:3px;background:url(/GWImages/Yellow/Common/tab/tab01_off_left.gif) no-repeat left top;}
+
+.CoviTab .ajax__tab_hover .ajax__tab_tab {background:url(/GWImages/Yellow/Common/tab/tab01_on_bg.gif) repeat-x;}
+.CoviTab .ajax__tab_hover .ajax__tab_outer {background:url(/GWImages/Yellow/Common/tab/tab01_on_right.gif) no-repeat right top;}
+.CoviTab .ajax__tab_hover .ajax__tab_inner {background:url(/GWImages/Yellow/Common/tab/tab01_on_left.gif) no-repeat left top;}
+
+.CoviTab .ajax__tab_active .ajax__tab_tab {height:22px;padding:4px;margin:0 4 0 0; background:url(/GWImages/Yellow/Common/tab/tab01_on_bg.gif) repeat-x;}
+.CoviTab .ajax__tab_active .ajax__tab_outer {background:url(/GWImages/Yellow/Common/tab/tab01_on_right.gif) no-repeat right top;}
+.CoviTab .ajax__tab_active .ajax__tab_inner {background:url(/GWImages/Yellow/Common/tab/tab01_on_left.gif) no-repeat left top;}
+
+.CoviTab .ajax__tab_body {border-style:none;}
+
+/*approval portal*/
+.n_appleft	{ margin:0px; padding-left:5px; vertical-align:top}
+.n_appright	{ width:330px; padding-left:5px; vertical-align:top}
+.n_appbg span { padding-left:5px; padding-right:3px; color:#ffffff;}
+.n_appbg input { background:url(/GWImages/Yellow/Covi/Approval/app_portal/input_bg02.gif) no-repeat 100% 1px; width:195px; height:23px; border:none;}
+.n_appbg .tin	{ padding-top:0px; padding-left:0px;}
+.n_appbg img { padding-bottom:0px;}
+
+.abox_north				{ background: url(/GWImages/Yellow/Covi/Approval/app_portal/abox_top.gif) repeat-x; height: 12px;}
+.abox_south				{ background: url(/GWImages/Yellow/Covi/Approval/app_portal/abox_bot.gif) repeat-x; height: 12px;}
+.abox_cw				{ background: url(/GWImages/Yellow/Covi/Approval/app_portal/abox_left_bg.gif) repeat-y; width:12px; }
+.abox_cc				{ background: #ffffff; padding:3px 5px 3px 5px; width:100%}
+.abox_cc .abox_img		{ width:90px; vertical-align:middle; }
+.abox_cc ul				{ margin:0px; padding:5px 0px 5px 0px;}
+.abox_cc ul li 			{ padding-left:10px; padding-top:3px;}
+.abox_ce				{ background: url(/GWImages/Yellow/Covi/Approval/app_portal/abox_right_bg.gif) repeat-y; width:12px;}
+.abox_size				{ width:12px height:12px;}
+.abox_cc ul li.n_ball	{ background:url(/GWImages/Yellow/Covi/Approval/common/n_left_icon.gif) no-repeat 0px 3px; padding:3px 10px 3px 15px;}
+
+.abox02_bg				{ background: #e3e8ef; height: 5px;}
+.abox02_bg02			{ background: #e3e8ef; width:5px; }
+.abox02_cc				{ background: #e3e8ef; padding:3px 5px 0px 5px; width:100%}
+.abox02_cc .n_boxtop	{ padding:3px 0px 0px 10px;}
+.abox02_cc .n_boxtop span	{ float:right; margin:0px; padding-bottom:3px;}
+.abox02_cc ul			{ margin:0px; padding-top:5px;}
+.abox02_cc ul li 		{ display:inline; padding-left:40px;}
+.abox02_size			{ width:5px height:5px;}
+.p_gab					{ margin:0px; padding-bottom:5px;}
+.t_gab					{ padding:0px; margin: 5px ; width:100%;}
+.app_help				{ background:url(/GWImages/Yellow/Covi/Approval/app_portal/app_helpbg.gif) no-repeat;height:200px;padding:5px 10px 0px 25px; vertical-align:top}
+.app_list				{ background:url(/GWImages/Yellow/Covi/Approval/app_portal/app_help_icon.gif) no-repeat; padding:2px 10px 3px 20px;}
+.app_help .pgap02		{ padding:5px 0px 3px 0px;}
+.app_help p				{ margin:0px; padding:3px 0px 0px 0px;}
+.app_my					{ text-align:center;}
+.n_pttd03				{ background: url(/GWImages/Yellow/Covi/main/ball02.gif) no-repeat 0px 8px; padding:3px 3px 1px 8px; }
+.app_my02				{ padding-left:50px;}
+
+/*main_img*/
+/* workplace */
+.n_mimg					{ background:url(/GWImages/Yellow/Covi/main/mimg_workplace.jpg) no-repeat #cad7e9; height:139px; width:100%;}
+/*순천향병원*/
+/*.n_mimg				{ background:url(/GWImages/Yellow/Covi/main/mimg_schmc.jpg) no-repeat #ffffff; height:139px; width:100%;}*/
+/*한국야쿠르트*/
+/*.n_mimg     			{ background:url(/GWImages/Yellow/Covi/main/mimg_yacurt.jpg) no-repeat #d6f1fc; height:139px; width:100%;}*/
+
+/*현대백화점*/
+/*.n_mimg     			{ background:url(/GWImages/Yellow/Covi/main/hyun_img.jpg) no-repeat #cad7e9 ; height:139px; width:100%;}*/
+
+/*선진*/
+/*.n_mimg     			{ background:url(/GWImages/Yellow/Covi/main/sunjin_img.jpg) no-repeat #fefef6  ; height:139px; width:100%;}*/
+
+/* 칼렌다 관련 */			  
+
+.calendar		 				{ clear: both; background: #FFFFFF; border: 1px solid #b4b4b4 ; width: 90px; height: 18px; margin: 0; padding: 0; }
+.calendar input					{ border: 0 none ; width: 68px; padding-left: 3px; padding-top: 2px; margin: 0; }
+
+/*  approval process desc */
+.description {font-weight : normal;font-size:9pt;font-family: MalgunGothic;background-color: #E7EBF6;color : #000000;line-height:120%;padding:3px;}
+.appicon	{ padding: 5px; vertical-align:middle; }
+.appback	{ background: url(/GWImages/Yellow/Covi/Approval/backline.gif) left bottom no-repeat; height:120px; width:800px;}
+.appbot		{ background: url(/GWImages/Yellow/Covi/Approval/back.gif) no-repeat right bottom; padding:0px; margin:0px;}
+
+/*cafe_mimg*/
+/*
+.ca_mimg				{ background:url(../Covi/Cafe/c_main.jpg) no-repeat #e7eef9; height:139px; width:100%; margin-bottom:10px;}
+.ca_simg01				{ background:url(../Covi/Cafe/cafe_timg01.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg02				{ background:url(../Covi/Cafe/cafe_timg02.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg03				{ background:url(../Covi/Cafe/cafe_timg03.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg04				{ background:url(../Covi/Cafe/cafe_timg04.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg05				{ background:url(../Covi/Cafe/cafe_timg05.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+*/
+
+/*cafe_mimg (2009.04.27)*/
+.ca_mimg				{ background:url(../Covi/cafe/c_main.jpg) no-repeat #e7eef9; height:139px; width:100%; margin-bottom:10px;}
+.ca_simg01				{ background:url(../Covi/cafe/cafe_timg01.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg02				{ background:url(../Covi/cafe/cafe_timg02.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg03				{ background:url(../Covi/cafe/cafe_timg03.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg04				{ background:url(../Covi/cafe/cafe_timg04.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+.ca_simg05				{ background:url(../Covi/cafe/cafe_timg05.gif) no-repeat #e7eef9; height:100px; width:100%; margin-bottom:10px;}
+
+.ca_sbg					{ background:url(../Covi/cafe/cafe_sbg.gif) repeat-x; height:65px;}
+.cat					{ margin:0px; padding:0px;}
+.cat dt					{ margin-bottom:5px; color:#e38a98; font-weight:bold;}
+.cat dd					{ margin:0px; padding:0px;}
+.cat input				{ margin-left:5px;}
+
+/*(2009.03.30)*/
+/*new_admin*/
+.n_admn					{ position: absolute;bottom: 0 !important; bottom: -1px; margin:0px; padding:0px;}
+.n_admbg				{ background:url(/GWImages/Yellow/common/nadm_bg.gif) repeat-x; height:22px;}
+.n_admn ul				{ margin:0px; padding:0px;}
+.n_admn ul li			{ display:inline; margin:0px; padding:0px; background: url(/GWImages/Yellow/common/nadm_ball.gif) no-repeat 0px 2px; padding-left:12px; margin-left:20px;}
+
+/* worktime */
+.wtbg					{ background:url(/GWImages/Yellow/Covi/main/wbox_bg.gif) repeat-x; width:100%;}
+.wtbg td				{ padding-left:3px; padding-right:3px;}
+.wtbg ul				{ margin:0px; padding:0px; background:url(/GWImages/Yellow/Covi/main/wbox_bleft.gif) no-repeat left top; height:24px;padding-left:8px; }
+.wtbg ul li				{ display:inline-block; margin:0px; background:url(/GWImages/Yellow/Covi/main/wbox_bright.gif) no-repeat right top; height:24px; padding-top:5px;}
+
+.wbox_north				{ background: url(/GWImages/Yellow/Covi/main/n_box02_top.gif) repeat-x; height:7px;}
+.wbox_south				{ background: url(/GWImages/Yellow/Covi/main/n_box02_bot.gif) repeat-x; height:8px;}
+.wbox_size				{ width:7px;}
+.wbox_cw				{ background: url(/GWImages/Yellow/Covi/main/n_box02_left_bg.gif) repeat-y; width:7px;}
+.wbox_ce				{ background: url(/GWImages/Yellow/Covi/main/n_box02_right_bg.gif) repeat-y; width:7px;} 
+.wbox_cc				{ background: #ffffff; border-bottom:2px solid #9b9b9b;}
+.wbox_cc2				{ background: #ffffff;}
+.wbox_cc.ccgab			{ padding:10px 5px 10px 5px;}
+.wbox_cc td				{ padding:3px 7px 3px 7px; border-bottom:1px solid #b1b1b1; }
+.wbox_cc td.tleft		{ margin:0px; padding:3px 0px 3px 0px; text-align: left; border:none;}
+.wbox_cc td.tright		{ border-bottom:2px solid #cbca9c;margin:0px; padding:3px 0px 3px 0px; text-align: right;}
+.wbox_cc td.tright img	{ padding-left:3px;}
+.wbox_cc td.gline		{ border-bottom:2px solid #cbca9c;}
+.wbox_cc td.gbot		{ border-bottom:2px solid #9b9b9b;}
+.wbox_cc td.inoff		{ background:#fafded;}
+.wbox_cc td.outoff		{ background:#eeeeee; color:#7f7f7f;}
+.wbox_cc td.tbold		{ font-weight:bold; color:#3f71a9; width:55px;}
+.wbox_cc td.tbold02		{ font-weight:bold; color:#7f7f7f;}
+
+/*password change */
+.cpbg					{ background:url(/GWImages/Yellow/Covi/common/box/cp_bg.gif) repeat-x; vertical-align:middle;}
+.cpbg img				{ vertical-align:middle; padding:1px 5px 3px 3px;}
+
+/*commute*/
+.opt					{ padding:5px 0px 3px 0px;}
+.opt .optimg			{ vertical-align:middle; padding:2px 4px 3px 4px;}
+.commute th				{ border-top:2px solid #cbca9c; border-bottom: 2px solid #cbca9c; text-align:left; padding:4px 0px 4px 10px; background:#fafded; font-weight:lighter; color:#516b13;} 
+.commute td				{ text-align:left;padding: 4px 7px 4px 7px; border-bottom:1px solid #b1b1b1; }
+.commute td.copt1		{ background:#f0b2b2;}
+.commute td.copt2		{ background:#dfdfdf;}
+.commute td.copt3		{ background:#fce199;}
+.commute td.copt4		{ background:#cce7bd;}
+
+/*로그인 레지스트리 환경설정 관련*/
+div#setbox		{ 
+				padding-top:30px; padding-left:20px; padding-right:20px; padding-bottom:20px;
+				margin:6px; border: 1px solid #4c659a; background-color:#FFFFFF; text-align:center;}
+div.setment		{margin-top:10px; margin-bottom:10px;}
+.Btn10 a						{display:block; 
+								background:url(/GWImages/common/btn/btn10.gif) left -27px; 
+								float:left; 
+								color:#FFFFFF; 
+								padding-left:18px; 
+								text-decoration:none; 
+								font-weight:bold;
+								height:27px; 
+								cursor:pointer; 
+								margin-left:5px; 
+								overflow:hidden}
+.Btn10 a:hover				{background:url(/GWImages/common/btn/btn10.gif) left -27px; 
+								color:#FFFFFF; 
+								text-decoration:none;
+								font-weight:bold;}
+.Btn10 a span				{display:block; 
+								float:left; 
+								background:url(/GWImages/common/btn/btn10.gif) right -27px; 
+								line-height:250%; 
+								padding-right:18px;  
+								padding-bottom:6px;  
+								height:27px; 
+								overflow:hidden; 
+								color:#FFFFFF;
+								font-weight:bold; 
+								text-decoration:none;}
+.Btn10 a:hover span			{background:url(/GWImages/common/btn/btn10.gif) right -27px; 
+								color:#FFFFFF; 
+								text-decoration:none;
+								font-weight:bold;}	
+
+
+
+/*************************************************
+       현대백화점 개인정보
+ *************************************************/
+ /*LIST*/
+.main_list8 {font-family:"맑은고딕"; color:666666; font-size:8pt; text-decoration:none}
+.main_list9 {PADDING:3 0 0 6px; font-family:"맑은고딕"; color:666666; font-size:9pt; text-decoration:none}
+.main_list99 {font-family:"맑은고딕"; color:666666; height:16px;font-size:9pt; text-decoration:none}
+
+.system_text {font-size:9pt; color:#666666; font-family:맑은고딕; text-decoration: none}
+.system_text:hover {font-size:9pt; color:#d26402; font-family:맑은고딕; text-decoration: none}
+
+/*************************************************
+      팝업창 사우검색 
+ *************************************************/
+ 
+ 
+ body.Type_Pop
+{
+	height:100%;
+	width:100%;	
+	background-image:url("/GWImages/Yellow/Covi/PopSearch/bg.gif");
+	color:#404041;
+	font-size:9pt;
+	font-family:맑은고딕 Arial;
+	margin:0 0 0 0;
+	scrollbar-3dlight-color:#595959;
+	scrollbar-arrow-color:#FFFFFF;
+	scrollbar-base-color:#CFCFCF;
+	scrollbar-darkshadow-color:#FFFFFF;
+	scrollbar-face-color:#CFCFCF;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-shadow-color:#595959;
+	}
+	
+	
+.title_Top {
+	FONT-SIZE:15px; 
+	font-weight:bold; 	
+	COLOR: #ffffff;  
+	LINE-HEIGHT: 22px; 
+	FONT-FAMILY: 맑은고딕,MalgunGothic
+}
+
+
+.title_Bottom {
+	FONT-SIZE:11px; 
+	COLOR: #484848;  
+	LINE-HEIGHT: 18px; 
+	FONT-FAMILY: 맑은고딕,MalgunGothic
+}
+
+  .cssBtn_75	{
+	position:relative;top:2;
+	width:75px;height:32px;
+	border:0 solid transparent;
+	background-color:transparent;
+	font-family:MalgunGothic;
+	font-size:12px;	
+	color:#000000;
+	background-image:url("/GWImages/Yellow/Covi/PopSearch/btn_75.gif");.
+	cursor:pointer;
+}
+
+
+.input_01 {
+     BORDER-RIGHT: #458fc3 2px solid; 
+	 BORDER-TOP: #458fc3 2px solid; 
+	 BORDER-LEFT: #458fc3 2px solid; 
+	 BORDER-BOTTOM: #458fc3 2px solid;
+	 background-color:#ebf5fc;
+}
+
+.BTable_List_Item {
+
+	border-bottom-color: #cccccc;
+	border-bottom-width:1px;
+	border-bottom-style:solid;	
+	height:23px;
+	padding-top:3px;
+	text-align:left;
+	table-layout:fixed;
+}
+
+.title_left {
+	FONT-SIZE: 13px; 
+	font-weight:bold; 
+	COLOR: #1d6fa6; 
+	FONT-FAMILY: 맑은고딕,MalgunGothic
+}								  text-align: center;
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab01_left.gif) no-repeat left top;
+      							  margin: 0; padding-left: 5px; }
+.tab01 a span 					{ height: 16px; color: #666666;
+								  float: left;
+      							  display: block;
+      							  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab01_right.gif) no-repeat right top;
+								  margin: 0; padding-top: 6px; padding-right: 7px; padding-left: 2px; }
+								  
+/* End IE5-Mac hack */
+.tab01 a:hover 					{ color: #823300;
+								  background-position: 0 -30px; }
+.tab01 a:hover span				{ color: #823300;
+								  background-position: right -30px; }
+.tab01 .current a 				{ color: #823300;
+								  background-position: 0 -30px; }
+.tab01 .current a span 			{ color: #823300;
+								  background-position: right -30px; }
+								  
+								  
+/*
+.tab02 							{ clear: both; width: 100%;
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab02_bg.gif) repeat-x left top;
+								  margin-bottom: 5px;
+								  padding: 0; }
+.tab02 ul 						{ list-style: none;
+								  margin: 0;
+								  padding: 0; }
+.tab02 li 						{ display: inline;
+      							  margin: 0;
+      							  padding: 0; }
+.tab02 a 						{ height: 30px; float: left;
+								  text-align: center;
+								  font-weight: bold; 
+								  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab02_left.gif) no-repeat left top;
+      							  margin: 0; padding-left: 5px; }
+.tab02 a span 					{ height: 18px; color: #999999;
+								  float: left;
+      							  display: block;
+      							  background: transparent url(/GWImages/Yellow/Covi/Common/tab/tab02_right.gif) no-repeat right top;
+								  margin: 0; padding-top: 12px; padding-right: 13px; padding-left: 9px; }*/
+								  
+/* End IE5-Mac hack */
+.tab02 a:hover 					{ color: #000000;
+								  background-position: 0 -30px; }
+.tab02 a:hover span				{ color: #000000;
+								  background-position: right -30px; }
+.tab02 .current a 				{ color: #000000;
+								  background-position: 0 -30px; }
+.tab02 .current a span 			{ color: #000000;
+								  background-position: right -30px; }
+								  
+								  
+								  
+.clas							{ height: 25px; float: right; right: 5px; }
+								  
+						  
+/* ==================================================================================================================================== */
+/* ====================================================업무관리관련 누락CSS 추가 20090305 by ssuby================================================================================ */
+/* 왼쪽 메뉴 밑 Box 관련 */
+.Box                                                 { margin: 0 0px 0 5px; padding: 0; width: 185px; text-align: left; position: relative; }
+.Box_tl                                              { background: #ffffff; font-size: 1px; height: 1px; }
+.Box_tr                                              { background: #ffffff; padding-left: 1px; height: 1px; }
+.Box_tc                                              { background: #cccccc; margin-right: 1px; height: 1px; }
+
+.Box_cl                                              { clear: both; background: #cccccc; }
+.Box_cr                                              { background: #cccccc right; padding-left: 1px; }
+.Box_cc                                              { background: #ffffff; margin-right: 1px; padding: 0; height: 100%;}
+
+.Box_bl                                              { background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_left.gif) no-repeat left; font-size: 1px; height: 5px; }
+.Box_br                                              { background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_right.gif) no-repeat right; padding-left: 5px; height: 5px; }
+.Box_bc                                              { background: url(/GWImages/Yellow/Covi/Common/box/box01_bottom_bg.gif) repeat-x; margin-right: 5px; height: 5px; }
+
+.Box_cc .title                               { background: url(/GWImages/Yellow/Covi/Common/box/box_bg.gif) repeat-x bottom; color:#823300; height: 17px; margin: 0; padding: 7px 0 0 12px; }
+
+.Box_cc ul                                           { margin: 0; padding: 10px 0 0 5px; }
+
+.Box_cc ul li                                { background: url(/GWImages/Yellow/Covi/Common/icon/blt_04.gif) no-repeat; background-position: 0 8px; line-height: 20px; margin: 0; padding: 0 5px 1px 7px; }
+
+.Box_cc ul li a                                      { color: #666666; }
+
+.Box_tab                                             { clear: both; float: left; margin: 0; padding: 0; }
+
+.Box_tab_tl                                  { float: left; background: #cccccc; width: 1px; height: 25px; margin: 0; padding: 0; }
+
+.Box_tab a                                           { width: 92px;
+                                                               height: 19px;
+                                                               color: #333333;
+                                                               text-align: center;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_off.gif) no-repeat;
+                                                               display: block;
+                                                               float: left;
+                                                               margin: 0;                     
+                                                               padding-top: 6px; }
+.Box_tab a:hover                             { width: 92px;
+                                                               height: 19px;
+                                                               color: #823300;
+                                                               text-align: center;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on.gif) no-repeat;
+                                                               display: block;
+                                                              float: left; }                                              
+.Box_tab .current                           { color: #823300;
+                                                               background: url(/GWImages/Yellow/Covi/Common/tab/box_tab_on.gif) no-repeat; }
+/* 2개를 3개로 바뀐 css 2008-06-02 */
+
+.Box_tab02                                           { clear: both; float: left; margin: 0; padding: 0; width: 184px; }
+
+.Box_tab02 a                                 { width: 61px;
+                                                               height: 19px;
+                                
+.title					{ color: #333333; font-weight: bold; width: 90px; height: 25px; background-color: #efefef; padding-left: 10px; }								  
+.line					{ height: 1px; background: #FFFFFF url(/webgw/mv_event/images/line_bg.gif) repeat-x ; font-size:1px; margin: 0; padding:0; }	
+
+.pop_title { font-family:  "맑은고딕", "MalgunGothic"; font-size: 14px; font-weight: bold; color: #GGGGGG;}                                          

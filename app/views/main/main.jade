@@ -1,0 +1,191 @@
+extends ../layouts/default
+block head
+    script(src='/assets/js/detect.js')
+    script(src='/assets/js/fastclick.js')
+    script(src='/assets/js/jquery.slimscroll.js')
+    script(src='/assets/js/jquery.blockUI.js')
+    
+    script(src='/assets/js/waves.js')
+    script(src='/assets/js/wow.min.js')
+    script(src='/assets/js/jquery.nicescroll.js')
+    script(src='/assets/js/jquery.scrollTo.min.js')
+    script(src='/plugins/switchery/switchery.min.js')
+    // skycons
+    script(src='/plugins/skyicons/skycons.min.js', type='text/javascript')
+    // Counter Up
+    script(src='/plugins/waypoints/lib/jquery.waypoints.js')
+    script(src='/plugins/counterup/jquery.counterup.min.js')
+    // circliful Chart
+    script(src='/plugins/jquery-circliful/js/jquery.circliful.min.js')
+    script(src='/plugins/jquery-sparkline/jquery.sparkline.min.js')
+    //Page js
+    script(src='/assets/pages/jquery.dashboard.js')
+
+    script(type='text/javascript').
+      jQuery(document).ready(function($) {
+        $('.counter').counterUp({
+            delay: 100,
+            time: 1200
+        });
+        $('.circliful-chart').circliful();
+      });
+block content
+      .content-page
+        // Start content
+        .content
+          .container
+            // Page-Title
+            .row
+              .col-sm-12
+                .page-title-box
+                  ol.breadcrumb.pull-right
+                    li
+                      a(href='#') Service Desk
+                    li.active Home
+                  h4.page-title Welcome !
+            .row
+              .col-sm-6.col-lg-3
+                .widget-simple-chart.text-right.card-box
+                  .circliful-chart(data-dimension='90', data-text='35%', data-width='5', data-fontsize='14', data-percent='35', data-fgcolor='#5fbeaa', data-bgcolor='#ebeff2')
+                  h3.text-success.counter 2562
+                  p.text-muted.text-nowrap 접수대기
+              .col-sm-6.col-lg-3
+                .widget-simple-chart.text-right.card-box
+                  .circliful-chart(data-dimension='90', data-text='75%', data-width='5', data-fontsize='14', data-percent='75', data-fgcolor='#3bafda', data-bgcolor='#ebeff2')
+                  h3.text-primary.counter 5685
+                  p.text-muted.text-nowrap 처리중
+              .col-sm-6.col-lg-3
+                .widget-simple-chart.text-right.card-box
+                  .circliful-chart(data-dimension='90', data-text='58%', data-width='5', data-fontsize='14', data-percent='58', data-fgcolor='#f76397', data-bgcolor='#ebeff2')
+                  h3.text-pink.counter 248
+                  p.text-muted.text-nowrap 처리완료
+              .col-sm-6.col-lg-3
+                .widget-simple-chart.text-right.card-box
+                  .circliful-chart(data-dimension='90', data-text='49%', data-width='5', data-fontsize='14', data-percent='49', data-fgcolor='#98a6ad', data-bgcolor='#ebeff2')
+                  h3.text-inverse.counter 62
+                  p.text-muted.text-nowrap 협의필요 
+            // end row
+            .row
+              .col-lg-12
+                .card-box.widget-user
+                  div
+                    // <img src="/isu/images/users/avatar-1.jpg" class="img-responsive img-circle" alt="user">
+                    i.fa.fa-calendar(style=' position:absolute; top:32px; left:45px; color:#999; font-size:48px;')
+                    .wid-u-info
+                      h4.m-t-5.m-b-15
+                        | 유지 보수
+                        small.text-muted.m-l-15.font-13 유지보수 계약기간 입니다.
+                      p
+                        b.m-r-10 계약기간 :
+                        |  2017-01-01 ~ 2018-01-01 (
+                        span.text-success
+                          b 365
+                        | 일 남음)
+            // start Chart
+            .row
+              .col-lg-6
+                .card-box
+                  h4.text-dark.header-title.m-t-0.m-b-30 당월 현황 조회
+                  .widget-chart.text-center
+                    #sparkline2
+                    ul.list-inline.m-t-15
+                      li
+                        h5.text-muted.m-t-20 요청처리
+                        h4.m-b-0 75%
+                      li
+                        h5.text-muted.m-t-20 응답율
+                        h4.m-b-0 100%
+                      li
+                        h5.text-muted.m-t-20 만족율
+                        h4.m-b-0 90%
+              .col-lg-6
+                .card-box
+                  h4.text-dark.header-title.m-t-0.m-b-30 증감표
+                  .widget-chart.text-center
+                    #sparkline1
+                    ul.list-inline.m-t-15
+                      li
+                        h5.text-muted.m-t-20 2015
+                        h4.m-b-0 523
+                      li
+                        h5.text-muted.m-t-20 2016
+                        h4.m-b-0 615
+                      li
+                        h5.text-muted.m-t-20 2017
+                        h4.m-b-0 455
+            // end Chart
+            // start 접수현황
+            .row
+              .col-lg-12
+                .card-box
+                  h4.text-dark.header-title.m-t-0 접수현황
+                  p.text-muted.m-b-25.font-12 최근 접수 순서대로 나열합니다. 
+                  .table-responsive
+                    table.table
+                      thead
+                        tr
+                          th(width='4%') #
+                          th 제목
+                          th(width='16%') 등록일
+                          th(width='10%') 요청경로
+                          th(width='12%') 진행구분
+                          th(width='10%') 담당자
+                          th(width='16%') 접수(완료)일
+                      tbody
+                        tr
+                          td 1
+                          td 부팅안됨
+                          td 2017-09-04 10:53
+                          td 전화
+                          td
+                            span.label.label-info 미평가
+                          td 김이수
+                          td 2017-09-08 15:30
+                        tr
+                          td 2
+                          td 부팅안됨
+                          td 2017-09-04 10:53
+                          td 전화
+                          td
+                            span.label.label-success 미평가
+                          td 김이수
+                          td 2017-09-08 15:30
+                        tr
+                          td 3
+                          td 부팅안됨
+                          td 2017-09-04 10:53
+                          td 전화
+                          td
+                            span.label.label-pink 미평가
+                          td 김이수
+                          td 2017-09-08 15:30
+                        tr
+                          td 4
+                          td 부팅안됨
+                          td 2017-09-04 10:53
+                          td 전화
+                          td
+                            span.label.label-purple 미평가
+                          td 김이수
+                          td 2017-09-08 15:30
+                        tr
+                          td 5
+                          td 부팅안됨
+                          td 2017-09-04 10:53
+                          td 전화
+                          td
+                            span.label.label-warning 미평가
+                          td 김이수
+                          td 2017-09-08 15:30
+                        tr
+                          td 6
+                          td 부팅안됨
+                          td 2017-09-04 10:53
+                          td 전화
+                          td
+                            span.label.label-primary 미평가
+                          td 김이수
+                          td 2017-09-08 15:30
+block footer
+        footer.footer.text-right
+          | 2017 ⓒ ISU Group.

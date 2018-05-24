@@ -1,0 +1,65 @@
+extends ../layouts/default
+block head
+    script(type='text/javascript').
+        var higherProcessObj = !{JSON.stringify(higherProcess).replace(/<\//g, '<\\/')};
+    script(src='/isu/js/higherProcess/edit.js')
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') SD기본정보
+                                li.active 상위업무 수정
+                            h4.page-title 상위업무 수정
+                .row
+                    .col-sm-12
+                        .card-box
+                            .p-20
+                                .btn-toolbar.form-group
+                                    form.form-horizontal.group-border-dashed(name='form' action='/higherProcess/#{higherProcess._id}/edit' method='post')
+                                        .form-group
+                                            .pull-left
+                                                .btn.btn-primary.waves-effect.waves-light.m-l-5(onclick="location.href='/higherProcess'")
+                                                    i.fa.fa-list-ul
+                                                    |  목록
+                                                .btn.btn-inverse.waves-effect.waves-light.m-l-5(onclick="location.href='/higherProcess/#{higherProcess._id}/delete'") 
+                                                    i.fa.fa-remove
+                                                    |  삭제
+                                            .pull-right
+                                                button.btn.btn-primary(type='submit')
+                                                    i.fa.fa-send-o
+                                                    |  저장
+                                        hr
+                                        .form-group
+                                            label.col-sm-3.control-label 상위업무코드
+                                            .col-sm-3
+                                                input.form-control(type='text', name='higherProcess[higher_cd]', value='#{higherProcess.higher_cd}', placeholder='', readonly)
+                                        .form-group
+                                            label.col-sm-3.control-label 상위업무명
+                                            .col-sm-3
+                                                input.form-control(type='text', name='higherProcess[higher_nm]', value='#{higherProcess.higher_nm}', placeholder='')
+                                        .form-group
+                                            label.col-sm-3.control-label 설명
+                                            .col-sm-9
+                                                input.form-control(type='text', name='higherProcess[description]', value='#{higherProcess.description}',placeholder='')
+                                        .form-group(style='display:none')
+                                            label.col-sm-3.control-label 회사명
+                                            .col-sm-3
+                                                input.form-control(type='text', name='higherProcess[company_nm]', value='#{higherProcess.company_nm}', placeholder='')
+                                        .form-group(style='display:none')
+                                            label.col-sm-3.control-label 이메일
+                                            .col-sm-3
+                                                input.form-control(type='text', name='higherProcess[sabun]', value='#{higherProcess.sabun}', placeholder='')
+                                        .form-group
+                                            label.col-sm-3.control-label 사용여부
+                                            .col-sm-3
+                                                select.form-control.input-sm(id='use_yn' name='higherProcess[use_yn]' type='text' value='#{higherProcess.use_yn}')
+                                                    option(value='사용') 사용 
+                                                    option(value='미사용') 미사용

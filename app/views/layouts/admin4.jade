@@ -1,0 +1,155 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1')
+        meta(name='description', content='A fully featured admin theme which can be used to build CRM, CMS, etc.')
+        meta(name='author', content='Coderthemes')
+        link(href='/assets/images/favicon_1.ico', rel='shortcut icon')
+        title Service Desk - HOME
+        link(href='/plugins/switchery/switchery.min.css', rel='stylesheet')
+        link(type='text/css', href='/plugins/jquery-circliful/css/jquery.circliful.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/bootstrap.min.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/core.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/icons.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/components.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/menu_light.css', rel='stylesheet')
+        link(type='text/css', href='/assets/css/responsive.css', rel='stylesheet')
+        script(src='/assets/js/modernizr.min.js')
+        // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+        // WARNING: Respond.js doesn't work if you view the page via file://
+        //if lt IE 9
+        script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+        script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+        // Plugins
+        script(src='/assets/js/jquery.min.js')
+        script(src='/assets/js/bootstrap.min.js')
+        script(type='text/javascript').
+            var resizefunc = [];  
+
+    block head
+    body.widescreen.fixed-left-void
+        #wrapper.forced
+            .topbar
+                .topbar-left
+                    .text-center
+                        a.logo(href='/')
+                            span isu
+                            img(src='/isu/images/ci_isu_white.png', alt='ISU')
+                .navbar.navbar-default(role='navigation')
+                    .container
+                        div
+                            .pull-left
+                                button.button-menu-mobile.open-left.waves-effect
+                                    i.md.md-menu
+                                span.clearfix
+                            ul.nav.navbar-nav.hidden-xs
+                                li
+                                    a.waves-effect(href='/incident/new/문의하기') 문의하기
+                                li
+                                    a.waves-effect(href='/incident') 처리진행현황
+                                - if(session.group_flag =="in") {
+                                li
+                                    a.waves-effect(href='/search/user_qna') 자주묻는질문과답
+                                - }
+                                //form.navbar-left.app-search.pull-left.hidden-xs(role='search')
+                                    input.form-control.app-search-input(type='text', placeholder='Search...')
+                                    a(href='')
+                                        i.fa.fa-search
+                            ul.nav.navbar-nav.navbar-right.pull-right
+                                li.hidden-xs
+                                    a.waves-effect.waves-light(href='/usermanage/myPage')
+                                        i.md.md-account-circle
+                                        |  마이페이지
+                                li.hidden-xs
+                                    a.waves-effect.waves-light(href='/logout')
+                                        i.md.md-settings-power
+                                        |  로그아웃
+            .left.side-menu
+                .sidebar-inner.slimscrollleft
+                    #sidebar-menu
+                        ul
+                            li.menu-title Service Desk
+                            li.has_sub
+                                a.waves-effect.waves-primary(href='javascript:void(0);')
+                                    i.md.md-now-widgets
+                                    span  문의하기
+                                    span.menu-arrow
+                                ul.list-unstyled
+                                    li
+                                        a(href='/incident/new/문의하기')
+                                            | 문의등록  
+                                            //i.fa.fa-circle-o.text-pink.m-l-5
+                                    li
+                                        a(href='/incident') 처리진행현황
+                                    - if(session.group_flag =="in") {
+                                    li
+                                        a(href='/search/user_qna') 자주묻는 질문과답
+                                    - }
+                                    li
+                                        a(href='/search/user_list')
+                                            | 처리된 내용검색 
+                                            //i.fa.fa-circle-o.text-pink.m-l-5
+                            //업무담당자 오픈
+                            li.has_sub
+                                a.waves-effect.waves-primary(href='javascript:void(0);')
+                                    i.md.md-person
+                                    span  SD 담당자 
+                                    span.menu-arrow
+                                ul.list-unstyled(style="display:block")
+                                    li
+                                        a(href='/incident/new_mng') 상담접수(전화)
+                                    li
+                                        a(href='/manager/work_list') 나의 업무처리현황
+                                    li
+                                        a(href='/myProcess/') 나의 업무지정
+                                    //li
+                                        a(href='/manager/month_list') 월별 처리내역
+                            li.has_sub
+                                a.waves-effect.waves-primary(href='javascript:void(0);')
+                                    i.md.md-search
+                                    span  SD 검색/통계 
+                                    span.menu-arrow
+                                ul.list-unstyled
+                                    li
+                                        a(href='/search/mng_list') 전체내용검색
+                                    li
+                                        a(href='/statistic/com_higher') 회사별 상위업무통계
+                                    li
+                                        a(href='/statistic/high_lower') 상위별 하위업무통계
+                            li.has_sub
+                                a.waves-effect.waves-primary(href='javascript:void(0);')
+                                    i.md.md-view-list
+                                    span  SD 기본정보 
+                                    span.menu-arrow
+                                ul.list-unstyled
+                                    //li
+                                        a(href='/higherProcess/') 상위업무조회
+                                    //li
+                                        a(href='/lowerProcess/') 하위업무조회
+                                    li
+                                        a(href='/company/')
+                                            | 회사정보관리(외부) 
+                                    li
+                                        a(href='/usermanage/')
+                                            | 사원정보관리(내외) 
+                                    li
+                                        a(href='/usermanageAccess/')
+                                            | 미승인 사원관리
+                                    li
+                                        a(href='/companyProcess/') 회사별 상위업무지정
+                                    //li
+                                        a(href='/processGubun/') 처리구분 코드조회
+                                    //li
+                                        a(href='gw_sub4_7.html') 업무별 담당자현황
+                                    li
+                                        a(href='/oftenqna/') 자주묻는 질문과답
+                        .clearfix
+                    .clearfix
+            .clearfix
+            block content
+            block footer
+
+    // Custom main Js
+    script(src='/assets/js/jquery.core.js')
+    script(src='/assets/js/jquery.app.js')

@@ -1,0 +1,86 @@
+extends ../layouts/default
+block head
+    script(src='/vendor/jquery/jquery.min.js')
+    script(src='/isu/js/usermanage/index.js', type='text/javascript')
+
+block content
+    .content-page
+        .content
+            .container
+                // Page-Title
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') SD 기본정보
+                                li.active 사원정보관리(내외)
+                            h4.page-title 사원정보관리(내외)
+                .row
+                    .col-lg-12
+                        .card-box
+                            form.form-horizontal.group-border-dashed(action='#', onsubmit='return false;')
+                                .form-group
+                                    label.col-sm-2.control-label 회사명 
+                                    .col-sm-4
+                                        select.form-control(id='company_cd' name='company_cd')
+                                            option(value ='*') 전체
+                                            - if (company.length > 0) {
+                                                - for( var i = 0 ; length = company.length > i ; i++ ){ //속도가 느리다고 알고 있음.
+                                                    option(value ='#{company[i].company_cd}') #{company[i].company_nm}
+                                                - }
+                                            - }
+                                    label.col-sm-2.control-label 사용유무
+                                    .col-sm-2
+                                        select.form-control(id='using_yn' name='using_yn')
+                                            option(value ='*') 전체
+                                            option(value ='Y') 사용
+                                            option(value ='N') 미사용
+                                .form-group.m-b-0
+                                    label.col-sm-2.control-label 검색어
+                                    .col-sm-2
+                                        select.form-control(id='searchType' name='searchType')
+                                            option(value='company_nm,employee_nm') 전체
+                                            option(value='company_nm') 회사명
+                                            option(value='employee_nm') 사원명
+                                    .col-sm-6
+                                        input.form-control(id='searchText' name='searchText' type='text')
+                                    .col-sm-2
+                                        button.btn.btn-primary(id='searchBtn' type='button') 조회
+                .row
+                    .col-sm-12
+                        .btn-toolbar.form-group
+                                .pull-left
+                                    a.btn.btn-primary.waves-effect.waves-light.m-l-5(href='/usermanage/new')
+                                        i.fa.fa-edit
+                                        |  추가
+                        .card-box
+                            //table.table.table-bordered
+                            table.table.table-hover
+                                thead
+                                    tr
+                                        th.text-center 회사명
+                                        th.text-center email
+                                        th.text-center 사원명
+                                        th.text-center 부서명
+                                        th.text-center(width='6%') 직위
+                                        th.text-center(width='14%') 연락처
+                                        th.text-center(width='6%') 사용여부
+                                        th.text-center(width='6%') 메일발송
+                                tbody(id='more_list')
+                        .row
+                            .col-sm-4
+                                .dataTables_info Showing 1 to 15 of 
+                                    span(id='totalPage')
+                                    |  pages
+                            .col-sm-8
+                                .dataTables_paginate.paging_simple_numbers.pull-right
+                                    ul#paging.pagination
+
+    #ajax_indicator(style='display:none')
+        p(style='text-align:center; padding:16px 0 0 0; left:50%; top:40%; position:absolute;')
+            img(src='/isu/images/large-loading.gif', width='26px', height='26px', alt='처리중', border='0', align='absmiddle')
+
+block footer

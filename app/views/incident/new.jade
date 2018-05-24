@@ -1,0 +1,112 @@
+extends ../layouts/default
+block head
+    // summernot
+    link(href='/plugins/summernote/dist/summernote.css', rel='stylesheet')
+    // form summernote
+    script(src='/plugins/summernote/dist/summernote.min.js')
+
+    //첨부파일
+    script(src='/vendor/fileupload/js/fileinput.js', type='text/javascript')
+    link(href='/vendor/fileupload/css/fileinput.css', media='all', rel='stylesheet', type='text/css')
+
+    link(href='/plugins/switchery/switchery.min.css', rel='stylesheet')
+    link(href='/assets/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/core.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/icons.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/components.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/pages.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/menu_light.css', rel='stylesheet', type='text/css')
+    link(href='/assets/css/responsive.css', rel='stylesheet', type='text/css')
+
+    script(src='/assets/js/modernizr.min.js')
+
+    script(src='/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')
+    script(src='/plugins/bootstrap-daterangepicker/daterangepicker.js')
+    
+    script(src='/isu/js/incident/new.js', type='text/javascript')
+    
+
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='/index') Home
+                                li
+                                    a(href='/incident/new') 문의 및 담당자
+                                li.active 문의하기
+                            h4.page-title 문의하기
+                .row
+                    .col-sm-12
+                        .btn-toolbar.m-t-10(role='toolbar')
+                            .pull-right
+                                button#saveBtn.btn.btn-primary.waves-effect.waves-light.m-r-5(type='button')
+                                    span 저장
+                                    i.fa.fa-send.m-l-10
+                .row
+                    .col-lg-12
+                        .card-box.m-t-10
+                            .p-20
+                                form.form-horizontal.group-border-dashed(id='form' name='form' action='/incident/new' method='post' enctype='multipart/form-data')  
+                                    .form-group
+                                        label.col-sm-2.control-label 요청업무
+                                        .col-sm-4
+                                            input#higher_nm.form-control(type='hidden' name='incident[higher_nm]')
+                                            select#higher_cd.form-control(name='incident[higher_cd]')
+                                                option(value ='') 선택하세요
+                                                - if (companyProcess.length > 0) {
+                                                    - for( var i = 0 ; length = companyProcess.length > i ; i++ ){ //속도가 느리다고 알고 있음.
+                                                        option(value ='#{companyProcess[i].higher_cd}') #{companyProcess[i].higher_nm}
+                                                    - }
+                                                - }
+                                        label.col-sm-2.control-label 긴급구분
+                                        .col-sm-2
+                                            select.form-control(name='incident[process_speed]')
+                                                option(value='N') 보통
+                                                option(value='Y') 긴급     
+                                    .form-group
+                                        label.col-sm-2.control-label 요청자명
+                                        .col-sm-4
+                                            input.form-control(type='text', name='incident[real_register_mm]', style = "ime-mode:active", required, value=user_nm)
+                                        label.col-sm-2.control-label 연락처
+                                        .col-sm-4
+                                            input.form-control(type='text', name='incident[real_contact]', placeholder='전화번호 / hong@xxxx.co.kr', required, value=real_contact)
+                                    .form-group(id='app_menu', style='display:none')
+                                        label.col-sm-2.control-label 문의요청 화면
+                                        .col-sm-10
+                                            input.form-control(type='text', name='incident[app_menu]', placeholder='인사관리>발령정보>발령처리' )                 
+                                    .form-group
+                                        label.col-sm-2.control-label 요청완료일
+                                        .col-sm-4
+                                            .input-group
+                                                .input-group
+                                                    input#datepicker-rcd.form-control(type='text', placeholder='yyyy/mm/dd', name='incident[request_complete_date]')
+                                                    span.input-group-addon.bg-primary.b-0.text-white
+                                                        i.ion-calendar
+                                        //label.col-sm-2.control-label 공개여부
+                                        //.col-sm-2
+                                            .checkbox.checkbox-primary.checkbox-single.p-t-10
+                                                input#singleCheckbox1(type='checkbox', value='Y', aria-label='Single checkbox One', name='incident[complete_open_flag]')
+                                                label
+                                    .form-group
+                                        label.col-sm-2.control-label 제목
+                                        .col-sm-10
+                                            input.form-control(type='text', name='incident[title]', style = "ime-mode:active", required, value=title)
+                                    .form-group
+                                        .col-sm-12
+                                            textarea#summernote.summernote(name='incident[content]')
+                                    .row
+                                        .col-md-12.portlets
+                                            .m-b-30
+                                                //input#attach-file.file(name='incident[attach-file]',  type='file', data-upload-url="#", multiple)
+                                                input#attach-file.file(name='incident[attach-file]', type='file', data-show-preview='false', data-show-upload='false', multiple)
+
+block footer
+
+
+

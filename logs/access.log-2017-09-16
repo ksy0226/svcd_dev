@@ -1,0 +1,4 @@
+[2017-09-16 10:27:50.408] [WARN] http - fe80::689b:78cd:d521:13f7 - - "GET / HTTP/1.1" 302 77 "" "avast! Antivirus"
+[2017-09-16 10:27:50.929] [INFO] http - fe80::689b:78cd:d521:13f7 - - "GET / HTTP/1.1" 200 6183 "" "avast! Antivirus"
+[2017-09-16 10:27:51.434] [WARN] http - ::ffff:10.30.30.65 - - "GET / HTTP/1.1" 302 47 "" "avast! Antivirus"
+[2017-09-16 10:27:51.798] [INFO] http - ::ffff:10.30.30.65 - - "GET / HTTP/1.1" 200 6183 "" "avast! Antivirus"

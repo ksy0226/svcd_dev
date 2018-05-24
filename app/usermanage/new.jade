@@ -1,0 +1,56 @@
+extends ../layouts/default
+
+block content
+    .content
+            .container
+                .row(style='margin-top:20px')
+                    .col-xs-12.col-sm-10.col-md-8
+                        h3.masthead-brand 사원정보관리(내외) > 추가
+                        hr.colorgraph
+                form.form.col-md-12.center-block(name='form' action='/usermanage/new' method='post')
+                    .row(style='margin-top:-15px')
+                        .col-xs-12.col-sm-10.col-md-8
+                            .form-group
+                                button.btn.btn-success.btn-md(type='submit') 저장
+                    .row(style='margin-top:20px') 
+                        .col-xs-12.col-sm-10.col-md-8
+                            form.form.center-block(name='form' action='/usermanage/new' method='post')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[compannyNm]' type='text' placeholder='회사명' required value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[userId]' type='text' placeholder='아이디' required value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[password]' type='text' placeholder='비밀번호' required value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[userNm]' type='text' placeholder='사원명' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[deptNm]' type='text' placeholder='부서명' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[jikwe]' type='text' placeholder='직위' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[jikchk]' type='text' placeholder='직책' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[email]' type='email' placeholder='e-mail' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[hpNo]' type='text' placeholder='핸드폰번호' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[birthdayDt]' type='text' placeholder='생년월일' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[post]' type='text' placeholder='우편번호' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[address]' type='text' placeholder='회사주소' value='')
+                                .form-group
+                                    input.form-control.input-lg(name='usermanage[callNo]' type='text' placeholder='회사전화번호' value='')
+                                .form-group
+                                    label 사용자권한구분
+                                    select.form-control.input-lg(name='usermanage[userFlag]')
+                                        option(value='1') 그룹관리자 
+                                        option(value='2') 회사관리자
+                                        option(value='3') 업무관리자
+                                        option(value='4') 업무담당자
+                                        option(value='9' Selected) 일반사용자
+                                .form-group
+                                    label 그룹사권한구분
+                                    select.form-control.input-lg(name='usermanage[groupFlag]')
+                                        option(value='out' Selected) 외부사용자 
+                                        option(value='in') 내부사용자

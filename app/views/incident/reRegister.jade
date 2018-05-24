@@ -1,0 +1,143 @@
+extends ../layouts/default
+block head
+    script(type='text/javascript').
+        var incidentObj = !{JSON.stringify(incident).replace(/<\//g, '<\\/')};
+    script(src='/isu/js/incident/reRegister.js')
+
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='/index') Home
+                                li
+                                    a(href='/incident/new') 문의 및 담당자
+                                li.active 처리된 내용검색
+                            h4.page-title 처리된 내용검색
+                        .row
+                            .col-lg-12
+                                .btn-toolbar.m-t-10(role='toolbar')
+                                    .pull-left                               
+                                        button.btn.btn-primary.waves-effect.waves-light.m-l-5(onclick="location.href='/search/user_list'")
+                                            i.fa.fa-bars
+                                            | 목록
+                                        buttonn#registerBtn.btn.btn-warning.waves-effect.waves-light.m-l-5(type='button' onclick="location.href='/incident/edit/#{incident._id}'")
+                                            i.fa.fa-copy
+                                            | 재등록
+                        .row
+                            .col-sm-12.m-t-20
+                                .card-box
+                                    h4
+                                        b 접수 내용
+                                    hr.m-0
+                                    table.table.table-bordered
+                                        colgroup
+                                            col(width='20%')
+                                            col(width='30%')
+                                            col(width='20%')
+                                            col(width='30%')
+                                        tbody
+                                        tr
+                                            th.bg-muted 진행상태
+                                                td
+                                                    span#_status_nm
+                                            th.bg-muted 긴급구분
+                                                td#_process_speed
+                                        tr
+                                            th.bg-muted 상위업무
+                                            td#_higher_nm
+                                            th.bg-muted 하위업무
+                                            td#_lower_nm
+                                        tr
+                                            th.bg-muted 요청자
+                                            td#_request_company_nm-request_nm
+                                            th.bg-muted 완료요청일
+                                            td#_request_complete_date
+                                        tr
+                                            th.bg-muted 요청경로
+                                            td#_app_menu
+                                            th.bg-muted 등록자/등록일
+                                            td#_register_nm-register_date
+                                        tr
+                                            th.bg-muted 제목
+                                            td#_title(colspan='3')
+                                        tr
+                                            th.bg-muted 요청내용
+                                            td#_content(colspan='3')
+                                        tr(style='display:')
+                                            th.bg-muted 첨부파일
+                                            //td(colspan='3')
+                                                i.fa.fa-paperclip.m-r-10
+                                                a(href='#')
+                                                    span.text-pink faqimage.gif
+                                            td(colspan='3')
+                                                span#_attach
+                                        tr
+                                            th.bg-muted 접수상담내용
+                                            td(colspan='3')
+                                                | 접수하였습니다.
+                                                br
+                        .row
+                            .col-sm-12.m-t-20
+                                .card-box
+                                    h4
+                                        //h4.m-t-30
+                                        b 처리 내용
+                                    hr.m-0
+                                    table.table.table-bordered.m-t-0
+                                        colgroup
+                                            col(width='20%')
+                                            col(width='30%')
+                                            col(width='20%')
+                                            col(width='30%')
+                                        tbody
+                                            tr
+                                                th.bg-muted 처리담당자
+                                                td#_manager_nm
+                                                th.bg-muted 접수일
+                                                td#_receipt_date
+                                            tr
+                                                th.bg-muted 완료예정일
+                                                td#_complete_reserve_date
+                                                th.bg-muted 난이도
+                                                td
+                                                    span#_business_level.badge.badge-danger
+                                            tr
+                                                th.bg-muted 처리구분
+                                                td(colspan='3') 
+                                                    span#_process_nm
+                                            tr
+                                                th.bg-muted 처리내용
+                                                td#_complete_content(colspan='3')
+
+                                            tr
+                                                th.bg-muted 처리완료일
+                                                td#_complete_date
+                                                th.bg-muted 처리소요시간
+                                                td#_work_time
+                                                    //i.fa.fa-clock-o.text-muted
+                                                    //b.m-l-10.m-r-5
+                                                    //| 시간
+                                            tr
+                                                th.bg-muted 지연사유
+                                                td#_delay_reason(colspan='3')
+                                            tr
+                                                th.bg-muted 평가
+                                                td#_valuation
+                                                th.bg-muted 공개여부
+                                                td#_complete_open_flag
+                                            
+                                            //tr
+                                                th.bg-muted.text-danger 내부공유사항
+                                                td#_sharing_content(colspan='3')
+
+
+block footer
+
+
+

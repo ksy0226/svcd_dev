@@ -1,0 +1,53 @@
+extends ../layouts/default
+block head
+    script(src='/vendor/jquery/jquery.min.js')
+    script(src='/isu/js/higherProcess/index.js', type='text/javascript')
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') SD기본정보
+                                li.active 상위업무조회
+                            h4.page-title 상위업무조회
+                .row
+                    .col-lg-12
+                        .card-box
+                            form.form-horizontal.group-border-dashed(action='#', onsubmit='return false;')
+                                .form-group.m-b-0
+                                    label.col-sm-2.control-label 상위업무명
+                                    .col-sm-4
+                                        input.form-control(id='searchText' name='searchText' type='text' value=searchText)
+                                    .col-sm-2
+                                        button.btn.btn-primary(id='searchBtn' type='button') 조회
+                .row
+                    .col-sm-12
+                        .btn-toolbar.form-group
+                            .pull-left
+                                a.btn.btn-primary.waves-effect.waves-light.m-l-5(href='/higherProcess/new')
+                                    i.fa.fa-edit
+                                    |  추가
+                        .card-box
+                            table.table.table-hover
+                                thead
+                                    tr
+                                        th.text-center(width='25%') 상위업무명
+                                        th.text-center 설명
+                                        th.text-center(width='11%') 등록일
+                                        th.text-center(width='10%') 사용여부
+                                tbody(id='more_list')
+                        .row
+                            .col-sm-4
+                                .dataTables_info Showing 1 to 15 of 
+                                    span(id='totalPage')
+                                    |  pages
+                            .col-sm-8
+                                .dataTables_paginate.paging_simple_numbers.pull-right
+                                    ul#paging.pagination

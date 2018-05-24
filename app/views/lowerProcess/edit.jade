@@ -1,0 +1,86 @@
+extends ../layouts/default
+block head
+    script(type='text/javascript').
+        var lowerProcessObj = !{JSON.stringify(lowerProcess).replace(/<\//g, '<\\/')};
+    script(src='/isu/js/lowerProcess/edit.js')
+
+block content
+    .content-page
+        .content
+            .container
+                // Page-Title
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') SD기본정보
+                                li.active 하위업무 수정
+                            h4.page-title 하위업무 수정
+                .row
+                    .col-sm-12
+                        .card-box
+                            .p-20
+                                .btn-toolbar.form-group
+                                    form.form-horizontal.group-border-dashed(id='lowerProcessForm' name='form' action='/lowerProcess/edit/#{lowerProcess._id}' method='post')
+                                        .form-group
+                                            .pull-left
+                                                .btn.btn-primary.waves-effect.waves-light.m-l-5(onclick="location.href='/lowerProcess'")
+                                                    i.fa.fa-list-ul
+                                                    |  목록
+                                                .btn.btn-inverse.waves-effect.waves-light.m-l-5(onclick="location.href='/lowerProcess/delete/#{lowerProcess._id}'") 
+                                                    i.fa.fa-remove
+                                                    |  삭제
+                                            .pull-right
+                                                button.btn.btn-primary(type='submit')
+                                                    i.fa.fa-send-o
+                                                    |  저장
+                                        hr
+                                        .form-group(style='display:none')
+                                            label.col-sm-3.control-label 상위업무코드
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[higher_cd]', type='text', placeholder='', value='#{lowerProcess.higher_cd}', disabled)
+                                        .form-group
+                                            label.col-sm-3.control-label 상위업무명
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[higher_nm]', type='text', value='#{lowerProcess.higher_nm}', disabled)
+                                        .form-group
+                                            label.col-sm-3.control-label 하위업무코드
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[lower_cd]', type='text', value='#{lowerProcess.lower_cd}')
+                                        .form-group
+                                            label.col-sm-3.control-label 하위업무명
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[lower_nm]', type='text', value='#{lowerProcess.lower_nm}')
+                                        .form-group
+                                            label.col-sm-3.control-label 설명
+                                            .col-sm-9
+                                                input.form-control(name='lowerProcess[description]', type='text', value='#{lowerProcess.description}')
+                                        .form-group
+                                            label.col-sm-3.control-label 소요시간
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[need_hour]', type='text', value='#{lowerProcess.need_hour}')
+                                        .form-group(style='display:none')
+                                            label.col-sm-3.control-label 회사코드
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[company_cd]', type='text', value='#{lowerProcess.company_cd}')
+                                        .form-group(style='display:none')
+                                            label.col-sm-3.control-label 회사명
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[company_nm]', type='text', value='#{lowerProcess.company_nm}')
+                                        .form-group(style='display:none')
+                                            label.col-sm-3.control-label 사번
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[sabun]', type='text', value='#{lowerProcess.sabun}')
+                                        .form-group(style='display:none')
+                                            label.col-sm-3.control-label 등록자
+                                            .col-sm-3
+                                                input.form-control(name='lowerProcess[user_nm]', type='text', value='#{lowerProcess.user_nm}')
+                                        .form-group
+                                            label.col-sm-3.control-label 사용여부
+                                            .col-sm-3
+                                                select.form-control.input-sm(id='use_yn', name='lowerProcess[use_yn]')
+                                                    option(value='사용' Selected) 사용 
+                                                    option(value='미사용') 미사용

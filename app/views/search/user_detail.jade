@@ -1,0 +1,206 @@
+extends ../layouts/default
+block head
+    link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    //link(href='/isu/css/board_style.css', rel='stylesheet')
+    
+
+    script(src='/isu/js/search/user_detail.js', type='text/javascript')
+    script(src='/isu/js/search/user_list.js', type='text/javascript')
+
+block content
+    .content-page
+        // Start content
+        .content
+            .container
+                // Page-Title
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') 문의 및 담당자
+                                li.active 처리된 내용검색
+                            h4.page-title 처리된 내용검색
+
+                    
+                    .row
+                        .col-lg-12
+                            .btn-toolbar.m-t-10(role='toolbar')
+                                .pull-left
+                                    button.btn.btn-primary.waves-effect.waves-light.m-l-5(type='button' onClick='javascript:goList();')
+                                        i.fa.fa-bars
+                                        |  목록
+                                    button.btn.btn-primary.waves-effect.waves-light.m-l-5(type='button' onClick='window.print();')
+                                        i.fa.fa-print
+                                        |  인쇄
+                                //.pull-right
+                                    button.btn.btn-info.waves-effect.waves-light.m-r-5(type='button')
+                                        i.fa.fa-file-pdf-o
+                                        |  PDF Download
+                                    button.btn.btn-success.waves-effect.waves-light.m-r-5(type='button')
+                                        i.fa.fa-file-excel-o
+                                        |  Excel Download
+                                    button.btn.btn-purple.waves-effect.waves-light.m-r-5(type='button')
+                                        i.fa.fa-edit
+                                        |  버튼
+                                    button.btn.btn-primary.waves-effect.waves-light.m-r-5(type='button')
+                                        i.fa.fa-edit
+                                        |  인쇄
+                    // End Button Area
+                    // start Grid Area
+                    .row
+                        .col-sm-12.m-t-20
+                            .card-box
+                                h4
+                                    b 접수 내용
+                                hr.m-0
+                                table.table.table-bordered
+                                    colgroup
+                                        col(width='20%')
+                                        col(width='30%')
+                                        col(width='20%')
+                                        col(width='30%')
+                                    tbody
+                                        tr
+                                            th.bg-muted 진행상태
+                                            - if( incident.status_cd == '1'){
+                                                td
+                                                    span.label.label-inverse #{incident.status_nm}
+                                            - }else if( incident.status_cd == '2'){
+                                                td
+                                                    span.label.label-primary #{incident.status_nm}       
+                                            - }else if( incident.status_cd == '3'){
+                                                td
+                                                    span.label.label-success #{incident.status_nm}       
+                                            - }else if( incident.status_cd == '4'){
+                                                td
+                                                    span.label.label-purple #{incident.status_nm}       
+                                            - }else if( incident.status_cd == '5'){
+                                                td
+                                                    span.label.label-info #{incident.status_nm}       
+                                            - }else if( incident.status_cd == '9'){
+                                                td
+                                                    span.label.label-default #{incident.status_nm}       
+                                            - }
+                                            th.bg-muted 긴급구분
+                                            - if( incident.process_speed == '1'){
+                                                td 보통
+                                            - }else{
+                                                td 긴급
+                                            - }
+                                        tr
+                                            th.bg-muted 상위업무
+                                            td(id='higher_nm' value='#{incident.higher_nm}') #{incident.higher_nm}
+                                            th.bg-muted 하위업무
+                                            td #{incident.lower_nm}
+                                        tr
+                                            th.bg-muted 요청자
+                                            td #{incident.request_company_nm} / #{incident.request_nm}
+                                            th.bg-muted 완료요청일
+                                            td #{incident.request_complete_date}
+                                        tr
+                                            th.bg-muted 요청경로
+                                            td #{incident.app_menu}
+                                            th.bg-muted 등록자/등록일
+                                            td #{incident.register_nm} / #{incident.register_date}
+                                        tr
+                                            th.bg-muted 제목
+                                            td(colspan='3') #{incident.title}
+                                        tr
+                                            th.bg-muted 요청내용
+                                            td(colspan='3') #!{incident.content}
+                                        tr(style='display:')
+                                            th.bg-muted 첨부파일
+                                            td(colspan='3')
+                                            
+                                                
+                                        tr
+                                            th.bg-muted 접수상담내용
+                                            td(colspan='3')
+                                                | 접수하였습니다.
+                                                br
+                                        
+                                h4.m-t-30
+                                    b 처리 내용
+                                hr.m-0
+                                table.table.table-bordered.m-t-0
+                                    colgroup
+                                        col(width='20%')
+                                        col(width='30%')
+                                        col(width='20%')
+                                        col(width='30%')
+                                    tbody
+                                        tr
+                                            th.bg-muted 처리담당자
+                                            td #{incident.manager_nm}
+                                            th.bg-muted 접수일
+                                            td #{incident.receipt_date}
+                                        tr
+                                            th.bg-muted 완료예정일
+                                            td #{incident.complete_reserve_date}
+                                            th.bg-muted 난이도
+                                            td
+                                                span.badge.badge-danger #{incident.business_level}
+                                        tr
+                                            th.bg-muted 처리구분
+                                            td(colspan='3') #{incident.business_level}
+                                        tr
+                                            th.bg-muted 처리내용
+                                            td(colspan='3') #{incident.complete_content}
+
+                                        tr
+                                            th.bg-muted 처리완료일
+                                            td #{incident.complete_date}
+                                            th.bg-muted 처리소요시간
+                                            td
+                                                i.fa.fa-clock-o.text-muted
+                                                b.m-l-10.m-r-5 #{incident.need_minute}
+                                                | 시간
+                                        tr
+                                            th.bg-muted 지연사유
+                                            td(colspan='3') #{incident.delay_reason}
+                                        tr
+                                            th.bg-muted 평가
+                                            td #{incident.valuation}
+                                            th.bg-muted 공개여부 / 조회수
+                                            td #{incident.complete_open_flag} / #{incident.reading_cnt}
+                                        tr
+                                            th.bg-muted.text-danger 내부공유사항
+                                            td(colspan='3') #{incident.sharing_content}
+                    // end Grid Area
+                // end container
+            // end content
+            footer.footer.text-right  2017 © ISU Group. 
+            // ==============================================================
+            // End Right content here
+            // ==============================================================
+            // END wrapper
+    script.
+        var resizefunc = [];
+    // jQuery
+    script(src='/assets/js/jquery.min.js')
+    script(src='/assets/js/bootstrap.min.js')
+    script(src='/assets/js/detect.js')
+    script(src='/assets/js/fastclick.js')
+    script(src='/assets/js/jquery.slimscroll.js')
+    script(src='/assets/js/jquery.blockUI.js')
+    script(src='/assets/js/waves.js')
+    script(src='/assets/js/wow.min.js')
+    script(src='/assets/js/jquery.nicescroll.js')
+    script(src='/assets/js/jquery.scrollTo.min.js')
+    script(src='../plugins/switchery/switchery.min.js')
+    script(src='../plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')
+    script(type='text/javascript', src='../plugins/multiselect/js/jquery.multi-select.js')
+    script(type='text/javascript', src='../plugins/jquery-quicksearch/jquery.quicksearch.js')
+    script(src='../plugins/select2/select2.min.js', type='text/javascript')
+    script(src='../plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js', type='text/javascript')
+    script(src='../plugins/bootstrap-inputmask/bootstrap-inputmask.min.js', type='text/javascript')
+    script(src='../plugins/moment/moment.js')
+    script(src='../plugins/timepicker/bootstrap-timepicker.min.js')
+    script(src='../plugins/mjolnic-bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js')
+    script(src='../plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js')
+    script(src='../plugins/bootstrap-daterangepicker/daterangepicker.js')
+    script(src='/assets/js/jquery.core.js')
+    script(src='/assets/js/jquery.app.js')

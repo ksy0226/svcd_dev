@@ -1,0 +1,71 @@
+extends ../layouts/default
+block head
+    title  3-6 처리구분별처리내역
+    script(src='/assets/js/jquery.core.js')
+    script(src='/assets/js/jquery.app.js')
+
+    script(src='/vendor/jquery/jquery-ui.1.11.0.js')
+    script(src='/vendor/jquery/jquery.min.js')
+
+    script(src='/plugins/rowspan/jquery.rowspanizer.js', type='text/javascript')
+    script(src='/isu/js/statistic/process_gubun.js', type='text/javascript')
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') SD 검색/통계
+                                li.active 처리구분별 처리내역
+                            h4.page-title 처리구분별 처리내역
+                .row
+                    .col-lg-12
+                        .card-box.m-t-10
+                            form.form-horizontal.group-border-dashed(action='#')
+                                .form-group
+                                    label.col-sm-2.control-label 회사명
+                                    .col-sm-4
+                                        select#company_cd.form-control
+                                .form-group
+                                    label.col-sm-2.control-label 검색년도
+                                    .col-sm-2
+                                        select#yyyy.form-control
+                                            option(value='2012') 2012
+                                            option(value='2013') 2013
+                                            option(value='2014') 2014
+                                            option(value='2015') 2015
+                                            option(value='2016') 2016
+                                            option(value='2017') 2017
+                                            option(selected='2018') 2018
+                                            option(value='2019') 2019
+                                            option(value='2020') 2020
+                                            option(value='2021') 2021
+                                            option(value='2022') 2022
+                                            option(value='2023') 2023
+                                            option(value='2024') 2024
+                                            option(value='2025') 2025
+                                    label.col-sm-2.control-label 상위업무
+                                    .col-sm-2
+                                        select#higher_cd.form-control
+                                    .col-sm-2
+                                        button#searchBtn.btn.btn-primary(type='button')
+                                            i.fa.fa-search.m-r-5
+                                            | 조회
+                .row
+                    .col-lg-12
+                        .card-box
+                            table.table.table-bordered
+                                thead
+                                    tr
+                                        th.font-12(class='text-center') 처리구분명
+                                        th.font-12(class='text-center', width='10%') 접수건수
+                                        th.font-12(class='text-center', width='10%') 해결건수
+                                        th.font-12(class='text-center', width='10%') 해결률(%)
+                                        th.font-12(class='text-center', width='10%') 평점
+                                tbody#more_list

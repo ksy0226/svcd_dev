@@ -1,0 +1,55 @@
+
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Send email in nodejs
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
+
+.panel.panel-primary(style='width:50%;margin:0 auto; margin-top:10%')
+    .panel-heading
+        h3 Email Form In Node.Js
+    .panel-body(style='height:40%; text-align:center;')
+        p#msg.bg-info
+        form#emailForm.form-horizontal(role='form', method='post')
+            .form-group
+                label.control-label.col-sm-2(for='email') Email:
+                .col-sm-10
+                    input.form-control(name='email', type='email', placeholder='Enter email', required='required')
+            .form-group
+                label.control-label.col-sm-2(for='subject') Subject:
+                .col-sm-10
+                    input.form-control(name='subject', type='text', placeholder='Enter subject', required='required')
+            .form-group
+                label.control-label.col-sm-2(for='description') Description:
+                .col-sm-10
+                    textarea.form-control(name='description', placeholder='Enter Description')
+            .form-group
+                .col-sm-offset-2.col-sm-10
+                    button#send.btn.btn-primary.btn-lg(type='button')
+                        span.glyphicon.glyphicon-send
+
+script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+script.
+    $(function(){
+        var fullUrl =  location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+        $("#send").click(function(){
+            var formData = $("#emailForm").serialize();
+            $("#msg").text("Email sending Please wait..");
+            $.ajax({
+                url: fullUrl+'/send',
+                type: 'POST',
+                data: formData,
+                success: function(result) {
+                    $("#msg").empty().text(result);
+                },
+                error: function(e) {
+                    $("#msg").empty().text("There is some error to send email, Error code:"+e.status +", Error message:"+e.statusText);
+                },
+                dataType: "html",
+                timeout: 60000
+            });
+        });
+    });

@@ -1,0 +1,56 @@
+extends ../layouts/default
+
+block content
+    .content
+            .container
+                .row(style='margin-top:20px')
+                    .col-xs-12.col-sm-10.col-md-8
+                        h3.masthead-brand 사원정보관리(내외) > 리스트 조회
+                        hr.colorgraph
+                form.form.col-md-12.center-block(name='form' action='/usermanage/new' method='post')
+                    .row(style='margin-top:-15px')
+                        .col-xs-3.col-sm-3.col-md-3
+                            a.btn.btn-primary(href='/usermanage/new')
+                                | 추가 
+                        .col-xs-3.col-sm-3.col-md-3
+                            input.form-control(type='text' id='searchText' name='searchText')
+                        .col-xs-2.col-sm-2.col-md-2
+                            .dropdown
+                                button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown') 검색유형
+                                    span.span.caret
+                                ul.dropdown-menu.dropdown-menu(role='menu', aria-labelledby='menu1')
+                                    li(role='presentation')
+                                        a(role='menuitem', tabindex='-1', href='#' data-type='title,content') 제목,본문
+                                    li(role='presentation')
+                                        a(role='menuitem', tabindex='-1', href='#' data-type='title') 제목
+                                    li(role='presentation')
+                                        a(role='menuitem', tabindex='-1', href='#' data-type='content') 본문
+                    .row(style='margin-top:20px') 
+                        .col-xs-12.col-sm-10.col-md-8
+                            table.table.table-striped
+                                thead
+                                    tr
+                                        th.stretch 회사명
+                                        th 아이디
+                                        th 사원명
+                                        th 부서명
+                                        th 직위
+                                        th 직책
+                                        th 핸드폰번호
+                                tbody
+                                    - if (usermanage.length > 0) {
+                                        // - for( var i = 0 ; length = usermanage.length > i ; i++ ){ //속도가 빠르다고 알고 있음.
+                                        - for( var i in usermanage ){ //속도가 느리다고 알고 있음.
+                                            tr(onclick="onclick=location.href='/usermanage/#{usermanage[i]._id}/edit'")
+                                                td.highlight(data-highlight='search.highlight.title') #{usermanage[i].compannyNm}
+                                                td #{usermanage[i].userId}
+                                                td #{usermanage[i].userNm}
+                                                td #{usermanage[i].deptNm}
+                                                td #{usermanage[i].jikwe}
+                                                td #{usermanage[i].jikchk}
+                                                td #{usermanage[i].hpNo}
+                                        - }
+                                    - }else{
+                                        tr
+                                            td(colspan='5' align='center') 조회된 데이타가 없습니다.
+                                    - }

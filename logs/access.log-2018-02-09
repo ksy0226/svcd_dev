@@ -1,0 +1,1 @@
+[2018-02-09 09:41:50.592] [INFO] http - ::ffff:127.0.0.1 - - "GET /incident/getIncident?user=manager&page=1&perPage=15&searchType=title,content&status_cd=3&company_cd=*&lower_cd=*&reg_date_from=&reg_date_to=&searchText=&_=1518066028334 HTTP/1.1" 200 - "https://localhost/manager/work_list" "Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko"

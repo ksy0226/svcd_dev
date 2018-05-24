@@ -1,0 +1,75 @@
+extends ../layouts/default
+block head
+    script(src='/vendor/jquery/jquery.min.js')
+    script(src='/isu/js/oftenQna/index.js', type='text/javascript')
+
+block content
+    .content-page
+        .content
+            .container
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='/oftenqna/') Home
+                                li
+                                    a(href='/oftenqna/') SD 기본정보
+                                li.active 자주묻는 질문과답
+                            h4.page-title 자주묻는 질문과답
+                .row
+                    .col-lg-12
+                        .card-box
+                            form.form-horizontal.group-border-dashed(action='#', onsubmit='return false;')
+                                .form-group
+                                    label.col-sm-2.control-label 상위업무 
+                                    .col-sm-4
+                                        select.form-control(id='higher_cd' name='higher_cd')
+                                            option(value ='*') 전체
+                                            - if (higherprocess.length > 0) {
+                                                - for( var i = 0 ; length = higherprocess.length > i ; i++ ){ //속도가 느리다고 알고 있음.
+                                                    option(value ='#{higherprocess[i].higher_cd}') #{higherprocess[i].higher_nm}
+                                                - }
+                                            - } 
+                                    label.col-sm-2.control-label 정렬방식
+                                    .col-sm-2
+                                        select.form-control(id='order_by' name='order_by')
+                                            option(value ='higher_nm') 상위업무명
+                                            option(value ='title') 제목
+                                            option(value ='created_at') 최근등록일
+                                            option(value ='reading_cnt') 조회수
+                                .form-group.m-b-0
+                                    label.col-sm-2.control-label 검색어
+                                    .col-sm-2
+                                        select.form-control(id='searchType' name='searchType')
+                                            option(value='title,content') 제목+내용
+                                            option(value='title') 제목
+                                            option(value='content') 내용
+                                    .col-sm-6
+                                        input.form-control(id='searchText' name='searchText' type='text')
+                                    .col-sm-2
+                                        button.btn.btn-primary(id='searchBtn' type='button') 조회
+                .row
+                    .col-sm-12
+                        .btn-toolbar.form-group
+                                .pull-left
+                                    a.btn.btn-primary.waves-effect.waves-light.m-l-5(href='/oftenqna/new')
+                                        i.fa.fa-edit
+                                        |  추가
+                        .card-box
+                            //table.table.table-bordered
+                            table.table.table-hover
+                                thead
+                                    tr
+                                        th.text-center(width='20%') 상위업무명
+                                        th.text-center(width='40%') 제목
+                                        th.text-center(width='10%') 등록자
+                                        th.text-center(width='20%') 등록일
+                                        th.text-center(width='10%') 조회수
+                                tbody(id='more_list')
+
+block footer
+
+    #ajax_indicator(style='display:none')
+        p(style='text-align:center; padding:16px 0 0 0; left:50%; top:40%; position:absolute;')
+            img(src='/isu/images/large-loading.gif', width='26px', height='26px', alt='처리중', border='0', align='absmiddle')

@@ -1,0 +1,112 @@
+doctype html
+html
+    head
+        title #{title}
+
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')      
+        meta(name='google-site-verification', content='8dL8-JtafRwPb9mqiolYLGX-gJQ6iWrzWrHkZRnE2Uo')
+        link(rel='stylesheet', href='/vendor/bootstrap-3.3.7/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/vendor/bootstrap-3.3.7/css/bootstrap-theme.min.css')
+        link(rel='stylesheet', href='/isu/css/login2.css')
+        script(src='/vendor/jquery/jquery.js')
+        script(src='/vendor/bootstrap-3.3.7/js/bootstrap.min.js')
+        script(src='/isu/js/index.js')
+        script(src='https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCxP37XXc7zDZDaiewUvyyvpTPk_oIoOwU&callback=initMap')
+
+    body
+         #video-wrapper.video-wrapper
+             video#bgvid(autoplay='', loop='')
+                 source(src='/isu/video/m-bg.mp4', type='video/webm')
+                 source(src='/isu/video/m-bg.mp4', type='video/mp4')
+
+        .content
+            .container
+                //로그인                      
+                .row(style='margin-top:20px')
+                    .col-xs-12.col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
+                        form#loginForm(action='/index' method='post' name='login')
+                            fieldset
+                                -if(message == null){
+                                    h2 로그인하세요.
+                                -}else{
+                                    h3 #{message}
+                                -}
+                                hr.colorgraph
+                                .form-group
+                                    input#email.form-control.input-lg(type='email', name='email', value=('#{email}' == 'undefined' ? '' : '#{email}') placeholder='Email Address')
+                                .form-group
+                                    input#password.form-control.input-lg(type='password', name='password', placeholder='Password')
+                                span.button-checkbox
+                                    button.btn(type='button', data-color='info') 아이디 저장
+                                    input#remember_me.hidden(type='checkbox', name='remember_me', checked=('true'==='#{remember_me}' ? 'on' : undefined))
+                                    a.btn.btn-link.pull-right(href='') 비밀번호 찾기
+                                hr.colorgraph
+                                .row
+                                    .col-xs-6.col-sm-6.col-md-6
+                                        input.btn.btn-lg.btn-success.btn-block(type='submit', value='로그인')
+                                    .col-xs-6.col-sm-6.col-md-6
+                                        a.btn.btn-lg.btn-primary.btn-block(href='') 계정신청
+                //회사소개
+                .row(style='margin-top:20px')
+                    .col-xs-4.col-sm-4.col-md-4.col-sm-offset-2.col-md-offset-3
+                        a.btn(href='http://www.isusystem.com/kor/index.do' target='_blank') 회사소개
+                    .col-xs-4.col-sm-4.col-md-4.col-sm-offset-2.col-md-offset-3
+                        a.btn(href='http://blog.naver.com/isu_system' target='_blank') 블로그
+                    .col-xs-4.col-sm-4.col-md-4.col-sm-offset-2.col-md-offset-3
+                        a.btn(data-toggle="modal" data-target="#myModal") 찾아오시는 길        
+                //회사정보
+                .row(style='margin-top:60px')
+                    .col-xs-12.col-sm-12.col-md-12.col-sm-offset-2.col-md-offset-3
+                        hr
+                        img(src='/isu/images/isusystem_logo.jpg', alt='ISU SYSTEM')
+                        p
+                            |06575) 서울시 서초구 사평대로 84
+                        p
+                            |.copyright COPYRIGHT ISU SYSTEM Co. Ltd. ALL RIGHT RESERVED.
+
+        //찾아오는 길
+        #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+                        h4#myModalLabel.text-primary 
+                            |찾아오시는 길
+                    .modal-body         
+                        #container(style='margin-top: 0px;')
+                            .sub_content                                    
+                                #map.map_area
+                                hr.colorgraph
+                                .cus-con
+                                    .row
+                                        .col-md-3.text-center
+                                            img(src='/isu/images/cus03.png', alt='자가용 이용시')
+                                        .col-md-9
+                                            h4.text-point
+                                                |자가용 이용 시
+                                            p.text-default 
+                                                |팔레스 호텔 방면에서 오시면 반포전화국 앞에서 유턴가능. 건물 내 지하주하장 이용
+                                hr
+                                .cus-con
+                                    .row
+                                        .col-md-3.text-center
+                                            img(src='/isu/images/cus04.png', alt='지하철 이용시')
+                                        .col-md-9
+                                            h4.text-point 
+                                                |지하철 이용 시
+                                            p.text-default
+                                                span.text-green
+                                                    |2호선 
+                                                서초역 강남성모병원 7번 출구 → 21번 마을버스 → 반포전화국 하차
+                                            p.text-default
+                                                span.text-blue
+                                                    |4호선 
+                                                |총신대역 신세대웨딩홀 1번 출구 → 14번 마을버스 → 이수화학 빌딩
+                                            p.text-default
+                                                span.text-brown
+                                                    |9호선
+                                                |신반포역 반포종합운동장 4번 출구 → 10번/14번 마을버스 → 반포전화국 하차
+                                            p.text-default   
+                                                span.text-orange
+                                                    |3/7/9호선 
+                                                |고속버스터미널역 고속버스터미널역 8-1번 출구 → 10번/14번 마을버스 → 반포전화국 하차

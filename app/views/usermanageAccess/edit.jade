@@ -1,0 +1,145 @@
+extends ../layouts/default
+block head 
+    script(type='text/javascript').
+        var usermanageAccessObj = !{JSON.stringify(usermanageAccess).replace(/<\//g, '<\\/')};
+    script(src='/isu/js/usermanageAccess/edit.js')
+    
+    // postcode
+    script(src='/isu/js/postcode.js')
+    // http
+    script(src='http://dmaps.daum.net/map_js_init/postcode.v2.js')
+
+block content
+    .content-page
+        .content
+            .container
+                // Page-Title
+                .row
+                    .col-sm-12
+                        .page-title-box
+                            ol.breadcrumb.pull-right
+                                li
+                                    a(href='#') Home
+                                li
+                                    a(href='#') SD 기본정보
+                                li.active 미승인 사원관리
+                            h4.page-title 미승인 사원관리
+                 // Form TYPE 1
+                .row
+                    .col-lg-12
+                        .card-box
+                            .p-20
+                                form.form-horizontal.group-border-dashed(id='usermanageAccessForm' name='form' action='/usermanageAccess/edit/#{usermanageAccess._id}' method='post')
+                                    .form-group
+                                        .pull-left
+                                            .btn.btn-primary.waves-effect.waves-light.m-l-5(onclick="location.href='/usermanageAccess'")
+                                                i.fa.fa-list-ul
+                                                |  목록
+                                            .btn.btn-inverse.waves-effect.waves-light.m-l-5(onclick="location.href='/usermanageAccess/delete/#{usermanageAccess._id}'") 
+                                                i.fa.fa-remove
+                                                |  삭제
+                                        .pull-right
+                                            button.btn.btn-primary(type='submit')
+                                                i.fa.fa-send-o
+                                                |  저장
+                                    hr
+                                    .form-group
+                                        .row
+                                            .col-xs-12.col-sm-12.col-md-12
+                                                // Your awesome content goes here
+                                                .m-b-30
+                                                    .form-group
+                                                        label.col-sm-2.control-label 입력한 회사명
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[userCompany_nm]', type='text', value=usermanageAccess.userCompany_nm, readonly)
+                                                    .form-group(style='display:none')
+                                                        label.col-sm-2.control-label 회사코드명
+                                                        .col-sm-9
+                                                            input.form-control(id='company_nm' name='usermanageAccess[company_nm]' type='text' value='#{usermanageAccess.company_nm}' required)
+                                                    .form-group
+                                                            label.col-sm-2.control-label 회사코드
+                                                            .col-sm-9
+                                                                select.form-control(id='company_cd' name='usermanageAccess[company_cd]' onchange='companyCd()' required) 
+                                                                    - if (company.length > 0) {
+                                                                        - for( var i = 0 ; length = company.length > i ; i++ ){ 
+                                                                            -if(usermanageAccess.company_cd == company[i].company_cd){
+                                                                                option(value='#{company[i].company_cd}' seleceted) #{company[i].company_nm}
+                                                                            -}else{
+                                                                                option(value='#{company[i].company_cd}') #{company[i].company_nm}
+                                                                            -}
+                                                                        - }
+                                                                    - }
+                                                    .form-group
+                                                        label.col-sm-2.control-label email
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[email]' type='text' value='#{usermanageAccess.email}')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 비밀번호
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[password]' type='password' value='' placeholder='********')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 사원명
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[employee_nm]' type='text' value='#{usermanageAccess.employee_nm}')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 부서명
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[dept_nm]' type='text' value='#{usermanageAccess.dept_nm}')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 직위
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[position_nm]' type='text' value='#{usermanageAccess.position_nm}')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 직책
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[jikchk_nm]' type='text' value='#{usermanageAccess.jikchk_nm}')
+                                                    .form-group
+                                                            label.col-sm-2.control-label 메일 발송여부
+                                                            .col-sm-9
+                                                                select.form-control(id='email_send_yn' name='usermanageAccess[email_send_yn]' type='text' value='#{usermanageAccess.email_send_yn}')
+                                                                    option(value='Y') 사용 
+                                                                    option(value='N') 사용안함
+                                                    .form-group
+                                                        label.col-sm-2.control-label 핸드폰번호
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[hp_telno]' type='text' value='#{usermanageAccess.hp_telno}')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 회사주소1
+                                                        .col-sm-2
+                                                            input.form-control(name='usermanageAccess[dom_post_cd1]', type='text', value='#{usermanageAccess.dom_post_cd1}')
+                                                        .col-sm-5
+                                                            input.form-control(name='usermanageAccess[dom_addr]', type='text', value='#{usermanageAccess.dom_addr}')
+                                                        .col-sm-2
+                                                            span.btn.btn-sm.btn-primary(id='postcode') 우편번호 찾기
+                                                    .form-group
+                                                        label.col-sm-2.control-label 회사주소2
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[dom_addr2]', type='text', value='#{usermanageAccess.dom_addr2}')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 회사전화번호
+                                                        .col-sm-9
+                                                            input.form-control(name='usermanageAccess[office_tel_no]' type='text' value='#{usermanageAccess.office_tel_no}')
+                                                    .form-group
+                                                        label.col-sm-2.control-label 사용자권한구분
+                                                        .col-sm-9
+                                                            select.form-control(id='user_flag' name='usermanageAccess[user_flag]' type='text' value='#{usermanageAccess.user_flag}')
+                                                                option(value='5') 고객사관리자
+                                                                option(value='9') 일반사용자
+                                                    .form-group
+                                                        label.col-sm-2.control-label 그룹사권한구분
+                                                        .col-sm-9
+                                                            select.form-control(id='group_flag' name='usermanageAccess[group_flag]' type='text' value='#{usermanageAccess.group_flag}')
+                                                                option(value='out' selected) 외부사용자 
+                                                                //option(value='in') 내부사용자
+                                                    .form-group
+                                                        label.col-sm-2.control-label 승인여부
+                                                        .col-sm-9
+                                                            select.form-control(id='access_yn' name='usermanageAccess[access_yn]' type='text' value='#{usermanageAccess.access_yn}')
+                                                                option(value='Y') 승인 
+                                                                option(value='N') 미승인
+                                                    .form-group
+                                                        label.col-sm-2.control-label 사용여부
+                                                        .col-sm-9
+                                                            select.form-control(id='using_yn' name='usermanageAccess[using_yn]' type='text' value='#{usermanageAccess.using_yn}')
+                                                                option(value='Y') 사용 
+                                                                option(value='N') 사용안함
