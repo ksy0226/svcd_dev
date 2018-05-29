@@ -22,7 +22,8 @@ var companySchema = mongoose.Schema({
     use_yn: { type: String },                       //사용여부(Y:사용, N:미사용)
     group_flag  : { type : String , default : 'out' },
     date_from: { type: String },                    //유지보수 시작일
-    date_to: { type: String }                       //유지보수 종료일
+    date_to: { type: String }                   //유지보수 종료일
+
 });
 
 companySchema.pre("save", setCreateAt);

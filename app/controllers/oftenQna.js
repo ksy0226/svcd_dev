@@ -91,7 +91,7 @@ module.exports = {
     },
 
     save: (req, res, next) => {
-        //logger.debug('save start >>>>>>> ' + req);
+        logger.debug('save start >>>>>>> ' + req);
         var newOftenqna = req.body.oftenqna;
 
         if (req.files) {
@@ -148,6 +148,9 @@ module.exports = {
                                 err: err
                             });
                         } else {
+                            logger.debug("===========================");
+                            logger.debug("=oftenqna=>>>"+ oftenqna);
+                            
                             res.render("oftenqna/edit", {
                                 cache : true,
                                 higher: higher,
@@ -162,8 +165,9 @@ module.exports = {
     },
 
     update: (req, res, next) => {
-        //logger.debug("oftenQna controllers update start =====> " + JSON.stringify(req.body));
+        logger.debug("oftenQna controllers update start =====> " + JSON.stringify(req.body));
         var newOftenqna = req.body.oftenqna;
+
         if (req.files) {
             newOftenqna.attach_file = req.files;
         }
@@ -176,8 +180,8 @@ module.exports = {
                     err: err
                 });
             } else {
-                //res.redirect('/oftenqna/');
-                res.render('/oftenqna/',{cache : true});
+                res.redirect('/oftenqna/');
+                //res.render('/oftenqna/',{cache : true});
             }
         });
     },

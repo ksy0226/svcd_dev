@@ -24099,3 +24099,784 @@ HTTPS server listening on port 8080
 Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
 Mongoose default connection is open
 (node:50320) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+(node:45400) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #1
+(node:10500) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:10500) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Mongoose default connection error: DisconnectedError: Ran out of retries trying to reconnect to "175.119.100.184:27017". Try setting `server.reconnectTries` and `server.reconnectInterval` to something higher.
+Error: Can't set headers after they are sent.
+    at validateHeader (_http_outgoing.js:491:11)
+    at ServerResponse.setHeader (_http_outgoing.js:498:3)
+    at ServerResponse.header (E:\svcd_dev\node_modules\express\lib\response.js:767:10)
+    at ServerResponse.send (E:\svcd_dev\node_modules\express\lib\response.js:170:12)
+    at done (E:\svcd_dev\node_modules\express\lib\response.js:1004:10)
+    at Object.exports.renderFile (E:\svcd_dev\node_modules\jade\lib\index.js:374:12)
+    at View.exports.__express [as engine] (E:\svcd_dev\node_modules\jade\lib\index.js:417:11)
+    at View.render (E:\svcd_dev\node_modules\express\lib\view.js:135:8)
+    at tryRender (E:\svcd_dev\node_modules\express\lib\application.js:640:10)
+    at Function.render (E:\svcd_dev\node_modules\express\lib\application.js:592:3)
+    at ServerResponse.render (E:\svcd_dev\node_modules\express\lib\response.js:1008:7)
+    at E:\svcd_dev\config\routes.js:68:17
+    at Layer.handle_error (E:\svcd_dev\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\svcd_dev\node_modules\express\lib\router\index.js:315:13)
+    at E:\svcd_dev\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (E:\svcd_dev\node_modules\express\lib\router\index.js:335:12)
+Error: Can't set headers after they are sent.
+    at validateHeader (_http_outgoing.js:491:11)
+    at ServerResponse.setHeader (_http_outgoing.js:498:3)
+    at ServerResponse.header (E:\svcd_dev\node_modules\express\lib\response.js:767:10)
+    at ServerResponse.contentType (E:\svcd_dev\node_modules\express\lib\response.js:595:15)
+    at ServerResponse.send (E:\svcd_dev\node_modules\express\lib\response.js:145:14)
+    at done (E:\svcd_dev\node_modules\express\lib\response.js:1004:10)
+    at Object.exports.renderFile (E:\svcd_dev\node_modules\jade\lib\index.js:374:12)
+    at View.exports.__express [as engine] (E:\svcd_dev\node_modules\jade\lib\index.js:417:11)
+    at View.render (E:\svcd_dev\node_modules\express\lib\view.js:135:8)
+    at tryRender (E:\svcd_dev\node_modules\express\lib\application.js:640:10)
+    at Function.render (E:\svcd_dev\node_modules\express\lib\application.js:592:3)
+    at ServerResponse.render (E:\svcd_dev\node_modules\express\lib\response.js:1008:7)
+    at E:\svcd_dev\config\routes.js:68:17
+    at Layer.handle_error (E:\svcd_dev\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\svcd_dev\node_modules\express\lib\router\index.js:315:13)
+    at E:\svcd_dev\node_modules\express\lib\router\index.js:284:7
+(node:12828) [DEP0013] DeprecationWarning: Calling an asynchronous function without callback is deprecated.
+error: Forever detected script exited with code: 1
+(node:52464) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:52464) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #1
+(node:33756) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #2
+(node:49072) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #3
+(node:19920) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #4
+(node:37144) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #5
+(node:19124) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #6
+(node:12624) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #7
+(node:30212) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #8
+(node:36064) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #9
+(node:40924) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #10
+(node:48756) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #11
+(node:8604) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+TypeError: Cannot read property 'attach_file' of null
+    at E:\svcd_dev\app\controllers\incident.js:694:34
+    at model.Query.<anonymous> (E:\svcd_dev\node_modules\mongoose\lib\model.js:3805:16)
+    at E:\svcd_dev\node_modules\kareem\index.js:277:21
+    at E:\svcd_dev\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+error: Forever detected script exited with code: 1
+error: Script restart attempt #12
+(node:47264) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+events.js:183
+      throw er; // Unhandled 'error' event
+      ^
+
+TypeError: Cannot read property 'attach_file' of null
+    at E:\svcd_dev\app\controllers\incident.js:694:34
+    at model.Query.<anonymous> (E:\svcd_dev\node_modules\mongoose\lib\model.js:3805:16)
+    at E:\svcd_dev\node_modules\kareem\index.js:277:21
+    at E:\svcd_dev\node_modules\kareem\index.js:131:16
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+error: Forever detected script exited with code: 1
+error: Script restart attempt #13
+(node:40180) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #14
+(node:44652) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:44652) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #15
+(node:50596) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:50596) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #16
+(node:10264) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:10264) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #17
+(node:34936) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:34936) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #18
+(node:51356) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51356) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #19
+(node:34588) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:34588) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #20
+(node:38448) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #21
+(node:48892) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:48892) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #22
+(node:18768) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:18768) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #23
+(node:59452) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:59452) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #24
+(node:50532) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:50532) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #25
+(node:45780) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:45780) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #26
+(node:19432) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:19432) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #27
+(node:45320) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #28
+(node:60032) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:60032) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #29
+(node:32652) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:32652) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #30
+(node:45240) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:45240) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #31
+(node:17424) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:17424) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #32
+(node:46712) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:46712) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #33
+(node:51752) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51752) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #34
+(node:17424) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:17424) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #35
+(node:59096) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:59096) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #36
+(node:59336) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:59336) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #37
+(node:26764) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:26764) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #38
+(node:47008) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:47008) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #39
+(node:60288) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:60288) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Error: Can't set headers after they are sent.
+    at validateHeader (_http_outgoing.js:491:11)
+    at ServerResponse.setHeader (_http_outgoing.js:498:3)
+    at ServerResponse.header (E:\svcd_dev\node_modules\express\lib\response.js:767:10)
+    at ServerResponse.send (E:\svcd_dev\node_modules\express\lib\response.js:170:12)
+    at done (E:\svcd_dev\node_modules\express\lib\response.js:1004:10)
+    at Object.exports.renderFile (E:\svcd_dev\node_modules\jade\lib\index.js:374:12)
+    at View.exports.__express [as engine] (E:\svcd_dev\node_modules\jade\lib\index.js:417:11)
+    at View.render (E:\svcd_dev\node_modules\express\lib\view.js:135:8)
+    at tryRender (E:\svcd_dev\node_modules\express\lib\application.js:640:10)
+    at Function.render (E:\svcd_dev\node_modules\express\lib\application.js:592:3)
+    at ServerResponse.render (E:\svcd_dev\node_modules\express\lib\response.js:1008:7)
+    at E:\svcd_dev\config\routes.js:68:17
+    at Layer.handle_error (E:\svcd_dev\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (E:\svcd_dev\node_modules\express\lib\router\index.js:315:13)
+    at E:\svcd_dev\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (E:\svcd_dev\node_modules\express\lib\router\index.js:335:12)
+error: Forever detected script exited with code: 1
+error: Script restart attempt #40
+(node:41320) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:41320) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #41
+(node:5540) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:5540) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #42
+(node:60316) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:60316) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #43
+(node:5660) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:5660) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #44
+(node:58784) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:58784) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #45
+(node:57104) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:57104) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #46
+(node:57020) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:57020) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #47
+(node:56856) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #48
+(node:4516) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:4516) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #49
+(node:5612) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #50
+(node:58628) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:58628) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #51
+(node:58772) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:58772) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #52
+(node:60348) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:60348) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #53
+(node:40916) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:40916) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #54
+(node:51428) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51428) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #55
+(node:55992) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:55992) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #56
+(node:59800) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:59800) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #57
+(node:42700) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:42700) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #58
+(node:42300) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:42300) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #59
+(node:48700) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:48700) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #60
+(node:28464) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:28464) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #61
+(node:55456) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:55456) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #62
+(node:59780) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:59780) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #63
+(node:2940) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:2940) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #64
+(node:58756) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:58756) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #65
+(node:4952) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:4952) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #66
+(node:45204) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:45204) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #67
+(node:60164) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:60164) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #68
+(node:16524) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:16524) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #69
+(node:12004) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:12004) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #70
+(node:44304) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:44304) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #71
+(node:49204) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:49204) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #72
+(node:27540) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:27540) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #73
+(node:5780) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:5780) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #74
+(node:46468) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:46468) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #75
+(node:51440) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51440) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #76
+(node:17980) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:17980) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #77
+(node:46576) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:46576) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #78
+(node:57608) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:57608) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #79
+(node:51288) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51288) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #80
+(node:56180) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:56180) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #81
+(node:33580) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:33580) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #82
+(node:40852) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:40852) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #83
+(node:51360) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #84
+(node:33448) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:33448) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #85
+(node:58896) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:58896) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #86
+(node:58988) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:58988) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #87
+(node:56412) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:56412) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #88
+(node:45064) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:45064) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html

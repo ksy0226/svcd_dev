@@ -2,10 +2,28 @@
 
 $(document).ready(function () {
     //alert(JSON.stringify(oftenqnaObj));
+    
+    if($('input:checkbox[name="oftenqna[pop_yn]"]').val() == "Y"){
+        $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", true);
+    }else{
+        alert("아니면 : " + $('input:checkbox[name="oftenqna[pop_yn]"]').val());
+        $('input:checkbox[name="oftenqna[pop_yn]"]').prop("checked", false);
+    }
+    /*
+    if($('input:checkbox[name="oftenqna[pop_yn]"]').val()=="Y"){
+        $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", true);
+    }else{
+        $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", false);
+    }
+    
+    */
+    
+
+
     $('#higher_cd').val(oftenqnaObj.higher_cd);
 
     $('.summernote').summernote({
-        height: 170, // set editor height
+        height: 450, // set editor height
         minHeight: null, // set minimum height of editor
         maxHeight: null, // set maximum height of editor
         focus: false // set focus to editable area after initializing summernote
@@ -22,14 +40,50 @@ $(document).ready(function () {
     $('.inline-editor').summernote({
         airMode: true
     });
+    
+    $('#pop_yn').on('click', function () {
 
+        if($('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked') == true){
+            $('input:checkbox[name="oftenqna[pop_yn]"]').val("Y");
+        }else{
+            alert("11111 : "+ $('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked'));
+            $('input:checkbox[name="oftenqna[pop_yn]"]').val("N");
+        }
+        
+        alert("bbbbb : " +$('input:checkbox[name="oftenqna[pop_yn]"]').val());
+
+    })
+    
     $('#saveBtn').on('click', function () {
         if (checkValue()) {
             if (confirm("등록하시겠습니까?")) {
+                if(document.getElementById("pop_yn").checked) {
+                    document.getElementById('pop_ynHidden').disabled = true;
+                }
                 $('#form').submit();
+                
+                /*
+                $('#form').submit(function () {
+
+                    var this_master = $(this);
+                
+                    this_master.find('input[type="checkbox"]').each( function () {
+                        var checkbox_this = $(this);
+
+                        if( checkbox_this.is(":checked") == true ) {
+                            checkbox_this.attr('value','Y');
+                        } else {
+                            checkbox_this.prop('checked',true);
+                            //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA    
+                            checkbox_this.attr('value','N');
+                        }
+                    })
+                })
+                */
             }
         }
     })
+    
 });
 
 //상위코드 맵핑

@@ -49,6 +49,10 @@ block content
                                         .col-sm-3
                                             input.form-control(id='higher_nm', name='oftenqna[higher_nm]', type='text', placeholder='')
                                     .form-group
+                                        label.col-sm-2.control-label 팝업공지
+                                        .col-sm-1
+                                            input.form-control(id='pop_yn', name='oftenqna[pop_yn]', type='checkbox', class='filled-in form-check-input', value='N')
+                                    .form-group
                                         label.col-sm-2.control-label 상위업무
                                         .col-sm-4
                                             select#higher_cd.form-control(name='oftenqna[higher_cd]' onchange='higherCd()')
@@ -68,7 +72,8 @@ block content
                                     .row
                                         .col-md-12.portlets
                                             .m-b-30
-                                                input#attach-file.file(name='oftenqna[attach-file]', data-upload-url="#", type='file', multiple='')
+                                                //input#attach-file.file(name='oftenqna[attach-file]', data-upload-url="#", type='file', multiple='')
+                                                input#attach-file.file(name='incident[attach-file]', type='file', data-show-preview='false', data-show-upload='false', multiple)
 block footer
 
 

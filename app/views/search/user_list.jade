@@ -55,6 +55,7 @@ block head
 
     script(src='/isu/js/search/user_list.js', type='text/javascript')
 
+
 block content
     .content-page
         .content
@@ -135,7 +136,7 @@ block content
                                     ul#paging.pagination
 
     //상세모달
-    //#wdetail_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='custom-width-modalLabel', aria-hidden='true', style='display: none;')
+    #wdetail_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='custom-width-modalLabel', aria-hidden='true', style='display: none;')
         .modal-dialog(style='width:80%;')
             .modal-content
                 .modal-header
@@ -159,7 +160,7 @@ block content
                                         button.btn.btn-primary.waves-effect.waves-light.m-l-5(type='button', onClick="javascript:$('#wdetail_modal').modal('hide')")
                                             i.fa.fa-bars
                                             | 목록
-                                        buttonn#registerBtn.btn.btn-warning.waves-effect.waves-light.m-l-5(type='button')
+                                        buttonn#registerBtn.btn.btn-warning.waves-effect.waves-light.m-l-5(type='button', onclick="reRegister();")
                                             i.fa.fa-copy
                                             | 재등록
                                         //button.btn.btn-primary.waves-effect.waves-light.m-l-5(type='button', onclick='window.print()')
@@ -234,7 +235,6 @@ block content
                                                 | 접수하였습니다.
                                                 br
 
-
                         .col-sm-12.m-t-20
                             .card-box
                                 h4
@@ -286,11 +286,6 @@ block content
                                         //tr
                                             th.bg-muted.text-danger 내부공유사항
                                             td#_sharing_content(colspan='3')
-                                        tr  
-                                            // 상위업무코드
-                                            #_higher_cd
-                                            // 상위업무명
-                                            #_higher_nm
 
 
 

@@ -13,9 +13,6 @@ var pageCnt = 10;      // 한 화면에 나타낼 페이지 수
 var totalPage = 0;
 
 
-
-
-
 $(document).ready(function () {
 
     $('#reg_date_from').datepicker({
@@ -62,7 +59,17 @@ $(document).ready(function () {
         research(1);
     });
 
+
 });
+
+/**
+ * 재등록
+ * @param {*} incident_id  
+ */
+function reRegister(){
+    location.href = "/incident/edit/"+ incident_id;
+}
+
 
 
 //다시 조회
@@ -181,9 +188,7 @@ function setDataList(dataObj, selectedPage, totalDataCnt) {
 
         var addList = "";
         //addList += "							<tr onclick=window.location='/search/user_detail/" + dataObj[i-1]._id + "'>";
-        //addList += "							<tr onclick=detailShow('" + dataObj[i]._id + "') style='cursor:pointer' >";
-        //addList += "							<tr onclick=reRegister('"+dataObj[i]._id+"') style='cursor:pointer' >";
-        addList += "	                        <tr onclick=location='/incident/reRegister/" + dataObj[i]._id + "'>";
+        addList += "							<tr onclick=detailShow('" + dataObj[i]._id + "') style='cursor:pointer' >";
         //상위업무 제외
         //addList += "								<td>" + dataObj[i-1].higher_nm + "</td>";
         addList += "								<td class='text-center'>" + dataObj[i].lower_nm + "</td>";
@@ -291,7 +296,7 @@ function detailShow(id){
         },
         success: function (dataObj) {
             setDetail(dataObj);
-            //$('#wdetail_modal').modal('show');
+            $('#wdetail_modal').modal('show');
         }
     });
 }
@@ -332,9 +337,6 @@ function setDetail(dataObj){
 
     $('#_title').html(dataObj.title);
     $('#_content').html(dataObj.content);
-
-    $('#_higher_cd').html(dataObj.higher_cd);
-
 
     if(dataObj.status_cd == '1'){
         $('#_status_nm').addClass('label label-inverse');
@@ -398,97 +400,3 @@ function setDetail(dataObj){
         $('#_attach').removeClass();
     }
 }
-
-
-/**
- * 재등록
- * @param {*} incident_id  
- */
-function reRegister(id){
-    alert(id);
-    //incident id값 세팅
-    incident_id = id;
-
-    var reqParam = '';
-    $.ajax({
-        type: "GET",
-        async: true,
-        url: "/incident/reRegister/"+id,
-        dataType: "json", // xml, html, script, json 미지정시 자동판단
-        timeout: 30000, //제한 시간
-        cache: false,
-        data: reqParam, // $($('form')).serialize()
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        error: function (request, status, error) {
-            alert("error : " + error);
-        },
-        beforeSend: function () {
-        },
-        success: function (dataObj) {
-            setRegistered(dataObj);
-            //$('#wdetail_modal').modal('show');
-            setDetail(dataObj);
-        }
-    });
-}
-
-
-function setRegistered(){
-    alert("setRegistered");
-}
-/**
- * 재등록 
- */
-/*
-function reRegister(id){
-    alert(111);
-    alert(id);
-    //alert($('#_title').text());
-    //alert($('#_content').text());
-    //alert($('#_higher_cd').text());
-    //alert( $('#_higher_nm').text());
-
-    //$('#wdetail_modal').modal('hide');
-
-    //var reqParam = "title=" + encodeURIComponent($('#_title').text()) +"&content=" + $('#_content').text()
-    //        +"&incident[higher_cd]=" + $('#_higher_cd').text()+"&incident[higher_nm]=" + $('#_higher_nm').text();
-
-    //location.href = "/incident/new/문의하기?title="+ encodeURIComponent($('#_title').text());
-    
-
-   /*
-    
-    $.ajax({
-        type: "POST",
-        async: true,
-        url: "/incident/new/문의하기",
-        dataType: "json", // xml, html, script, json 미지정시 자동판단
-        timeout: 30000,
-        cache: false,
-        data: reqParam,
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        error: function (request, status, error) {
-            alert("reRegister error : " + error);
-        },
-        beforeSend: function () {
-        },
-        success: function (dataObj) {
-
-            if (dataObj.success) {
-                $('.modal').modal('hide');
-                initValuationModal();
-                research();
-            } else {
-                alert('e : ' + JSON.stringify(dataObj));
-            }
-     
-     
-                    
-        }
-    });
-    
-    
-
-
-}
-*/
