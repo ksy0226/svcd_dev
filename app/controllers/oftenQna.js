@@ -202,10 +202,14 @@ module.exports = {
         });
     },
 
-    //summernote 이미지링크 처리
+    /**
+     * summernote 이미지링크 처리
+     */
     insertedImage: (req, res, next) => {
-        //logger.debug("=====================>oftenqna controllers insertedImage");
-        res.send(req.file.filename);
+        //console.log("image upload .....");
+        //res.send( '/uploads/' + req.file.filename);
+        //logger.debug("=====================>incident controllers insertedImage");
+        res.send('/uploads/' + req.file.filename);
     },
 
     //oftenqna 첨부파일 다운로드

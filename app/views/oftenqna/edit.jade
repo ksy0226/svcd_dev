@@ -40,6 +40,13 @@ block content
                 .row
                     .col-lg-12
                         .card-box.m-t-10
+                            .forum-container
+                                #more_list.row
+                            #more_view.row
+
+                .row
+                    .col-lg-12
+                        .card-box
                             .p-20
                                 form.form-horizontal.group-border-dashed(id='form' name='form' action='/oftenqna/edit/#{oftenqna._id}' method='post' enctype="multipart/form-data")  
                                     .form-group
@@ -48,6 +55,10 @@ block content
                                             input.form-control(id='pop_yn', name='oftenqna[pop_yn]', type='checkbox', class='filled-in form-check-input', value='#{oftenqna.pop_yn}')
                                         .col-sm-1
                                             input.form-control(id='pop_ynHidden', name='oftenqna[pop_yn]', type='hidden', class='filled-in form-check-input', value='N')
+                                    .form-group(style='display:none')
+                                        label.col-sm-2.control-label 회사선택
+                                        .col-sm-4
+                                            input.form-control(id='company_nm', name='oftenqna[company_nm]', type='text', placeholder='')
                                     .form-group(style='display:none')
                                         label.col-sm-2.control-label 상위업무명
                                         .col-sm-4
@@ -69,6 +80,7 @@ block content
                                     .form-group
                                         .col-sm-12
                                             textarea#summernote.summernote(name='oftenqna[content]', type='text') !{oftenqna.content}
+
                                             
                                     // 첨부파일 1개 이상일때만 표시
                                     - if (oftenqna.attach_file.length > 0){
@@ -113,7 +125,7 @@ block content
                                         .col-md-12.portlets
                                             .m-b-30
                                                 //input#attach-file.file(name='oftenqna[attach-file]', data-upload-url="#", type='file', multiple='')
-                                                input#attach-file.file(name='incident[attach-file]', type='file', data-show-preview='false', data-show-upload='false', multiple)
+                                                input#attach-file.file(name='oftenqna[attach-file]', type='file', data-show-preview='false', data-show-upload='false', multiple)
 block footer
 
 

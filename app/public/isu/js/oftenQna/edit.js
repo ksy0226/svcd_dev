@@ -6,19 +6,8 @@ $(document).ready(function () {
     if($('input:checkbox[name="oftenqna[pop_yn]"]').val() == "Y"){
         $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", true);
     }else{
-        alert("아니면 : " + $('input:checkbox[name="oftenqna[pop_yn]"]').val());
         $('input:checkbox[name="oftenqna[pop_yn]"]').prop("checked", false);
     }
-    /*
-    if($('input:checkbox[name="oftenqna[pop_yn]"]').val()=="Y"){
-        $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", true);
-    }else{
-        $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", false);
-    }
-    
-    */
-    
-
 
     $('#higher_cd').val(oftenqnaObj.higher_cd);
 
@@ -40,17 +29,23 @@ $(document).ready(function () {
     $('.inline-editor').summernote({
         airMode: true
     });
+
+
+    $('#form').submit(function(){
+        $('input[name=files]').remove();
+    });
+
     
     $('#pop_yn').on('click', function () {
 
         if($('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked') == true){
             $('input:checkbox[name="oftenqna[pop_yn]"]').val("Y");
         }else{
-            alert("11111 : "+ $('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked'));
+            //alert("11111 : "+ $('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked'));
             $('input:checkbox[name="oftenqna[pop_yn]"]').val("N");
         }
         
-        alert("bbbbb : " +$('input:checkbox[name="oftenqna[pop_yn]"]').val());
+        //alert("bbbbb : " +$('input:checkbox[name="oftenqna[pop_yn]"]').val());
 
     })
     
@@ -61,25 +56,6 @@ $(document).ready(function () {
                     document.getElementById('pop_ynHidden').disabled = true;
                 }
                 $('#form').submit();
-                
-                /*
-                $('#form').submit(function () {
-
-                    var this_master = $(this);
-                
-                    this_master.find('input[type="checkbox"]').each( function () {
-                        var checkbox_this = $(this);
-
-                        if( checkbox_this.is(":checked") == true ) {
-                            checkbox_this.attr('value','Y');
-                        } else {
-                            checkbox_this.prop('checked',true);
-                            //DONT' ITS JUST CHECK THE CHECKBOX TO SUBMIT FORM DATA    
-                            checkbox_this.attr('value','N');
-                        }
-                    })
-                })
-                */
             }
         }
     })
@@ -93,7 +69,66 @@ function higherCd() {
     sIdx = sIdx - 1; //'선택하세요' 인덱스값 1을 빼줌
     //선택값 매핑
     $('#higher_nm').val($('#higher_cd option:selected').text());
+    var higherCdVal = $('#higher_cd').val();
+    
+    getCompany(higherCdVal);
 }
+
+
+function getCompany(higherCdVal) {
+    alert("param : "+ higherCdVal);
+
+    var reqParam = 'higher_cd=' + higherCdVal;
+
+    $.ajax({
+        type: "GET",
+        async: true,
+        url: "/companyProcess/getCompany",
+        dataType: "json", // xml, html, script, json 미지정시 자동판단
+        timeout: 30000,
+        cache: false,
+        data: reqParam,
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        error: function (request, status, error) {
+            $('#ajax_indicator').css("display", "none");
+            alert("error : " + error);
+        },
+        beforeSend: function () {
+            $('#ajax_indicator').css("display", "");
+        },
+        success: function (dataObj) {
+            $('#ajax_indicator').css("display", "none");
+            
+            setCompany(dataObj);
+        }
+    });
+}
+
+//내용 매핑
+function setCompany(dataObj) {
+    //alert("dataObj.length : " + dataObj.length);
+    
+    if(dataObj.length >0) {
+        for(var i=0; i< dataObj.length; i++){
+
+            var addList = "";
+            addList += "<tr><td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i].length +"/></td><td width='14%'>&nbsp;" + dataObj[i].company_cd + "</td>";
+            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+1].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+1].company_cd + "</td>";
+            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+2].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+2].company_cd + "</td>";
+            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+3].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+3].company_cd + "</td>";
+            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+4].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+4].company_cd + "</td>";
+            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+5].length +"/></td><td width='15%'>&nbsp;" + dataObj[i+5].company_cd + "</td>";
+            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+6].length +"/></td><td width='15%'>&nbsp;" + dataObj[i+6].company_cd + "</td>";
+            addList += "</tr>";
+            
+            $("#more_list").append(addList);
+            i=i+7;
+        }
+    }
+}
+
+
+
 
 //필수값 체크
 function checkValue() {
@@ -113,19 +148,19 @@ function checkValue() {
 }
 
 //summernote 이미지 업로드
-function sendFile(file, el) {
-    var form_data = new FormData();
-    form_data.append('insertedImage', file);
+
+function sendFile(files, editor, welEditable) {
+    data = new FormData();
+    data.append("oftenqna[attach-file]", files);
     $.ajax({
-        data: form_data,
+        data: data,
         type: "POST",
         url: '/oftenqna/insertedImage',
-        cache: false,
+        cache: true,
         contentType: false,
-        enctype: 'multipart/form-data',
         processData: false,
-        success: function (img_name) {
-            $(el).summernote('editor.insertImage', img_name);
+        success: function(url) {
+            $('#summernote').summernote("insertImage", url);
         }
     });
 }

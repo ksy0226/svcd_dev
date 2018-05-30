@@ -8,7 +8,7 @@ const controller = require('../controllers/companyProcess');
 router.route('/').get(ssc.sessionCheck, controller.edit);
 router.route('/edit').get(ssc.sessionCheck, controller.edit)
                      .post(ssc.sessionCheck, controller.update);
-                     
 router.route('/getCompanyProcess').get(ssc.sessionCheck,controller.getCompanyProcess);
+router.route('/getCompany').get(ssc.sessionCheck,controller.getCompany);
 
 module.exports = router;

@@ -129,6 +129,41 @@ module.exports = {
             logger.error("CompanyProcessModel.find error : ", e);
         }
     },
+
+    /**
+     * 상위업무에 따른 회사 조회
+     */
+
+    getCompany :  (req, res, next) => {
+        try {
+            var condition = {};
+            if (req.query.higher_cd != null) {
+                condition.higher_cd = req.query.higher_cd;
+            }
+
+            logger.debug("==========================================getCompany=========================================");
+            logger.debug("condition : ", condition);
+            logger.debug("====================================================================================================");
+
+            CompanyProcessModel.find(condition, function (err, companyProcess) {
+                if (err) {
+                    return res.json({
+                        success: false,
+                        message: err
+                    });
+                } else {
+
+                    logger.debug("======================================getCompany.find======================================");
+                    logger.debug("companyProcess : ", companyProcess);
+                    logger.debug("====================================================================================================");
+
+                    res.json(companyProcess);
+                }
+            }).sort('higher_cd');
+        } catch (e) {
+            logger.error("getCompany.find error : ", e);
+        }
+    }
 };
 
 
