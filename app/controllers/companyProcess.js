@@ -136,30 +136,97 @@ module.exports = {
 
     getCompany :  (req, res, next) => {
         try {
+            
             var condition = {};
             if (req.query.higher_cd != null) {
                 condition.higher_cd = req.query.higher_cd;
             }
-
+            
             logger.debug("==========================================getCompany=========================================");
             logger.debug("condition : ", condition);
             logger.debug("====================================================================================================");
 
-            CompanyProcessModel.find(condition, function (err, companyProcess) {
+
+            //>>>>> 상위업무에 매핑되는 회사명 찾기
+            var aggregatorOpts = [{
+                $match: condition
+            }, {
+                $group: { //그룹
+                    _id: {
+                        company_cd: "$company_cd"
+                    }
+                }
+            }, {
+                $lookup: {
+                    from: "companies", // join 할 collection명
+                    localField: "_id.company_cd", // 기본 키($group에서 얻은 값)
+                    foreignField: "company_cd", // 외래 키(usermanagers collection에 값) 
+                    as: "company_nm" // 결과를 배출할 alias ( 필드명 )
+                }
+            }, {
+                $project: {
+                    "company_nm.company_nm": 1
+                }
+            }]
+
+            logger.debug("========================================================================");
+            logger.debug("getCompany aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
+            logger.debug("========================================================================");
+            
+            //MyProcess.aggregate(aggregatorOpts).exec(function (err, targetUser) {
+
+            //CompanyProcessModel.find(condition, function (err, companyProcess) {
+            CompanyProcessModel.aggregate(aggregatorOpts).exec(function (err, companyProcess) {
+                logger.debug("companyProcess : "+ JSON.stringify(companyProcess));
+                logger.debug("companyProcess length : " + companyProcess.length);
                 if (err) {
                     return res.json({
                         success: false,
                         message: err
                     });
                 } else {
+                    /*
+                    if(companyProcess != null) {
+                        for (var i = 0; i < companyProcess.length; i++) {
 
-                    logger.debug("======================================getCompany.find======================================");
-                    logger.debug("companyProcess : ", companyProcess);
-                    logger.debug("====================================================================================================");
+                            logger.debug("=============================================");
+                            logger.debug("getCompany aggregate!!! aggregatorOpts  ", aggregatorOpts);
+                            logger.debug("getCompany aggregate!!! companyProcess[i].company_nm  111", companyProcess[i].company_nm.length);
+                            logger.debug("=============================================");
+
+                            if(companyProcess[i].company_nm.length > 0){
+                               
+                                if(companyProcess[i].company_nm[0].company_nm != null){
+                                    var company_nm = companyProcess[i].company_nm[0].company_nm ;
+                                    //var manager = "ISU_ST01004";
+
+                                    logger.debug("=============================================");
+                                    logger.debug("company_nm 222: ", JSON.stringify(company_nm));
+                                    logger.debug("=============================================")
+
+                             
+
+                                   res.json(company_nm);
+                                }else{
+
+                                    //logger.debug("==============================================================================");
+                                    //logger.debug("getCompany aggregate!!! companyProcess[i]  ", JSON.stringify(companyProcess[i]));
+                                    //logger.debug("==============================================================================");
+
+                                }
+                            }
+                        }
+                    }
+                    */
+
+                    //logger.debug("======================================getCompany.find======================================");
+                    //logger.debug("companyProcess : ", JSON.stringify(companyProcess));
+
+                    //logger.debug("====================================================================================================");
 
                     res.json(companyProcess);
                 }
-            }).sort('higher_cd');
+            });
         } catch (e) {
             logger.error("getCompany.find error : ", e);
         }

@@ -59,6 +59,22 @@ $(document).ready(function () {
             }
         }
     })
+
+    
+
+    $("#checkAll").on('click', function () {
+        alert("click-click");
+        //클릭되었으면
+        if($("#checkall").prop("checked")){
+            //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
+            $("input[name=cpChkBox]").prop("checked",true);
+            //클릭이 안되있으면
+        }else{
+            //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
+            $("input[name=cpChkBox]").prop("checked",false);
+        }
+    })
+    
     
 });
 
@@ -77,6 +93,7 @@ function higherCd() {
 
 function getCompany(higherCdVal) {
     alert("param : "+ higherCdVal);
+    //$("#more_list").html('');
 
     var reqParam = 'higher_cd=' + higherCdVal;
 
@@ -103,28 +120,49 @@ function getCompany(higherCdVal) {
         }
     });
 }
-
+function checkFunc(){
+    if($("#checkAll").prop("checked")){
+        $("input[name=cpChkBox]").prop("checked",true);
+    }else{
+        $("input[name=cpChkBox]").prop("checked",false);
+    }
+}
 //내용 매핑
 function setCompany(dataObj) {
-    //alert("dataObj.length : " + dataObj.length);
-    
-    if(dataObj.length >0) {
-        for(var i=0; i< dataObj.length; i++){
 
-            var addList = "";
-            addList += "<tr><td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i].length +"/></td><td width='14%'>&nbsp;" + dataObj[i].company_cd + "</td>";
-            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+1].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+1].company_cd + "</td>";
-            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+2].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+2].company_cd + "</td>";
-            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+3].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+3].company_cd + "</td>";
-            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+4].length +"/></td><td width='14%'>&nbsp;" + dataObj[i+4].company_cd + "</td>";
-            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+5].length +"/></td><td width='15%'>&nbsp;" + dataObj[i+5].company_cd + "</td>";
-            addList += "<td><input class='cpChkBox' type='checkbox' id='cpChkBox'+"+ dataObj[i+6].length +"/></td><td width='15%'>&nbsp;" + dataObj[i+6].company_cd + "</td>";
-            addList += "</tr>";
-            
-            $("#more_list").append(addList);
-            i=i+7;
+    $("#more_list tr").remove();
+    //$("#more_list").remove();
+    //alert("dataObj : " + JSON.stringify(dataObj));
+    alert("dataObj.length : " + dataObj.length);         //4-> 건설erp
+    
+                
+    var addList = "";
+    
+    //var iCnt = 0;
+    //var jCnt = 0;
+    var j = 0; 
+
+    for(var i=0; i<dataObj.length; i++){
+        if(i==0){
+            addList += "<tr><td><input class='cpChkBox' type='checkbox' id='checkAll' onClick='checkFunc()'/></td><td> 전체선택 </td></tr><hr/>";
+            addList += "<tr>";
+        }
+        
+        if($.isEmptyObject(dataObj[i].company_nm)){
+            //iCnt++;
+        }else{
+            addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox'/></td><td id='test'>" +dataObj[i].company_nm[0].company_nm + "</td>";
+
+            if((dataObj[i].company_nm[0].company_nm).length>0){
+                j++;
+            }
+              
+            if(j%4==0){
+                addList += "<tr>";
+            }
         }
     }
+    $("#more_list").append(addList);
 }
 
 

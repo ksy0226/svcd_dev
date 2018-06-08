@@ -46,9 +46,9 @@ module.exports = {
                 }
             }]
 
-            //logger.debug("=============================================");
-            //logger.debug("util/alimi/sendAlimi aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
-            //logger.debug("=============================================");
+            logger.debug("=============================================");
+            logger.debug("util/alimi/sendAlimi aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
+            logger.debug("=============================================");
 
             MyProcess.aggregate(aggregatorOpts).exec(function (err, targetUser) {
 

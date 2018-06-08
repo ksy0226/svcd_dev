@@ -40,10 +40,7 @@ block content
                 .row
                     .col-lg-12
                         .card-box.m-t-10
-                            .forum-container
-                                #more_list.row
-                            #more_view.row
-
+                            #more_list.row
                 .row
                     .col-lg-12
                         .card-box
@@ -52,7 +49,7 @@ block content
                                     .form-group
                                         label.col-sm-2.control-label 팝업공지
                                         .col-sm-1
-                                            input.form-control(id='pop_yn', name='oftenqna[pop_yn]', type='checkbox', class='filled-in form-check-input', value='#{oftenqna.pop_yn}')
+                                            input.form-control(style='width:30px;height:30px', id='pop_yn', name='oftenqna[pop_yn]', type='checkbox', class='filled-in form-check-input', value='#{oftenqna.pop_yn}')
                                         .col-sm-1
                                             input.form-control(id='pop_ynHidden', name='oftenqna[pop_yn]', type='hidden', class='filled-in form-check-input', value='N')
                                     .form-group(style='display:none')
