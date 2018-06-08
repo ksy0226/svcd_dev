@@ -44,8 +44,6 @@ $(document).ready(function () {
             //alert("11111 : "+ $('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked'));
             $('input:checkbox[name="oftenqna[pop_yn]"]').val("N");
         }
-        
-        //alert("bbbbb : " +$('input:checkbox[name="oftenqna[pop_yn]"]').val());
 
     })
     
@@ -86,14 +84,17 @@ function higherCd() {
     //선택값 매핑
     $('#higher_nm').val($('#higher_cd option:selected').text());
     var higherCdVal = $('#higher_cd').val();
-    
-    getCompany(higherCdVal);
+
+    //팝업공지 체크 되어 있으면, 상위업무에 따른 회사선택 로딩
+    if($("#pop_yn").prop("checked")){
+        getCompany(higherCdVal);
+    }else{
+        $("#more_list tr").remove();
+    }
 }
 
 
 function getCompany(higherCdVal) {
-    alert("param : "+ higherCdVal);
-    //$("#more_list").html('');
 
     var reqParam = 'higher_cd=' + higherCdVal;
 
@@ -117,46 +118,37 @@ function getCompany(higherCdVal) {
             $('#ajax_indicator').css("display", "none");
             
             setCompany(dataObj);
+            
         }
     });
 }
-function checkFunc(){
-    if($("#checkAll").prop("checked")){
-        $("input[name=cpChkBox]").prop("checked",true);
-    }else{
-        $("input[name=cpChkBox]").prop("checked",false);
-    }
-}
+
+
 //내용 매핑
 function setCompany(dataObj) {
 
-    $("#more_list tr").remove();
-    //$("#more_list").remove();
-    //alert("dataObj : " + JSON.stringify(dataObj));
-    alert("dataObj.length : " + dataObj.length);         //4-> 건설erp
-    
-                
+    $("#more_list tr").remove();        
     var addList = "";
-    
     //var iCnt = 0;
-    //var jCnt = 0;
-    var j = 0; 
+    var j = 0;
 
     for(var i=0; i<dataObj.length; i++){
         if(i==0){
-            addList += "<tr><td><input class='cpChkBox' type='checkbox' id='checkAll' onClick='checkFunc()'/></td><td> 전체선택 </td></tr><hr/>";
+            addList += "<tr><td><input class='cpChkBox' type='checkbox' id='checkAll' onClick='checkAllFunc()'/></td><td>&nbsp;전체선택 </td></tr><hr/>";
             addList += "<tr>";
         }
         
         if($.isEmptyObject(dataObj[i].company_nm)){
             //iCnt++;
         }else{
-            addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox'/></td><td id='test'>" +dataObj[i].company_nm[0].company_nm + "</td>";
+            addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox' value='"+dataObj[i].company_nm[0].company_nm+"' onClick='checkFunc("+ i +")'/></td><td>&nbsp;" +dataObj[i].company_nm[0].company_nm + "</td>";
 
+            //company_nm 객체에 값이 있을 경우  
             if((dataObj[i].company_nm[0].company_nm).length>0){
                 j++;
             }
-              
+
+            //0이거나 4의 배수 시 <tr>추가
             if(j%4==0){
                 addList += "<tr>";
             }
@@ -165,6 +157,30 @@ function setCompany(dataObj) {
     $("#more_list").append(addList);
 }
 
+
+/** 체크박스 전체선택 */
+function checkAllFunc(){
+    if($("#checkAll").prop("checked")){
+        $("input[name=cpChkBox]").prop("checked",true);
+    }else{
+        $("input[name=cpChkBox]").prop("checked",false);
+    }
+}
+
+
+/** 체크박스 개별선택 */
+function checkFunc(i){
+    alert(i);
+
+    var checkboxValues = [];
+    $("input[name='cpChkBox']:checked").each(function(i) {
+        checkboxValues.push($(this).val());
+    });
+    alert(checkboxValues);
+    
+    $('input[name="oftenqna[company_nm]"]').val(checkboxValues);
+
+}
 
 
 
@@ -186,7 +202,6 @@ function checkValue() {
 }
 
 //summernote 이미지 업로드
-
 function sendFile(files, editor, welEditable) {
     data = new FormData();
     data.append("oftenqna[attach-file]", files);

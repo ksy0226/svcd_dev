@@ -174,6 +174,7 @@ module.exports = {
         OftenQnaModel.findOneAndUpdate({
             _id: req.params.id
         }, newOftenqna, function (err, newOftenqna) {
+            logger.debug("newOftenqna ==============> " + newOftenqna);
             if (err) {
                 res.render("http/500", {
                     cache : true,
