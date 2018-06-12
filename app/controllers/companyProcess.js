@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const async = require('async');
 const CompanyProcessModel = require('../models/CompanyProcess');
 const HigherProcessModel = require('../models/HigherProcess');
+const OftenQnaModel = require('../models/OftenQna')
 const logger = require('log4js').getLogger('app');
 const Iconv = require('iconv-lite');
 
@@ -142,9 +143,9 @@ module.exports = {
                 condition.higher_cd = req.query.higher_cd;
             }
             
-            logger.debug("==========================================getCompany=========================================");
-            logger.debug("condition : ", condition);
-            logger.debug("====================================================================================================");
+            //logger.debug("==========================================getCompany=========================================");
+            //logger.debug("condition : ", condition);
+            //logger.debug("====================================================================================================");
 
 
             //>>>>> 상위업무에 매핑되는 회사명 찾기
@@ -170,19 +171,19 @@ module.exports = {
                 }
             },  {
                     $sort: {
-                        "company_nm.company_nm": -1
+                        "company_nm.company_nm": 1
                 }
             }]
 
-            logger.debug("========================================================================");
-            logger.debug("getCompany aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
-            logger.debug("========================================================================");
+            //logger.debug("========================================================================");
+            //logger.debug("getCompany aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
+            //logger.debug("========================================================================");
             
             //MyProcess.aggregate(aggregatorOpts).exec(function (err, targetUser) {
             //CompanyProcessModel.find(condition, function (err, companyProcess) {
             CompanyProcessModel.aggregate(aggregatorOpts).exec(function (err, companyProcess) {
-                logger.debug("companyProcess : "+ JSON.stringify(companyProcess));
-                logger.debug("companyProcess length : " + companyProcess.length);
+                //logger.debug("companyProcess : "+ JSON.stringify(companyProcess));
+                //logger.debug("companyProcess length : " + companyProcess.length);
                 if (err) {
                     return res.json({
                         success: false,
@@ -193,9 +194,10 @@ module.exports = {
                 }
             });
         } catch (e) {
-            logger.error("getCompany.find error : ", e);
+            //logger.error("getCompany.find error : ", e);
         }
-    }
+    },
+    
 };
 
 

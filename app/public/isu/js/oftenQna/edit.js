@@ -1,8 +1,14 @@
 'use strict';
+var incident_id = ''; //선택 인시던트 id
 
 $(document).ready(function () {
-    //alert(JSON.stringify(oftenqnaObj));
-    
+
+    //팝업공지 체크되어 있을 경우,
+    if($('input:checkbox[name="oftenqna[pop_yn]"]').val() == "Y"){
+        getCheckData(oftenqnaObj._id); 
+    }
+
+
     if($('input:checkbox[name="oftenqna[pop_yn]"]').val() == "Y"){
         $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", true);
     }else{
@@ -40,9 +46,11 @@ $(document).ready(function () {
 
         if($('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked') == true){
             $('input:checkbox[name="oftenqna[pop_yn]"]').val("Y");
+            higherCd();
         }else{
-            //alert("11111 : "+ $('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked'));
             $('input:checkbox[name="oftenqna[pop_yn]"]').val("N");
+            $("input[name=cpChkBox]").prop("checked",false);
+            $("#more_list tr").remove();
         }
 
     })
@@ -61,7 +69,6 @@ $(document).ready(function () {
     
 
     $("#checkAll").on('click', function () {
-        alert("click-click");
         //클릭되었으면
         if($("#checkall").prop("checked")){
             //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
@@ -70,6 +77,7 @@ $(document).ready(function () {
         }else{
             //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
             $("input[name=cpChkBox]").prop("checked",false);
+            
         }
     })
     
@@ -84,17 +92,53 @@ function higherCd() {
     //선택값 매핑
     $('#higher_nm').val($('#higher_cd option:selected').text());
     var higherCdVal = $('#higher_cd').val();
-
-    //팝업공지 체크 되어 있으면, 상위업무에 따른 회사선택 로딩
-    if($("#pop_yn").prop("checked")){
-        getCompany(higherCdVal);
-    }else{
-        $("#more_list tr").remove();
-    }
+    getCompany(higherCdVal);
 }
 
 
-function getCompany(higherCdVal) {
+
+//팝업공지 체크에 따른 회사정보 조회
+function getCheckData(id) {
+
+    $.ajax({
+        type: "GET",
+        async: true,
+        url: "/oftenQna/getCheckData/" + id,
+        dataType: "json", // xml, html, script, json 미지정시 자동판단
+        timeout: 30000,
+        cache: false,
+        //data: reqParam,
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        error: function (request, status, error) {
+            $('#ajax_indicator').css("display", "none");
+            alert("error : " + error);
+        },
+        beforeSend: function () {
+            $('#ajax_indicator').css("display", "");
+        },
+        success: function (dataObj) {
+            $('#ajax_indicator').css("display", "none");
+            setCheckData(dataObj);
+        }
+    });
+}
+
+
+//내용 매핑
+function setCheckData(dataObj) {
+    var companyCheckList = dataObj.company_nm.split(',');
+    var checkListArr = new Array(companyCheckList.length);
+
+    for(var i = 0 ; i< companyCheckList.length ; i++){
+        var tmpValue = companyCheckList[i].split(',');
+        checkListArr[i]     = tmpValue;
+    }
+
+    getCompany(dataObj.higher_cd, checkListArr);
+}
+
+//상위업무에 따른 회사조회
+function getCompany(higherCdVal, checkListArr) {
 
     var reqParam = 'higher_cd=' + higherCdVal;
 
@@ -116,8 +160,7 @@ function getCompany(higherCdVal) {
         },
         success: function (dataObj) {
             $('#ajax_indicator').css("display", "none");
-            
-            setCompany(dataObj);
+            setCompany(dataObj, checkListArr);
             
         }
     });
@@ -125,11 +168,12 @@ function getCompany(higherCdVal) {
 
 
 //내용 매핑
-function setCompany(dataObj) {
-
+function setCompany(dataObj, checkListArr) {
+    //alert(JSON.stringify(dataObj));
+    
     $("#more_list tr").remove();        
     var addList = "";
-    //var iCnt = 0;
+    //var iCnt = 0; 객체에 값이 없는 경우
     var j = 0;
 
     for(var i=0; i<dataObj.length; i++){
@@ -141,9 +185,10 @@ function setCompany(dataObj) {
         if($.isEmptyObject(dataObj[i].company_nm)){
             //iCnt++;
         }else{
-            addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox' value='"+dataObj[i].company_nm[0].company_nm+"' onClick='checkFunc("+ i +")'/></td><td>&nbsp;" +dataObj[i].company_nm[0].company_nm + "</td>";
-
-            //company_nm 객체에 값이 있을 경우  
+            //alert($("input:checkbox[name=cpChkBox]").val());
+            addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox' value='"+dataObj[i].company_nm[0].company_nm+"' onClick='checkFunc("+ i +")' /></td><td>&nbsp;" +dataObj[i].company_nm[0].company_nm + "</td>";
+            $("input:checkbox[name=cpChkBox]").val(dataObj[i].company_nm[0].company_nm);
+            //company_nm 객체에 값이 있을 경우에만 실제 데이터 수(j) 증가
             if((dataObj[i].company_nm[0].company_nm).length>0){
                 j++;
             }
@@ -153,8 +198,20 @@ function setCompany(dataObj) {
                 addList += "<tr>";
             }
         }
+       
     }
     $("#more_list").append(addList);
+    
+
+    for(var k=0; k<checkListArr.length; k++){
+
+        $('input:checkbox[name="cpChkBox"]').each(function() {
+            if(this.value == checkListArr[k]){ //값 비교
+                   this.checked = true; //checked 처리
+             }
+        });
+    }  
+
 }
 
 
@@ -165,23 +222,31 @@ function checkAllFunc(){
     }else{
         $("input[name=cpChkBox]").prop("checked",false);
     }
+
+    var checkboxValues = $("input[name='cpChkBox']:checkbox:checked").map(function() {
+	    return $(this).val();
+    }).get();
+    $('input[name="oftenqna[company_nm]"]').val(checkboxValues);
 }
 
 
 /** 체크박스 개별선택 */
 function checkFunc(i){
-    alert(i);
 
-    var checkboxValues = [];
-    $("input[name='cpChkBox']:checked").each(function(i) {
-        checkboxValues.push($(this).val());
-    });
-    alert(checkboxValues);
-    
+    //체크박스에 체크된것만 배열 생성
+    var checkboxValues = $("input[name='cpChkBox']:checkbox:checked").map(function() {
+	    return $(this).val();
+    }).get();
     $('input[name="oftenqna[company_nm]"]').val(checkboxValues);
 
 }
 
+/**
+ * CheckBox 초기화
+ */
+function setCheckBox() {
+    
+}
 
 
 //필수값 체크

@@ -251,5 +251,35 @@ module.exports = {
         } catch (e) {
             logger.debug('oftenqna controllers error ====================> ', e)
         }
-    }
+    },
+    /**
+     * 팝업공지에 따른 회사 조회 -> 
+     */
+
+    getCheckData :  (req, res, next) => {
+
+        //logger.debug("Trace getCheckData  query: ", req.query.id);
+        //logger.debug("Trace getCheckData  params: ", req.params.id);
+        
+        try {
+            OftenQnaModel.findById({
+                _id: req.params.id
+            }, function (err, companyCheck) {
+                //logger.debug("=== getCheckData 1=== ", req.params.id);
+                //logger.debug("=== getCheckData 1=== ", companyCheck);
+                if (err) {
+                    return res.json({
+                        success: false,
+                        message: err
+                    });
+                } else {
+                    res.send(companyCheck);
+                }
+            });
+        } catch (e) {
+            logger.debug('****************', e);
+        }
+        
+    },
+    
 };

@@ -25,5 +25,6 @@ router.route('/download/:path1/:path2/:filename').get(ssc.sessionCheck, controll
 router.route('/list').get(ssc.sessionCheck, controller.list);
 router.route('/save/:id').get(ssc.sessionCheck, controller.edit)
                          .post(upload.array('oftenqna[attach-file]'), ssc.sessionCheck, controller.update);
+router.route('/getCheckData/:id').get(ssc.sessionCheck,controller.getCheckData);
 
 module.exports = router;

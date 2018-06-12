@@ -11,4 +11,6 @@ router.route('/edit').get(ssc.sessionCheck, controller.edit)
 router.route('/getCompanyProcess').get(ssc.sessionCheck,controller.getCompanyProcess);
 router.route('/getCompany').get(ssc.sessionCheck,controller.getCompany);
 
+
+
 module.exports = router;

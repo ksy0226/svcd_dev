@@ -186,6 +186,8 @@ function setContent(Obj) {
         addList += "											<i class='md md-desktop-windows'></i>" + dataObj[i].title + "";
         addList += "										</a>";
         addList += "									</div>";
+
+        
         addList += "									<div class='col-md-12'>";
         addList += "										<div class='forum-content truncate1 fh-100' style='word-wrap: break-word;'>";
         //addList += "											<a href='/incident/viewDetail/" + dataObj[i]._id + "'>" + dataObj[i].content + "</a>";
@@ -279,6 +281,7 @@ function initDetail() {
  * 상세조회 매핑
  */
 function setDetail(dataObj) {
+    
     /**
      * 등록내용 세팅
      */
@@ -305,7 +308,6 @@ function setDetail(dataObj) {
     $('#_title').html(dataObj.title);
     $('#_content').html(dataObj.content);
 
-    
 
     //진행상태 클래스 세팅
     if (dataObj.status_cd != null) {
