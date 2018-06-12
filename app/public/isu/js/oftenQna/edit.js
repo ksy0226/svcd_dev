@@ -37,9 +37,27 @@ $(document).ready(function () {
     });
 
 
+ 
     $('#form').submit(function(){
         $('input[name=files]').remove();
     });
+
+    function sendFile(files, editor, welEditable) {
+        data = new FormData();
+        data.append("oftenqna[attach-file]", files);
+        $.ajax({
+            data: data,
+            type: "POST",
+            url: '/oftenqna/insertedImage',
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(url) {
+                $('#summernote').summernote("insertImage", url);
+            }
+        });
+    }
+
 
     
     $('#pop_yn').on('click', function () {
@@ -97,7 +115,7 @@ function higherCd() {
 
 
 
-//팝업공지 체크에 따른 회사정보 조회
+//팝업공지 체크에 따른 회사리스트 조회
 function getCheckData(id) {
 
     $.ajax({
@@ -185,9 +203,9 @@ function setCompany(dataObj, checkListArr) {
         if($.isEmptyObject(dataObj[i].company_nm)){
             //iCnt++;
         }else{
-            //alert($("input:checkbox[name=cpChkBox]").val());
             addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox' value='"+dataObj[i].company_nm[0].company_nm+"' onClick='checkFunc("+ i +")' /></td><td>&nbsp;" +dataObj[i].company_nm[0].company_nm + "</td>";
             $("input:checkbox[name=cpChkBox]").val(dataObj[i].company_nm[0].company_nm);
+
             //company_nm 객체에 값이 있을 경우에만 실제 데이터 수(j) 증가
             if((dataObj[i].company_nm[0].company_nm).length>0){
                 j++;
@@ -266,19 +284,4 @@ function checkValue() {
     return true;
 }
 
-//summernote 이미지 업로드
-function sendFile(files, editor, welEditable) {
-    data = new FormData();
-    data.append("oftenqna[attach-file]", files);
-    $.ajax({
-        data: data,
-        type: "POST",
-        url: '/oftenqna/insertedImage',
-        cache: true,
-        contentType: false,
-        processData: false,
-        success: function(url) {
-            $('#summernote').summernote("insertImage", url);
-        }
-    });
-}
+

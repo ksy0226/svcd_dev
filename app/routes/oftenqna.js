@@ -20,7 +20,6 @@ router.route('/delete/:id').get(ssc.sessionCheck, controller.delete);
 //router.route('/insertedImage').post(upload2.array('insertedImage'), ssc.sessionCheck, controller.insertedImage);
 
 router.route('/insertedImage').get(ssc.sessionCheck, controller.insertedImage);
-
 router.route('/download/:path1/:path2/:filename').get(ssc.sessionCheck, controller.download);
 router.route('/list').get(ssc.sessionCheck, controller.list);
 router.route('/save/:id').get(ssc.sessionCheck, controller.edit)

@@ -167,6 +167,7 @@ module.exports = {
     update: (req, res, next) => {
         logger.debug("oftenQna controllers update start =====> " + JSON.stringify(req.body));
         var newOftenqna = req.body.oftenqna;
+        logger.debug("==================> "+ newOftenqna.company_nm);
 
         if (req.files) {
             newOftenqna.attach_file = req.files;
