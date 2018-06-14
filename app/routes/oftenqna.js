@@ -25,5 +25,7 @@ router.route('/list').get(ssc.sessionCheck, controller.list);
 router.route('/save/:id').get(ssc.sessionCheck, controller.edit)
                          .post(upload.array('oftenqna[attach-file]'), ssc.sessionCheck, controller.update);
 router.route('/getCheckData/:id').get(ssc.sessionCheck,controller.getCheckData);
+router.route('/getPopUpYN').get(ssc.sessionCheck,controller.getPopUpYN);
+
 
 module.exports = router;

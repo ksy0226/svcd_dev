@@ -5,13 +5,17 @@ var dataCnt = 0; // 출력 종료 인덱스
 var inCnt = 10; //한번에 화면에 조회되는 리스트 수
 
 $(document).ready(function () {
+
     //최초 조회
     getDataList();
-
     //메인 카운트 로드(접수대기,처리중,미평가,완료)
     cntLoad();
     //당월 처리현황 조회
     monthlyLoad();
+
+    //팝업체크여부 조회
+    getPopUpYN();
+
 });
 
 /**
@@ -178,7 +182,6 @@ function setMonthlyLoad(dataObj) {
 
 }
 
-
 function getDataList() {
     var reqParam = '';
     $.ajax({
@@ -264,3 +267,58 @@ function setDataList(dataObj) {
         })
     }
 }
+
+
+//팝업공지 체크에 따른 회사리스트 조회
+function getPopUpYN() {
+
+    $.ajax({
+        type: "GET",
+        async: true,
+        url: "/oftenQna/getPopUpYN",
+        dataType: "json", // xml, html, script, json 미지정시 자동판단
+        timeout: 30000,
+        cache: false,
+        //data: reqParam,
+        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        error: function (request, status, error) {
+            $('#ajax_indicator').css("display", "none");
+            alert("error : " + error);
+        },
+        beforeSend: function () {
+            $('#ajax_indicator').css("display", "");
+        },
+        success: function (dataObj) {
+            $('#ajax_indicator').css("display", "none");
+            setPopUp(dataObj);
+            //setCheckData(dataObj);
+        }
+    });
+}
+
+/*
+function setPopUp(dataObj) {
+    //modal
+    show(dataObj); 
+}
+*/
+
+//modal창 데이터 매핑
+function setPopUp(dataObj){
+    if(dataObj.length>0){
+        for(var i = 0 ; i < dataObj.length ; i++) {
+            //alert(dataObj[i].title);
+            //alert(dataObj[i].content);
+
+            $("#_title").html(dataObj[i].title);
+            $("#_content").html(dataObj[i].content);
+
+            //modal을 띄워준다. 
+            $("#myModal").modal('show');
+            //$("#myModal").modal('draggable');
+            
+        }
+    }
+    
+}
+

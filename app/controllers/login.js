@@ -20,6 +20,49 @@ module.exports = {
      * Validation action
      */
     index: (req, res) => {
+        //if (userInfo.status == 'OK') {
+            logger.debug("req.session.company_cd : "+req.session.company_cd);
+        
+            /*OftenQnaModel.findOne({
+                company_cd: req.session.company_cd
+            }).exec(function (err, oftenQna) {
+                logger.debug("==============================================");
+                logger.debug("req.session.email", req.session.email);
+                logger.debug("req.session.company_cd", req.session.company_cd);
+                logger.debug("oftenQna", oftenQna);
+                logger.debug("==============================================");
+                
+
+                if (err) {
+                    res.render('index', {
+                        cache : true,
+                        email: email,
+                        remember_me: remember_me,
+                        message: "error : 담당자에게 문의하세요."
+                    });
+                } else {
+                    
+               
+                    //>>>>>==================================================
+                    //권한에 따른 분기
+                    if (req.session.user_flag == '1') {
+                        res.render("main/admin",{cache : true});
+                    } else if (req.session.user_flag == '3') {
+                        res.render("main/admin3",{cache : true});
+                    } else if (req.session.user_flag == '4') {
+                        res.render("main/admin4",{cache : true});
+                    } else if (req.session.user_flag == '5') {
+                        res.render("main/admin5",{cache : true});
+                    } else {
+                        res.render("main/user",{cache : true});
+                    }
+                    //<<<<<==================================================
+                  
+                }
+            });
+            */
+    
+
         if (req.session.user_flag == '1') {
             res.render("main/admin",{cache : true});
         } else if (req.session.user_flag == '3') {
@@ -34,6 +77,8 @@ module.exports = {
     },
 
     logincheck: (req, res) => {
+           
+
         try {
             if (req.body.remember_me === "on") {
                 res.cookie('email', req.body.email);
@@ -52,8 +97,10 @@ module.exports = {
              */
             async.waterfall([function (callback) {
                 Usermanage.findOne({
-                    email: req.body.email
+                    email: req.body.email,
+                    company_cd: req.session.company_cd
                 }).exec(function (err, usermanage) {
+
                     if (err) {
                         res.render('index', {
                             cache : true,
@@ -67,6 +114,8 @@ module.exports = {
 
                         //logger.debug("=================================================================");
                         //logger.debug("usermanage is not null : ", usermanage);
+                        logger.debug("usermanage is not null : ", usermanage.company_cd);
+                        //logger.debug("=================================================================");
                         //logger.debug("usermanage.authenticate(req.body.password) : ", usermanage.authenticate(req.body.password));
                         //logger.debug("=================================================================");
 

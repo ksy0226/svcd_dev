@@ -51,11 +51,13 @@ module.exports = {
             } else {
                 var email = req.cookies.email;
                 var remember_me = req.cookies.remember_me;
+                var company_cd = req.cookies.company_cd;
 
                 res.render('index', {
                     cache : true,
                     email: email,
-                    remember_me: remember_me
+                    remember_me: remember_me,
+                    company_cd : company_cd
                 });
 
             }

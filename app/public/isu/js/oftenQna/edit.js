@@ -144,14 +144,14 @@ function getCheckData(id) {
 
 //내용 매핑
 function setCheckData(dataObj) {
-    var companyCheckList = dataObj.company_cd.split(',');
+    var companyCheckList = dataObj.company_cd.split(','); 
     var checkListArr = new Array(companyCheckList.length);
 
     for(var i = 0 ; i< companyCheckList.length ; i++){
         var tmpValue = companyCheckList[i].split(',');
         checkListArr[i] = tmpValue;
     }
-
+    
     getCompany(dataObj.higher_cd, checkListArr);
 }
 
@@ -187,7 +187,6 @@ function getCompany(higherCdVal, checkListArr) {
 
 //내용 매핑
 function setCompany(dataObj, checkListArr) {
-    //alert(JSON.stringify(dataObj));
     
     $("#more_list tr").remove();        
     var addList = "";
@@ -236,7 +235,8 @@ function checkAllFunc(){
     }else{
         $("input[name=cpChkBox]").prop("checked",false);
     }
-    //company_nm
+
+    //체크박스에 체크된것만 배열 생성
     var checkboxValues = $("input[name='cpChkBox']:checkbox:checked").map(function() {
 	    return $(this).val();
     }).get();
@@ -252,9 +252,8 @@ function checkFunc(i){
     var checkboxValues = $("input[name='cpChkBox']:checkbox:checked").map(function() {
 	    return $(this).val();
     }).get();
+
     $('input[name="oftenqna[company_cd]"]').val(checkboxValues);
-
-
 }
 
 /**

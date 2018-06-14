@@ -26,6 +26,8 @@ block head
     //chart_main.js 수정 후 삭제
     //script(src='/assets/pages/jquery.dashboard.js')
 
+
+
     script(type='text/javascript').
     
         jQuery(document).ready(function($) {
@@ -35,7 +37,7 @@ block head
             });
             //$('.circliful-chart').circliful();
         });
-    
+
     
 
 block content
@@ -125,4 +127,18 @@ block content
                                             th.text-center(width='11%') 담당자
                                             th.text-center(width='13%') 완료일
                                     tbody(id='more_list')
+
+    // Modal
+    #myModal.modal.fade(role='dialog')
+        .modal-dialog
+            // Modal content
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal') ×
+                    h4#_title.modal-title Modal Header
+                .modal-body
+                    p#_content Some text in the modal.
+                .modal-footer
+                    button.btn.btn-default(type='button', data-dismiss='modal') Close
+
 block footer

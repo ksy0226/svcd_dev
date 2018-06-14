@@ -283,4 +283,32 @@ module.exports = {
         
     },
     
+    getPopUpYN : (req, res, next) => {
+
+        try {
+            OftenQnaModel.find({
+                company_cd: {
+                    $regex: new RegExp(req.session.company_cd, "i")
+                },
+                pop_yn : "Y"
+            }).exec(function (err, oftenQna) {
+                logger.debug("==============================================");
+                logger.debug("company_cd", req.session.company_cd);
+                logger.debug("oftenQna", JSON.stringify(oftenQna));
+                logger.debug("==============================================");
+
+                if (err) {
+                    return res.json({
+                        success: false,
+                        message: err
+                    });
+                } else {
+                    res.send(oftenQna);
+                }
+            });
+        } catch (e) {
+            logger.debug('****************', e);
+        }
+
+    }
 };
