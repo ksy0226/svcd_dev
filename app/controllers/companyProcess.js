@@ -175,15 +175,15 @@ module.exports = {
                 }
             }]
 
-            //logger.debug("========================================================================");
-            //logger.debug("getCompany aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
-            //logger.debug("========================================================================");
+            logger.debug("========================================================================");
+            logger.debug("getCompany aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
+            logger.debug("========================================================================");
             
             //MyProcess.aggregate(aggregatorOpts).exec(function (err, targetUser) {
             //CompanyProcessModel.find(condition, function (err, companyProcess) {
             CompanyProcessModel.aggregate(aggregatorOpts).exec(function (err, companyProcess) {
-                //logger.debug("companyProcess : "+ JSON.stringify(companyProcess));
-                //logger.debug("companyProcess length : " + companyProcess.length);
+                logger.debug("companyProcess : "+ JSON.stringify(companyProcess));
+                logger.debug("companyProcess length : " + companyProcess.length);
                 if (err) {
                     return res.json({
                         success: false,

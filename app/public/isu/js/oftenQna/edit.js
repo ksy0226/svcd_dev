@@ -144,12 +144,12 @@ function getCheckData(id) {
 
 //내용 매핑
 function setCheckData(dataObj) {
-    var companyCheckList = dataObj.company_nm.split(',');
+    var companyCheckList = dataObj.company_cd.split(',');
     var checkListArr = new Array(companyCheckList.length);
 
     for(var i = 0 ; i< companyCheckList.length ; i++){
         var tmpValue = companyCheckList[i].split(',');
-        checkListArr[i]     = tmpValue;
+        checkListArr[i] = tmpValue;
     }
 
     getCompany(dataObj.higher_cd, checkListArr);
@@ -199,34 +199,30 @@ function setCompany(dataObj, checkListArr) {
             addList += "<tr><td><input class='cpChkBox' type='checkbox' id='checkAll' onClick='checkAllFunc()'/></td><td>&nbsp;전체선택 </td></tr><hr/>";
             addList += "<tr>";
         }
-        
         if($.isEmptyObject(dataObj[i].company_nm)){
             //iCnt++;
         }else{
-            addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox' value='"+dataObj[i].company_nm[0].company_nm+"' onClick='checkFunc("+ i +")' /></td><td>&nbsp;" +dataObj[i].company_nm[0].company_nm + "</td>";
-            $("input:checkbox[name=cpChkBox]").val(dataObj[i].company_nm[0].company_nm);
+            addList += "<td><input class='cpChkBox' type='checkbox' name='cpChkBox' value='"+dataObj[i].company_nm[0].company_cd+"' onClick='checkFunc("+ i +")' /></td><td>&nbsp;" +dataObj[i].company_nm[0].company_nm + "</td>";
 
+            
             //company_nm 객체에 값이 있을 경우에만 실제 데이터 수(j) 증가
             if((dataObj[i].company_nm[0].company_nm).length>0){
                 j++;
             }
-
             //0이거나 4의 배수 시 <tr>추가
             if(j%4==0){
                 addList += "<tr>";
             }
         }
-       
     }
     $("#more_list").append(addList);
     
-
+    //company_cd가 checkList배열에 들어있으면 해당 값 체크
     for(var k=0; k<checkListArr.length; k++){
-
         $('input:checkbox[name="cpChkBox"]').each(function() {
             if(this.value == checkListArr[k]){ //값 비교
-                   this.checked = true; //checked 처리
-             }
+                this.checked = true; //checked 처리
+            }
         });
     }  
 
@@ -240,22 +236,24 @@ function checkAllFunc(){
     }else{
         $("input[name=cpChkBox]").prop("checked",false);
     }
-
+    //company_nm
     var checkboxValues = $("input[name='cpChkBox']:checkbox:checked").map(function() {
 	    return $(this).val();
     }).get();
-    $('input[name="oftenqna[company_nm]"]').val(checkboxValues);
+
+    $('input[name="oftenqna[company_cd]"]').val(checkboxValues);
+    
 }
 
 
 /** 체크박스 개별선택 */
 function checkFunc(i){
-
     //체크박스에 체크된것만 배열 생성
     var checkboxValues = $("input[name='cpChkBox']:checkbox:checked").map(function() {
 	    return $(this).val();
     }).get();
-    $('input[name="oftenqna[company_nm]"]').val(checkboxValues);
+    $('input[name="oftenqna[company_cd]"]').val(checkboxValues);
+
 
 }
 
