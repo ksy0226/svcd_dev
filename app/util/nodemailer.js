@@ -199,7 +199,8 @@ module.exports = {
             }, {
                 $project: {
                     "manager.email": 1,
-                    "manager.email_send_yn": 1
+                    "manager.email_send_yn": 1,
+                    "manager.using_yn" : 1
                 }
             }]
 
@@ -235,7 +236,7 @@ module.exports = {
                                 logger.debug("util/nodemailer/mailAlimiSend aggregate!!! targetUser[i].manager >>> ", targetUser[i].manager);
                                 logger.debug("=============================================");
 
-                                if (targetUser[i].manager[0].email_send_yn == "Y" && targetUser[i].manager[0].email != null) {
+                                if (targetUser[i].manager[0].using_yn == "Y" && targetUser[i].manager[0].email_send_yn == "Y") {
 
                                     var receiver = targetUser[i].manager[0].email;
                                     //var receiver = 'ksy0226@isu.co.kr';
