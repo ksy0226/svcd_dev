@@ -85,6 +85,7 @@ module.exports = {
                     higher: higher,
                     user_nm: req.session.user_nm,
                     sabun: req.session.sabun,
+                    user_id: req.session.email
                 });
             }
         });
@@ -93,11 +94,18 @@ module.exports = {
     save: (req, res, next) => {
         logger.debug('save start >>>>>>> ' + req);
         var newOftenqna = req.body.oftenqna;
+        //등록자
+        newOftenqna.register_company_cd = req.session.company_cd;
+        newOftenqna.register_company_nm = req.session.company_nm;
+        newOftenqna.user_nm = req.session.user_nm;
+        newOftenqna.user_id = req.session.email;
 
         if (req.files) {
             newOftenqna.attach_file = req.files;
         }
         OftenQnaModel.create(newOftenqna, function (err, newOftenqna) {
+            logger.debug('=======newOftenqna22222=========', newOftenqna);
+
             if (err) {
                 res.render("http/500", {
                     cache : true,
@@ -156,6 +164,7 @@ module.exports = {
                                 higher: higher,
                                 oftenqna: oftenqna,
                                 user: req.user
+
                             });
                         }
                     });

@@ -8,11 +8,15 @@ $(document).ready(function () {
         getCheckData(oftenqnaObj._id); 
     }
 
+    //alert(oftenqnaObj);
+
 
     if($('input:checkbox[name="oftenqna[pop_yn]"]').val() == "Y"){
         $('input:checkbox[name="oftenqna[pop_yn]"]').attr("checked", true);
     }else{
         $('input:checkbox[name="oftenqna[pop_yn]"]').prop("checked", false);
+        $("input[name=cpChkBox]").prop("checked",false);
+        $("#more_list tr").remove();
     }
 
     $('#higher_cd').val(oftenqnaObj.higher_cd);
@@ -38,26 +42,9 @@ $(document).ready(function () {
 
 
  
-    $('#form').submit(function(){
-        $('input[name=files]').remove();
-    });
-
-    function sendFile(files, editor, welEditable) {
-        data = new FormData();
-        data.append("oftenqna[attach-file]", files);
-        $.ajax({
-            data: data,
-            type: "POST",
-            url: '/oftenqna/insertedImage',
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(url) {
-                $('#summernote').summernote("insertImage", url);
-            }
-        });
-    }
-
+    //$('#form').submit(function(){
+    //    $('input[name=files]').remove();
+    //});
 
     
     $('#pop_yn').on('click', function () {
@@ -68,7 +55,8 @@ $(document).ready(function () {
         }else{
             $('input:checkbox[name="oftenqna[pop_yn]"]').val("N");
             $("input[name=cpChkBox]").prop("checked",false);
-            $("#more_list tr").remove();
+            $("#checkRow").css("display", "none");
+            //$("#more_list tr").remove();
         }
 
     })
@@ -110,7 +98,9 @@ function higherCd() {
     //선택값 매핑
     $('#higher_nm').val($('#higher_cd option:selected').text());
     var higherCdVal = $('#higher_cd').val();
-    getCompany(higherCdVal);
+    if($('input:checkbox[name="oftenqna[pop_yn]"]').is(':checked') == true){
+        getCompany(higherCdVal);
+    }
 }
 
 
@@ -214,7 +204,10 @@ function setCompany(dataObj, checkListArr) {
             }
         }
     }
+
+    $("#checkRow").css("display", "");
     $("#more_list").append(addList);
+
     
     //company_cd가 checkList배열에 들어있으면 해당 값 체크
     for(var k=0; k<checkListArr.length; k++){
@@ -256,12 +249,6 @@ function checkFunc(i){
     $('input[name="oftenqna[company_cd]"]').val(checkboxValues);
 }
 
-/**
- * CheckBox 초기화
- */
-function setCheckBox() {
-    
-}
 
 
 //필수값 체크
@@ -282,3 +269,18 @@ function checkValue() {
 }
 
 
+function sendFile(files, editor, welEditable) {
+    data = new FormData();
+    data.append("oftenqna[attach-file]", files);
+    $.ajax({
+        data: data,
+        type: "POST",
+        url: '/oftenqna/insertedImage',
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(url) {
+            $('#summernote').summernote("insertImage", url);
+        }
+    });
+}

@@ -6,6 +6,7 @@ var inCnt = 10; //한번에 화면에 조회되는 리스트 수
 
 $(document).ready(function () {
 
+
     //최초 조회
     getDataList();
     //메인 카운트 로드(접수대기,처리중,미평가,완료)
@@ -15,9 +16,53 @@ $(document).ready(function () {
 
     //팝업체크여부 조회
     getPopUpYN();
+   
+    /*
+    $('#pop-close-btn').on('click', function () {
+       
+        if($('#pop-day').is(':checked') == true){
+            setCookie("notToday","Y", 1);
+            $("#myModal").hide();
+        }else{
+            $("#myModal").hide();
+        }
+    });
+    */
 
 });
+/**
+ * 쿠키
+ */
+/*
+function check(){
+    if(getCookie("notToday")!="Y"){
+		$("#myModal").show();
+    } 
+}
 
+function setCookie(name, value, expiredays) {
+	var today = new Date();
+	    today.setDate(today.getDate() + expiredays);
+	    document.cookie = name + '=' + escape(value) + '; path=/; expires=' + today.toGMTString() + ';'
+}
+
+function getCookie(name) { 
+    var cName = name + "="; 
+    var x = 0; 
+    while ( i <= document.cookie.length ) { 
+        var y = (x+cName.length); 
+        if ( document.cookie.substring( x, y ) == cName ) { 
+            if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) 
+                endOfCookie = document.cookie.length;
+            return unescape( document.cookie.substring( y, endOfCookie ) ); 
+        } 
+        x = document.cookie.indexOf( " ", x ) + 1; 
+        if ( x == 0 ) 
+            break; 
+    } 
+    return ""; 
+} 
+*/
 /**
  * 메인 카운트 로드
  */
@@ -291,33 +336,52 @@ function getPopUpYN() {
         success: function (dataObj) {
             $('#ajax_indicator').css("display", "none");
             setPopUp(dataObj);
-            //setCheckData(dataObj);
         }
     });
 }
 
-/*
-function setPopUp(dataObj) {
-    //modal
-    show(dataObj); 
-}
-*/
+
 
 //modal창 데이터 매핑
 function setPopUp(dataObj){
+    var addList = "";
+
+
     if(dataObj.length>0){
         for(var i = 0 ; i < dataObj.length ; i++) {
-            //alert(dataObj[i].title);
-            //alert(dataObj[i].content);
 
-            $("#_title").html(dataObj[i].title);
-            $("#_content").html(dataObj[i].content);
+            //$("#_title").html(dataObj[i].title);
+            //$("#_content").html(dataObj[i].content);
+            
 
-            //modal을 띄워준다. 
-            $("#myModal").modal('show');
-            //$("#myModal").modal('draggable');
+            addList += "<div id='"+dataObj[i]._id+"' role='dialog' class='modal fade'>";
+            addList += "<div class='modal-dialog' style='overflow-y: scroll; max-height:90%;  margin-top: 30px; margin-bottom:30px;'>";
+            addList += "<div id='modalContent' class='modal-content'>";
+            addList += "<div class='modal-header'>";
+            addList += "    <button type='button' data-dismiss='modal' class='close'>×</button>";
+            addList += "    <h4 id='_title' class='modal-title'>" + dataObj[i].title + "</h4>";
+            addList += "</div>";
+            addList += "<div class='modal-body'>";
+            addList += "    <p id='_content'>" + dataObj[i].content + "</p>";
+            addList += "</div>";
+            addList += "<div class='modal-footer'>";
+            addList += "<input id='pop-day' type='checkbox'/> 하루동안 보지 않기&nbsp; ";
+            addList += "<button id='pop-close-btn' type='button' data-dismiss='modal' class='btn btn-default'>Close</button>";
+            addList += "</div>";
+            addList += "</div>";
+            addList += "</div>";
+            addList += "</div>";
+
+            
+            $("#modalArea").append(addList);
+            $("#"+dataObj[i]._id).modal('show');    
+            //$("#"+i).modal('draggable');
             
         }
+        
+        
+
+        
     }
     
 }

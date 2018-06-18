@@ -9,8 +9,8 @@ var oftenqnaSchema = mongoose.Schema({
     title:          { type: String, required: true },
     content:        { type: String },
     reading_cnt:    { type: Number, default : 0 },
-    company_cd:     { type: String },
-    company_nm:     { type: String },
+    register_company_cd:     { type: String },
+    register_company_nm:     { type: String },
     sabun:          { type: String },
     user_nm:        { type: String },
     attach_file : [{ 
@@ -24,8 +24,10 @@ var oftenqnaSchema = mongoose.Schema({
         size:           {type : Number} }], 
     created_at:     {type : String},
     updated_at:     { type: Date },
-    pop_yn: { type: String },       //추가
-    user_id: { type: String }       //추가
+    pop_yn:         { type: String },       //추가
+    user_id:        { type: String },       //추가
+    company_cd:     { type: String },
+    company_nm:     { type: String }
 });
 
 oftenqnaSchema.pre("save", setCreateAt);
