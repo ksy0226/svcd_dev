@@ -3,66 +3,25 @@
 var rowIdx = 0; //출력 시작 인덱스
 var dataCnt = 0; // 출력 종료 인덱스
 var inCnt = 10; //한번에 화면에 조회되는 리스트 수
+var incident_id ='';
 
 $(document).ready(function () {
 
 
     //최초 조회
     getDataList();
+
     //메인 카운트 로드(접수대기,처리중,미평가,완료)
     cntLoad();
+
     //당월 처리현황 조회
     monthlyLoad();
-
+    
     //팝업체크여부 조회
     getPopUpYN();
-   
-    /*
-    $('#pop-close-btn').on('click', function () {
-       
-        if($('#pop-day').is(':checked') == true){
-            setCookie("notToday","Y", 1);
-            $("#myModal").hide();
-        }else{
-            $("#myModal").hide();
-        }
-    });
-    */
 
 });
-/**
- * 쿠키
- */
-/*
-function check(){
-    if(getCookie("notToday")!="Y"){
-		$("#myModal").show();
-    } 
-}
 
-function setCookie(name, value, expiredays) {
-	var today = new Date();
-	    today.setDate(today.getDate() + expiredays);
-	    document.cookie = name + '=' + escape(value) + '; path=/; expires=' + today.toGMTString() + ';'
-}
-
-function getCookie(name) { 
-    var cName = name + "="; 
-    var x = 0; 
-    while ( i <= document.cookie.length ) { 
-        var y = (x+cName.length); 
-        if ( document.cookie.substring( x, y ) == cName ) { 
-            if ( (endOfCookie=document.cookie.indexOf( ";", y )) == -1 ) 
-                endOfCookie = document.cookie.length;
-            return unescape( document.cookie.substring( y, endOfCookie ) ); 
-        } 
-        x = document.cookie.indexOf( " ", x ) + 1; 
-        if ( x == 0 ) 
-            break; 
-    } 
-    return ""; 
-} 
-*/
 /**
  * 메인 카운트 로드
  */
@@ -264,8 +223,7 @@ function setDataList(dataObj) {
         }
 
         for (var i = rowIdx; i < dataCnt; i++) {
-            /*
-            var creat_dateVal = dataObj[i].created_at;
+            /*var creat_dateVal = dataObj[i].created_at;
             creat_dateVal = creat_dateVal.substring(0, 10);
             var complete_dateVal = dataObj[i].complete_date;
             complete_dateVal = complete_dateVal.substring(0, 10);
@@ -316,28 +274,32 @@ function setDataList(dataObj) {
 
 //팝업공지 체크에 따른 회사리스트 조회
 function getPopUpYN() {
-
-    $.ajax({
-        type: "GET",
-        async: true,
-        url: "/oftenQna/getPopUpYN",
-        dataType: "json", // xml, html, script, json 미지정시 자동판단
-        timeout: 30000,
-        cache: false,
-        //data: reqParam,
-        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-        error: function (request, status, error) {
-            $('#ajax_indicator').css("display", "none");
-            alert("error : " + error);
-        },
-        beforeSend: function () {
-            $('#ajax_indicator').css("display", "");
-        },
-        success: function (dataObj) {
-            $('#ajax_indicator').css("display", "none");
-            setPopUp(dataObj);
-        }
-    });
+    var cookieCheck = getCookie("popupYN");
+    alert("cookieCheck : "+ cookieCheck);
+    
+    if(cookieCheck != "N"){
+        $.ajax({
+            type: "GET",
+            async: true,
+            url: "/oftenQna/getPopUpYN",
+            dataType: "json", // xml, html, script, json 미지정시 자동판단
+            timeout: 30000,
+            cache: false,
+            //data: reqParam,
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            error: function (request, status, error) {
+                $('#ajax_indicator').css("display", "none");
+                alert("error : " + error);
+            },
+            beforeSend: function () {
+                $('#ajax_indicator').css("display", "");
+            },
+            success: function (dataObj) {
+                $('#ajax_indicator').css("display", "none");
+                setPopUp(dataObj);
+            }
+        });
+    }
 }
 
 
@@ -352,6 +314,7 @@ function setPopUp(dataObj){
 
             //$("#_title").html(dataObj[i].title);
             //$("#_content").html(dataObj[i].content);
+            incident_id = dataObj[i]._id;
             
 
             addList += "<div id='"+dataObj[i]._id+"' role='dialog' class='modal fade'>";
@@ -365,8 +328,10 @@ function setPopUp(dataObj){
             addList += "    <p id='_content'>" + dataObj[i].content + "</p>";
             addList += "</div>";
             addList += "<div class='modal-footer'>";
-            addList += "<input id='pop-day' type='checkbox'/> 하루동안 보지 않기&nbsp; ";
-            addList += "<button id='pop-close-btn' type='button' data-dismiss='modal' class='btn btn-default'>Close</button>";
+            addList +="<label for='pop-day' onclick=closePopup('" + dataObj[i]._id + "') >"
+            addList += "<input id='pop-day' name='pop-day' type='checkbox' /> 하루동안 보지 않기&nbsp; ";
+            addList += "</label>";
+            addList += "<button id='pop-close-btn'ss type='button' data-dismiss='modal' class='btn btn-default'>Close</button>";
             addList += "</div>";
             addList += "</div>";
             addList += "</div>";
@@ -378,10 +343,41 @@ function setPopUp(dataObj){
             //$("#"+i).modal('draggable');
             
         }
-        
-        
+    }
+}
 
-        
+function getCookie(name) { 
+    var cookie = document.cookie;
+    alert("cookie : "+cookie);
+
+    if (document.cookie != "") { 
+        var cookie_array = cookie.split("; "); 
+        for ( var index in cookie_array) { 
+            var cookie_name = cookie_array[index].split("="); 
+            
+            if (cookie_name[0] == "popupYN") { 
+                return cookie_name[1]; 
+            } 
+        } 
+    } 
+    return ; 
+}
+
+
+function setCookie(name, value, expiredays) {
+    var date = new Date();
+    date.setDate(date.getDate() + expiredays);
+    document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
+    alert("document.cookie : "+ document.cookie);
+}
+
+function closePopup(id) {
+    alert("id :" + id);
+    
+    if($('input:checkbox[name="pop-day"]').is(':checked') == true){
+        alert("checked!!!");
+        setCookie("popupYN", "N", 1);
+        //$('#'+"id").hide();
     }
     
 }
