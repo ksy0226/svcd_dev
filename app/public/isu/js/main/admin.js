@@ -4,9 +4,9 @@ var rowIdx = 0; //출력 시작 인덱스
 var dataCnt = 0; // 출력 종료 인덱스
 var inCnt = 10; //한번에 화면에 조회되는 리스트 수
 var incident_id ='';
+var cnt =0; //modal창 갯수
 
 $(document).ready(function () {
-
     //최초 조회
     getDataList();
 
@@ -19,6 +19,8 @@ $(document).ready(function () {
     //팝업체크여부 조회
     getPopUpYN();
 
+
+   
 });
 
 /**
@@ -301,6 +303,7 @@ function getPopUpYN() {
 //modal창 데이터 매핑
 function setPopUp(dataObj){
     var addList = "";
+    
 
     if(dataObj.length>0){
         for(var i = 0 ; i < dataObj.length ; i++) {
@@ -322,7 +325,7 @@ function setPopUp(dataObj){
             addList +="<label for='pop-day' onclick=closePopup('"+dataObj[i]._id + "') >"
             addList += "<input id='pop-day' value='"+dataObj[i]._id + "' name='pop-day' type='checkbox' /> 하루동안 보지 않기&nbsp; ";
             addList += "</label>";
-            addList += "<button id='pop-close-btn'ss type='button' data-dismiss='modal' class='btn btn-default'>Close</button>";
+            addList += "<button id='pop-close-btn' type='button' data-dismiss='modal' class='btn btn-default' onclick=closeBtn('"+dataObj[i]._id + "')>Close</button>";
             addList += "</div>";
             addList += "</div>";
             addList += "</div>";
@@ -332,11 +335,15 @@ function setPopUp(dataObj){
             $("#modalArea").append(addList);
             
             /* 쿠키에 팝업차단 열지않기 확인 
-            /* "N"이 아닐 경우만 Modal SHOW
+            ** "N"이 아닐 경우만 Modal SHOW
             */
             var cookieCheck = getCookie(incident_id);
+            
             if(cookieCheck != "N"){
+                /*모달팝업 시 부모창 스크롤 막기*/
+                $('html, body').css({'overflow': 'hidden', 'height': '100%'}); 
                 $("#"+dataObj[i]._id).modal('show');
+                cnt++;
             }    
             
         }
@@ -348,7 +355,7 @@ function getCookie(name) {
     var cookie = document.cookie;
     if (document.cookie != "") { 
         var cookie_array = cookie.split("; "); 
-        for ( var index in cookie_array) { 
+        for (var index in cookie_array) { 
             var cookie_name = cookie_array[index].split("="); 
             
             if (cookie_name[0] == incident_id) { 
@@ -369,8 +376,16 @@ function setCookie(name, value, expiredays) {
 function closePopup(id) {
     //alert("id :" + id);
     $('#pop-day:checked').each(function() {
-        setCookie(this.value, "N", 1); //this.value ->id값으로 대체
-	});
+        setCookie(this.value, "N", 1); //this.value ->id값으로 쿠키명 확인
+    });
     
 }
 
+//모달 창 없을 때, 닫으면 부모창 Modal hidden 해제 
+function closeBtn(id){
+    cnt--;
+    
+    if(cnt==0){
+        $('html, body').css({'overflow': 'auto', 'height': '100%'});
+    }
+}
