@@ -13,6 +13,8 @@ block head
     link(href='/assets/css/menu_light.css', rel='stylesheet', type='text/css')
     link(href='/assets/css/responsive.css', rel='stylesheet', type='text/css')
 
+    link(href='/isu/css/user_info.css', rel='stylesheet')
+
     script(src='/assets/js/modernizr.min.js')
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
@@ -45,6 +47,7 @@ block head
     script(src='/plugins/bootstrap-daterangepicker/daterangepicker.js')
 
     script(src='/isu/js/manager/work_list.js', type='text/javascript')
+    
 
 block content
     // ==============================================================
@@ -562,5 +565,64 @@ block content
                                         .col-sm-10
                                             textarea.form-control(name='incident[nc_content]', rows='8')
 
+    // Modal
+    //a.btn.btn-info(href='#info', data-toggle='modal')
+        h4
+            i.glyphicon.glyphicon-eye-open
+            |  Info
+    // 사용자 정보 Modal
+
+    // Modal
+    #info_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog
+            .modal-content
+                .modal-header.modal-header-info
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h1
+                        i.glyphicon.glyphicon-thumbs-up
+                        |  Info Modal
+                .modal-body
+                    이름 : 홍길동
+                    br
+                    전화번호 : 02-590-6891
+                    br
+                    휴대폰 : 010-1234-5678
+                    br
+                    이메일 : hongildong@isu.co.kr
+                    br
+
+                .modal-footer
+                    button.btn.btn-default.pull-right(type='button', data-dismiss='modal') Close
+
+    //#info_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='custom-width-modalLabel', aria-hidden='true')
+        .modal-dialog(style='width:35%;')
+            .modal-content
+                .modal-header.modal-header-info
+                    button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+                    h1
+                        i.glyphicon.glyphicon-thumbs-up
+                        |  Info Modal
+                .modal-body
+                    // Start Button Area
+                    //.row
+                        .col-sm-12
+                            .btn-toolbar.m-b-10(role='toolbar')
+                                .pull-right
+                                    button#n_completeSaveBtn.btn.btn-sm.btn-primary.waves-effect.waves-light(type='button')
+                                        i.fa.fa-check.m-l-5
+                                        |  저장
+                    // End Button Area
+                    // start Insert Area
+                    //.row
+                        .col-sm-12
+                            .card-box.m-r-5
+                                form#n_complete_form.form-horizontal.group-border-dashed(action='#')
+                                    .form-group
+                                        label.col-sm-2.control-label 미처리 사유
+                                        .col-sm-10
+                                            textarea.form-control(name='incident[nc_content]', rows='8')
+                .modal-footer
+                    button.btn.btn-default.pull-left(type='button', data-dismiss='modal') Close
+   
 
 block footer    

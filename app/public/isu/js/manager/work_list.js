@@ -115,7 +115,13 @@ $(document).ready(function () {
         n_completeSave();
         research(1);
 
-    });    
+    }); 
+    
+    //사용자 클릭 시 request_nm
+    //미처리 저장버튼 클릭 시
+    $('#request_nm').on('click', function () {
+        getRequestInfo();
+    }); 
 
     //업무변경 상위업무 선택 시
     $('select[name="ch_higher_cd"]').on('change', function () {
@@ -190,6 +196,10 @@ $(document).ready(function () {
         initNCompleteModal();
     });
 });
+
+function getRequestInfo(){
+    $('#info_modal').modal('show');
+}
 
 
 
@@ -277,11 +287,12 @@ function setDataList(dataObj, selectedPage, totalDataCnt) {
 
         for(var i = 0 ; i < loopCnt ; i++){ 
             var addList = "";
-            addList += "							<tr onclick=detailShow('" + dataObj[i]._id + "')>";
+            //addList += "							<tr onclick=detailShow('" + dataObj[i]._id + "')>";
+            addList += "                            <tr>";
             addList += "								<td class='text-center'>" + dataObj[i].process_speed + "</td>";
             addList += "								<td class='text-center'>" + dataObj[i].status_cd + "</td>";
-            addList += "								<td>" + dataObj[i].title + "</td>";
-            addList += "								<td>" + dataObj[i].request_company_nm + "/" + dataObj[i].request_nm + "</td>";
+            addList += "								<td onclick=detailShow('" + dataObj[i]._id + "')>" + dataObj[i].title + "</td>";
+            addList += "								<td onclick=getRequestInfo()>" + dataObj[i].request_company_nm + "/" + dataObj[i].request_nm + "</td>";
             addList += "								<td class='text-center'>" + dataObj[i].register_date + "</td>";
             if(dataObj[i].receipt_date ==null){
                 addList += "								<td class='text-center'></td>";

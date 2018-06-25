@@ -323,7 +323,7 @@ function setPopUp(dataObj){
             addList += "</div>";
             addList += "<div class='modal-footer'>";
             addList +="<label for='pop-day' onclick=closePopup('"+dataObj[i]._id + "') >"
-            addList += "<input id='pop-day' value='"+dataObj[i]._id + "' name='pop-day' type='checkbox' /> 하루동안 보지 않기&nbsp; ";
+            addList += "<input id='pop-day' value='"+dataObj[i]._id + "' name='pop-day' type='checkbox'/> 하루동안 보지 않기&nbsp; ";
             addList += "</label>";
             addList += "<button id='pop-close-btn' type='button' data-dismiss='modal' class='btn btn-default' onclick=closeBtn('"+dataObj[i]._id + "')>Close</button>";
             addList += "</div>";

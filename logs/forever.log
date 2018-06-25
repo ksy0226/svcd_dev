@@ -69335,3 +69335,189 @@ HTTPS server listening on port 8080
 Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
 Mongoose default connection is open
 (node:46788) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #49
+(node:35636) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:35636) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #50
+(node:50604) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:50604) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #51
+(node:51472) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51472) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #52
+(node:49720) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:49720) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #53
+(node:46568) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:46568) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #54
+(node:50420) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:50420) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #55
+(node:51104) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51104) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #56
+(node:50912) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:50912) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: space required after `:` on line 50 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+error: Forever detected script exited with code: 1
+error: Script restart attempt #57
+(node:46256) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:46256) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #58
+(node:51196) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51196) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #59
+(node:2080) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:2080) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #60
+(node:52348) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:52348) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #61
+(node:24556) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+error: Forever detected script exited with code: 1
+error: Script restart attempt #62
+(node:52616) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:52616) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+error: Forever detected script exited with code: 1
+error: Script restart attempt #63
+(node:52520) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:52520) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+error: Forever detected script exited with code: 1
+error: Script restart attempt #64
+(node:51412) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:51412) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 587 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 589 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 591 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+error: Forever detected script exited with code: 1
+error: Script restart attempt #65
+(node:31048) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:31048) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 587 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 589 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 591 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+error: Forever detected script exited with code: 1
+error: Script restart attempt #66
+(node:15648) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:15648) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 587 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 589 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 591 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+error: Forever detected script exited with code: 1
+error: Script restart attempt #67
+(node:30192) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:30192) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #68
+(node:38336) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:38336) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+error: Forever detected script exited with code: 1
+error: Script restart attempt #69
+(node:53992) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:53992) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 587 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 589 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 591 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
