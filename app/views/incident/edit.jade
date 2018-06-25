@@ -123,6 +123,10 @@ block content
                                         label.col-sm-2.control-label 제목
                                         .col-sm-10
                                             input.form-control(type='text', name='incident[title]', id='title' style = "ime-mode:active", required)
+                                    .form-group(style='display:none')
+                                        label.col-sm-2.control-label 
+                                        .col-sm-10
+                                            input.form-control(type='text', name='incident[categoryId]', value=incident_id)
                                     .form-group
                                         .col-sm-12
                                             textarea#summernote.summernote(name='incident[content]')

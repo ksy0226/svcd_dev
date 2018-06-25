@@ -7,7 +7,6 @@ $(document).ready(function () {
     $('#higher_nm').val(incidentObj.higher_nm);
     $('#real_contact').val(incidentObj.real_contact);
 
-    
 
     $('#higher_cd').on('change',function(){
         selectedHighProcess(this);

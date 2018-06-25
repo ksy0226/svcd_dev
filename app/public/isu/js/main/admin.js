@@ -315,7 +315,7 @@ function setPopUp(dataObj){
             addList += "<div class='modal-dialog' style='overflow-y: scroll; max-height:90%;  margin-top: 30px; margin-bottom:30px;'>";
             addList += "<div id='modalContent' class='modal-content'>";
             addList += "<div class='modal-header'>";
-            addList += "    <button type='button' data-dismiss='modal' class='close'>×</button>";
+            //addList += "    <button type='button' data-dismiss='modal' class='close'>×</button>";
             addList += "    <h4 id='_title' class='modal-title'>" + dataObj[i].title + "</h4>";
             addList += "</div>";
             addList += "<div class='modal-body'>";
@@ -340,7 +340,7 @@ function setPopUp(dataObj){
             var cookieCheck = getCookie(incident_id);
             
             if(cookieCheck != "N"){
-                /*모달팝업 시 부모창 스크롤 막기*/
+                //모달팝업 시 부모창 스크롤 막기 처리
                 $('html, body').css({'overflow': 'hidden', 'height': '100%'}); 
                 $("#"+dataObj[i]._id).modal('show');
                 cnt++;
@@ -350,7 +350,7 @@ function setPopUp(dataObj){
     }
 }
 
-
+//쿠키값 가져오기 incident_id="N"
 function getCookie(name) { 
     var cookie = document.cookie;
     if (document.cookie != "") { 
@@ -367,12 +367,14 @@ function getCookie(name) {
 }
 
 
+//쿠키값 설정
 function setCookie(name, value, expiredays) {
     var date = new Date();
     date.setDate(date.getDate() + expiredays);
     document.cookie = escape(name) + "=" + escape(value) + "; expires=" + date.toUTCString();
 }
 
+//닫기버튼 클릭 시
 function closePopup(id) {
     //alert("id :" + id);
     $('#pop-day:checked').each(function() {
@@ -384,7 +386,7 @@ function closePopup(id) {
 //모달 창 없을 때, 닫으면 부모창 Modal hidden 해제 
 function closeBtn(id){
     cnt--;
-    
+
     if(cnt==0){
         $('html, body').css({'overflow': 'auto', 'height': '100%'});
     }

@@ -159,6 +159,14 @@ module.exports = {
             newincident.register_company_nm = req.session.company_nm;
             newincident.register_nm = req.session.user_nm;
             newincident.register_id = req.session.email;
+            //newincident.categoryId = 
+            //newincident.categoryId = req.body.incident;
+            
+            logger.debug("trace!!!!!!!!!!!!!!!!!!!!!!!");
+            //logger.debug("req.body: "+ req.body);
+            //logger.debug("req.body.incident : " + req.body.incident);
+            //logger.debug("newincident : "+ newincident);
+            //logger.debug("!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
 
             if (req.files) {
@@ -1083,7 +1091,8 @@ module.exports = {
                     
                     res.render("incident/edit", {
                         incident : incident,
-                        user_nm: req.session.user_nm
+                        user_nm: req.session.user_nm,
+                        incident_id : incident._id
 
                     });
                     

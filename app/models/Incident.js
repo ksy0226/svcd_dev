@@ -82,7 +82,8 @@ var IncidentSchema = new Schema({
 
     created_at              : {type : String},
     updated_at              : {type : Date},
-    deleted_att             : {type : Date}
+    deleted_at              : {type : Date},
+    categoryId              : {type : String}  //기존문의 ObjectId값 
 });
 
 IncidentSchema.pre("save", setCreateAt);
@@ -95,6 +96,8 @@ function isEmpty(value){
     return isValid;
 }
 
+
+
 IncidentSchema.virtual('getDate').get(function(){
     var date = new Date(this.createdAt);
     return {
@@ -103,6 +106,8 @@ IncidentSchema.virtual('getDate').get(function(){
         day : date.getDate()
     };
 });
+
+
 
 IncidentSchema.pre("save", setCreateAt);
 
