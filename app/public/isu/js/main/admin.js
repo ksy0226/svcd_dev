@@ -18,8 +18,6 @@ $(document).ready(function () {
 
     //팝업체크여부 조회
     getPopUpYN();
-
-
    
 });
 
@@ -341,8 +339,11 @@ function setPopUp(dataObj){
             
             if(cookieCheck != "N"){
                 //모달팝업 시 부모창 스크롤 막기 처리
-                //$('html, body').css({'overflow': 'hidden', 'height': '100%'}); 
-                $("#"+dataObj[i]._id).modal('show');
+                $('html, body').css({'overflow': 'hidden', 'height': '100%'}); 
+                
+                //선택영역 밖에 modal 닫힘 방지
+                //$("#"+dataObj[i]._id).modal('show');
+                $("#"+dataObj[i]._id).modal({backdrop: 'static', keyboard: false}) ;
                 cnt++;
             }    
             
@@ -386,8 +387,9 @@ function closePopup(id) {
 //모달 창 없을 때, 닫으면 부모창 Modal hidden 해제 
 function closeBtn(id){
     cnt--;
-
     if(cnt==0){
-        //$('html, body').css({'overflow': 'auto', 'height': '100%'});
+
+        $('html, body').css({'overflow': 'auto', 'height':'auto'});
+
     }
 }
