@@ -332,7 +332,8 @@ function setPopUp(dataObj){
             
             $("#modalArea").append(addList);
             
-            /* 쿠키에 팝업차단 열지않기 확인 
+            /* 
+            ** 쿠키에 팝업차단 열지않기 확인 
             ** "N"이 아닐 경우만 Modal SHOW
             */
             var cookieCheck = getCookie(incident_id);
