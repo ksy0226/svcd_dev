@@ -1671,3 +1671,5 @@
 [2018-06-25 15:57:59.348] [ERROR] http - ::1 - - "GET /manager/work_list HTTP/1.1" 500 - "http://localhost:8080/index" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko"
 [2018-06-25 18:14:54.467] [ERROR] http - ::1 - - "GET /assets/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 - "http://localhost:8080/incident/new_mng" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko"
 [2018-06-25 18:14:55.470] [ERROR] http - ::1 - - "GET /assets/css/images/ui-bg_flat_75_ffffff_40x100.png HTTP/1.1" 404 - "http://localhost:8080/incident/new_mng" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko"
+[2018-06-26 16:04:23.554] [ERROR] http - ::1 - - "GET /isu/js/main/admin1.js HTTP/1.1" 404 - "http://localhost:8080/usermanageAccess/" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko"
+[2018-06-26 16:09:32.645] [ERROR] http - ::1 - - "GET /isu/js/main/admin1.js HTTP/1.1" 404 - "http://localhost:8080/" "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko"
