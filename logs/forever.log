@@ -69521,3 +69521,15 @@ Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\vi
 Warning: missing space before text for line 587 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
 Warning: missing space before text for line 589 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
 Warning: missing space before text for line 591 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+error: Forever detected script exited with code: 1
+error: Script restart attempt #70
+(node:46536) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+HTTPS server listening on port 443
+HTTPS server listening on port 8080
+Mongoose default connection open to mongodb://175.119.100.184:27017/servicedesk
+Mongoose default connection is open
+(node:46536) DeprecationWarning: Mongoose: mpromise (mongoose's default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html
+Warning: missing space before text for line 585 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 587 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 589 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
+Warning: missing space before text for line 591 of jade file "E:\svcd_dev\app\views\manager\work_list.jade"
