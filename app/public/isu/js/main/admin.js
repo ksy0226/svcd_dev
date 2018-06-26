@@ -341,7 +341,7 @@ function setPopUp(dataObj){
             
             if(cookieCheck != "N"){
                 //모달팝업 시 부모창 스크롤 막기 처리
-                $('html, body').css({'overflow': 'hidden', 'height': '100%'}); 
+                //$('html, body').css({'overflow': 'hidden', 'height': '100%'}); 
                 $("#"+dataObj[i]._id).modal('show');
                 cnt++;
             }    
@@ -388,6 +388,6 @@ function closeBtn(id){
     cnt--;
 
     if(cnt==0){
-        $('html, body').css({'overflow': 'auto', 'height': '100%'});
+        //$('html, body').css({'overflow': 'auto', 'height': '100%'});
     }
 }
