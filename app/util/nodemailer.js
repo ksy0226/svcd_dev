@@ -3,6 +3,7 @@ var express = require('express');
 var session = require('express-session');
 var nodemailer = require('nodemailer');
 var smtpPool = require('nodemailer-smtp-pool');
+var MyProcess = require('../models/MyProcess');
 var config = require('../../config/config.json');
 var logger = require('log4js').getLogger('app');
 
@@ -167,5 +168,139 @@ module.exports = {
             }
             transporter.close();
         });
-    }
+    },
+
+    //문의 등록시 메일 알리미
+    mailAlimiSend: (req, res, next) => {
+        //logger.debug("=============================================KSY1");
+        //logger.debug("util/nodemailer/mailAlimiSend, req : ", req);
+        //logger.debug("=============================================")
+
+        try {
+            //>>>>> 상위업무에 매핑되는 사원찾기
+            var condition = {};
+            condition.higher_cd = req.higher_cd;
+
+            var aggregatorOpts = [{
+                $match: condition
+            }, {
+                $group: { //그룹
+                    _id: {
+                        email: "$email"
+                    }
+                }
+            }, {
+                $lookup: {
+                    from: "usermanages", // join 할 collection명
+                    localField: "_id.email", // 기본 키($group에서 얻은 값)
+                    foreignField: "email", // 외래 키(usermanagers collection에 값) 
+                    as: "manager" // 결과를 배출할 alias ( 필드명 )
+                }
+            }, {
+                $project: {
+                    "manager.email": 1,
+                    "manager.email_send_yn": 1,
+                    "manager.using_yn" : 1
+                }
+            }]
+
+            //logger.debug("=============================================KSY2");
+            //logger.debug("util/nodemailer/mailAlimiSend aggregate!!! aggregatorOpts  ", JSON.stringify(aggregatorOpts));
+            //logger.debug("=============================================");
+
+            MyProcess.aggregate(aggregatorOpts).exec(function (err, targetUser) {
+
+                if (err) {
+
+                    logger.error("=============================================");
+                    logger.error("util/nodemailer/mailAlimiSend aggregate!!! err  ", err);
+                    logger.error("=============================================");
+
+                } else {
+
+                    if (targetUser != null) {
+                        //logger.debug("=============================================KSY3");
+                        //logger.debug("util/nodemailer/mailAlimiSend aggregate!!! targetUser >>> ", JSON.stringify(targetUser));
+                        //logger.debug("=============================================");
+
+                        for (var i = 0; i < targetUser.length; i++) {
+
+                            //logger.debug("=============================================KSY4");
+                            //logger.debug("util/nodemailer/mailAlimiSend aggregate!!! aggregatorOpts >>> ", JSON.stringify(aggregatorOpts));
+                            //logger.debug("util/nodemailer/mailAlimiSend aggregate!!! targetUser[i].manager >>> ", targetUser[i].manager.length);
+                            //logger.debug("=============================================");
+
+                            if (targetUser[i].manager.length > 0) {
+
+                                logger.debug("=============================================KSY5");
+                                logger.debug("util/nodemailer/mailAlimiSend aggregate!!! targetUser[i].manager >>> ", targetUser[i].manager);
+                                logger.debug("=============================================");
+
+                                if (targetUser[i].manager[0].using_yn == "Y" && targetUser[i].manager[0].email_send_yn == "Y") {
+
+                                    var receiver = targetUser[i].manager[0].email;
+                                    //var receiver = 'ksy0226@isu.co.kr';
+                                    var mailTitle = "[서비스데스크 등록 알림] 상위 업무 : " + req.higher_nm;
+                                    var html = "";
+                                    html += "고객사명 : " + req.request_company_nm + "<br>";
+                                    html += "요청자명 : " + req.request_nm + "<br>";
+                                    html += "완료요청일자 : " + req.request_complete_date + "<br>";
+                                    html += "< 문의내용 ><br>";
+                                    html += req.content + "<br>";
+                                    html += "<br><hr>";
+                                    html += coment;
+
+                                    var mailOptions = {
+                                        from: sender,
+                                        to: receiver,
+                                        subject: mailTitle,
+                                        html: html
+                                    };
+
+                                    var transporter = nodemailer.createTransport(smtpPool({
+                                        service: config.mailer.service,
+                                        host: config.mailer.host,
+                                        port: config.mailer.port,
+                                        auth: {
+                                            user: config.mailer.user,
+                                            pass: config.mailer.password
+                                        },
+                                        tls: {
+                                            rejectUnauthorize: false
+                                        },
+                                        maxConnections: 5,
+                                        maxMessages: 10
+                                    }));
+
+                                    transporter.sendMail(mailOptions, function (err, res) {
+                                        if (err) {
+                                            logger.debug('Nodemailer evaluationSend Failes >>>>>>>>>> ' + err)
+                                        }
+                                        transporter.close();
+                                    });
+
+                                } else {
+
+                                    //logger.debug("=============================================");
+                                    //logger.debug("util/nodemailer/mailAlimiSend aggregate!!! targetUser[i]  ", JSON.stringify(targetUser[i]));
+                                    //logger.debug("=============================================");
+
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+            //<<<<< 상위업무에 매핑되는 사원찾기
+        } catch (e) {
+
+            logger.error("=============================================");
+            logger.error("util/nodemailer/mailAlimiSend error : ", e);
+            logger.error("=============================================")
+
+        } finally {
+
+        }
+
+    },
 }

@@ -185,6 +185,11 @@ module.exports = {
                 alimi.sendAlimi(req.body.incident.higher_cd);
                 //******************************* */
 
+                //******************************* */
+                // SD 업무담당자 그룹웨어 메일 호출
+                mailer.mailAlimiSend(newincident);
+                //******************************* */
+
                 callback(null);
             });
         }], function (err) {
@@ -240,6 +245,11 @@ module.exports = {
                 //******************************* */
                 // SD 업무담당자 사내메신저 호출
                 alimi.sendAlimi(req.body.incident.higher_cd);
+                //******************************* */
+
+                //******************************* */
+                // SD 업무담당자 그룹웨어 메일 호출
+                mailer.mailAlimiSend(newincident);
                 //******************************* */
 
                 callback(null);
