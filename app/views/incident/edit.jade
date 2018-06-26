@@ -85,6 +85,10 @@ block content
                         .card-box.m-t-10
                             .p-20
                                 form.form-horizontal.group-border-dashed(id='form' name='form' action='/incident/new' method='post' enctype='multipart/form-data')  
+                                    .form-group(style='display:none')
+                                        label.col-sm-2.control-label 요청업무코드
+                                        .col-sm-4
+                                            input#higher_cd.form-control(type='text', name='incident[higher_cd]', readonly)
                                     .form-group
                                         label.col-sm-2.control-label 요청업무
                                         .col-sm-4

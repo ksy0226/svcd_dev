@@ -5,6 +5,7 @@ $(document).ready(function () {
     $('#title').val(incidentObj.title);
     $('#summernote').val(incidentObj.content);
     $('#higher_nm').val(incidentObj.higher_nm);
+    $('#higher_cd').val(incidentObj.higher_cd);
     $('#real_contact').val(incidentObj.real_contact);
 
 
