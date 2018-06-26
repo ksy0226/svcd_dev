@@ -1093,8 +1093,9 @@ module.exports = {
                     
                     res.render("incident/edit", {
                         incident : incident,
-                        user_nm: req.session.user_nm,
-                        incident_id : incident._id
+                        user_nm : req.session.user_nm,
+                        incident_id : incident._id,
+                        user_tel : req.session.office_tel_no 
 
                     });
                     
